@@ -1,0 +1,72 @@
+RewriteEngine On
+ RewriteCond %{HTTPS} !=on
+ RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
+
+<FilesMatch "\.(ttf|otf|eot)$">
+<IfModule mod_headers.c>
+Header set Access-Control-Allow-Origin "*"
+</IfModule>
+</FilesMatch>
+
+<ifModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</ifModule>
+
+
+<ifModule mod_expires.c>
+
+	# Add correct content-type for fonts
+	AddType application/vnd.ms-fontobject .eot
+	AddType application/x-font-ttf .ttf
+	AddType application/x-font-opentype .otf
+	AddType application/x-font-woff .woff
+	AddType image/svg+xml .svg
+
+	# Compress compressible fonts
+	AddOutputFilterByType DEFLATE application/x-font-ttf application/x-font-opentype image/svg+xml
+
+	ExpiresActive On
+	ExpiresDefault "access plus 7 day"
+
+	# Cache Images
+	ExpiresByType image/x-icon "access plus 7 day"
+	ExpiresByType image/jpeg "access plus 7 day"
+	ExpiresByType image/png "access plus 7 day"
+	ExpiresByType image/gif "access plus 7 day"
+	ExpiresByType image/svg+xml "access plus 7 day"
+	ExpiresByType image/webp "access plus 7 day"
+	ExpiresByType image/jp2 "access plus 7 day"
+
+	# Cache Fonts
+	ExpiresByType application/vnd.ms-fontobject "access plus 7 day"
+	ExpiresByType application/x-font-ttf "access plus 7 day"
+	ExpiresByType application/x-font-opentype "access plus 7 day"
+	ExpiresByType application/x-font-woff "access plus 7 day"
+	ExpiresByType image/svg+xml "access plus 7 day"
+
+	# Cache other content types (Flash, CSS, JS, HTML, XML)
+	ExpiresByType application/x-shockwave-flash "access plus 7 day"
+	ExpiresByType text/css "access plus 7 day"
+	ExpiresByType text/javascript "access plus 7 day"
+	ExpiresByType application/javascript "access plus 7 day"
+	ExpiresByType application/x-javascript "access plus 7 day"
+	ExpiresByType text/html "access plus 600 seconds"
+	ExpiresByType application/xhtml+xml "access plus 600 seconds"
+
+</ifModule>
+
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml application/xhtml+xml text/javascript text/css application/x-javascript
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4.0[678] no-gzip
+BrowserMatch bMSIE !no-gzip !gzip-only-text/html
+<ifmodule mod_gzip.c>
+mod_gzip_on Yes
+mod_gzip_item_include file \.js$
+mod_gzip_item_include file \.css$ </ifmodule>
+</IfModule>
