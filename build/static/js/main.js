@@ -1,1 +1,1 @@
-var swiper=new Swiper(".swiper-container",{slidesPerView:2,slidesPerGroup:2,loopFillGroupWithBlank:!0,pagination:{el:".swiper-pagination",clickable:!0},breakpoints:{1300:{slidesPerView:1,slidesPerGroup:1}}});
+$(".slick-slider").slick({dots:!0,infinite:!1,speed:300,slidesToShow:2,slidesToScroll:2,prevArrow:!1,nextArrow:!1,responsive:[{breakpoint:1300,settings:{slidesToShow:1,slidesToScroll:1}}]});

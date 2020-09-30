@@ -1,1 +1,0 @@
-var swiper=new Swiper(".swiper-container",{slidesPerView:2,slidesPerGroup:2,loopFillGroupWithBlank:!0,pagination:{el:".swiper-pagination",clickable:!0},navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"},breakpoints:{1300:{slidesPerView:1,slidesPerGroup:1}}});
