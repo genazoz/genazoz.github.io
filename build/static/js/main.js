@@ -1,1 +1,1 @@
-$(".slick-slider").slick({dots:!0,infinite:!1,speed:300,slidesToShow:2,slidesToScroll:2,prevArrow:!1,nextArrow:!1,responsive:[{breakpoint:1300,settings:{slidesToShow:1,slidesToScroll:1}}]});
+$(document).ready(function(){$(".slick-slider").slick({dots:!0,infinite:!1,speed:300,slidesToShow:2,slidesToScroll:2,prevArrow:!1,nextArrow:!1,responsive:[{breakpoint:1300,settings:{slidesToShow:1,slidesToScroll:1}}]})});
