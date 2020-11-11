@@ -303,9 +303,7 @@ addEventToEls(".M_addTask [type=submit]",'click', function(event){
                     </div>
                     <div class="flexCol">
                         <a href="/krupnoeDelo/item.html">` + inputName + `</a>
-                        <p>
-                        ` + textarea + `
-                        </p>
+                        <p>` + textarea + `</p>
                     </div>
                 </div>
             </td>
@@ -556,7 +554,7 @@ function ItemDataToModal(todo){
         datetime = Y + '-' + M + '-' + T + "T" + deadlineTime;
         priority       =  todo.getAttribute('data-priority'),
         color          =  todo.querySelector('.todo-item__priority-indicator').style.backgroundColor,
-        describtion    =  todo.querySelector('.todo-item__title p').innerHTML;
+        describtion    =  todo.querySelector('.todo-item__title p').innerHTML.trim();
         
         editedTodoID = todo.getAttribute('id');
 
