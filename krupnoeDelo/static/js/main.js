@@ -277,7 +277,7 @@ addEventToEls(".M_addTask [type=submit]",'click', function(event){
         textarea  = 
             document.querySelector('.M_addTask textarea').value.trim() == ''
             ? '...' 
-            : textarea.trim(),
+            :  document.querySelector('.M_addTask textarea').value.trim(),
         T           =  inputDate.split('T')[0].split('-')[2], 
         M           =  inputDate.split('T')[0].split('-')[1], 
         Y           =  inputDate.split('T')[0].split('-')[0],
@@ -324,7 +324,7 @@ addEventToEls(".M_addTask [type=submit]",'click', function(event){
                     height="20"
                     viewBox="0 0 19 20"
                     fill="none"
-                    data-toggle-modal-btn
+                    data-toggle-todo-modal
                     data-switching-modal="M_editTask"
                 >
                     <path
@@ -336,12 +336,30 @@ addEventToEls(".M_addTask [type=submit]",'click', function(event){
                 </svg>
             </td>
         </tr>`);
-    addEventToEls('.todo-item [data-toggle-modal-btn]', 'click', ItemDataToModal)
-    
+ 
 })
 
-
 addEventToEls('[data-filtrate]', 'click', sortTodos);
+
+document.getElementById('todos-wrapper').addEventListener('click', function(event){
+    if(event.target.hasAttribute('data-toggle-todo-modal')){
+        let modal = event.target.getAttribute('data-switching-modal'),
+        modalClass = '.' + modal;
+        if(modal){
+            modalAnimate(document.querySelector(modalClass));
+        }
+        else if(this.classList.contains('modal-window') || this.classList.contains('MW') || this.classList.contains('M')){
+            if(event.target.className == this.getAttribute('class')){
+                modalAnimate(this);
+            }
+        }
+        else{
+            modalAnimate(this.closest('.modal-window, .MW, .M'));
+        }
+
+        ItemDataToModal(event.target.closest('.todo-item'));
+    }
+})
 
 function sortTodos(){
     let todosList = document.querySelectorAll('.todo-item'),
@@ -351,9 +369,15 @@ function sortTodos(){
     each(todosList, function(x){
         todosArray.push(parent.removeChild(x));
     })
-    each(todosArray.sort(function(x) {
+    each(todosArray.sort(function(x, x2) {
         var priority = x.getAttribute('data-priority');
-        return priority == dataSort ? -1 : 1;
+        var priority2 = x2.getAttribute('data-priority');
+        if(priority == dataSort && priority != priority2) {
+            return -1;
+        }
+        else{
+            return 0
+        }
     }), function(x) {
         parent.appendChild(x)
     });
@@ -361,7 +385,7 @@ function sortTodos(){
 
 window.onload = function(){ 
     document.getElementById('todos-wrapper').insertAdjacentHTML('afterbegin', `
-    <tr class="todo-item todo-item_new" data-priority="medium" id="todo-item_1">
+    <tr class="todo-item" data-priority="medium" id="todo-item_1">
         <td class="todo-item__title">
             <div class="flexRow">
                 <div class="todo-item__checkbox-wrapper">
@@ -393,7 +417,7 @@ window.onload = function(){
                 height="20"
                 viewBox="0 0 19 20"
                 fill="none"
-                data-toggle-modal-btn
+                data-toggle-todo-modal
                 data-switching-modal="M_editTask"
             >
                 <path
@@ -405,7 +429,7 @@ window.onload = function(){
             </svg>
         </td>
     </tr>
-    <tr class="todo-item todo-item_new" data-priority="high" id="todo-item_2">
+    <tr class="todo-item" data-priority="high" id="todo-item_2">
         <td class="todo-item__title">
             <div class="flexRow">
                 <div class="todo-item__checkbox-wrapper">
@@ -435,7 +459,7 @@ window.onload = function(){
                 height="20"
                 viewBox="0 0 19 20"
                 fill="none"
-                data-toggle-modal-btn
+                data-toggle-todo-modal
                 data-switching-modal="M_editTask"
             >
                 <path
@@ -447,7 +471,7 @@ window.onload = function(){
             </svg>
         </td>
     </tr>
-    <tr class="todo-item todo-item_new" data-priority="low" id="todo-item_3">
+    <tr class="todo-item" data-priority="low" id="todo-item_3">
         <td class="todo-item__title">
             <div class="flexRow">
                 <div class="todo-item__checkbox-wrapper">
@@ -477,7 +501,7 @@ window.onload = function(){
                 height="20"
                 viewBox="0 0 19 20"
                 fill="none"
-                data-toggle-modal-btn
+                data-toggle-todo-modal
                 data-switching-modal="M_editTask"
             >
                 <path
@@ -507,7 +531,6 @@ window.onload = function(){
         }
     })
 
-    addEventToEls('.todo-item [data-toggle-modal-btn]', 'click', ItemDataToModal)
 
     addEventToEls('input[type=color]', 'change', function(){
  
@@ -517,12 +540,14 @@ window.onload = function(){
     })
 }
 
-function ItemDataToModal(){
+function ItemDataToModal(todo){
     /**
      * Данные редактируемой тудушки
      */
-    let todo           =  this.closest('.todo-item'),
-        name           =  todo.querySelector('.todo-item__title a').innerHTML,
+    if(!todo){
+        todo           =  this.closest('.todo-item');
+    }
+    let name           =  todo.querySelector('.todo-item__title a').innerHTML,
         deadlineDate   =  todo.querySelector('.todo-item__deadline span').innerHTML,
         deadlineTime   =  todo.querySelector('.todo-item__deadline p').innerHTML,
         T = deadlineDate.split('.')[0], 
