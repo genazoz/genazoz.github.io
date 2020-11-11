@@ -4,7 +4,8 @@
 let activatedModals = 0,
     modalsArr = [],
     activatedMP = document.querySelectorAll('MP.active').length, 
-    MWZindex = 112;
+    MWZindex = 112,
+    editedTodoID;
 
 
 /**
@@ -60,7 +61,11 @@ function modalActivate(modal){
     modal.setAttribute('data-active','');
     modal.querySelector('[data-modal-wrapper]').setAttribute('data-active','');
 }
-function modalDisactivate(modal){
+function modalDisactivate(modal){  
+    var sel = window.getSelection(),
+    str = String(sel);
+    if(str.length > 0)
+        return 0;
     activatedModals--;
     MWZindex--;
     modalsArr.pop();
@@ -68,23 +73,6 @@ function modalDisactivate(modal){
     modal.removeAttribute('data-active');
     modal.querySelector('[data-modal-wrapper]').removeAttribute('data-active');
 }
-addEventToEls('[data-toggle-modal-btn]', 'click', function(event){
-
-    let modal = this.getAttribute('data-switching-modal'),
-        modalClass = '.' + modal;
-    if(modal){
-        modalAnimate(document.querySelector(modalClass));
-    }
-    else if(this.classList.contains('modal-window') || this.classList.contains('MW') || this.classList.contains('M')){
-        if(event.target.className == this.getAttribute('class')){
-            modalAnimate(this);
-        }
-    }
-    else{
-        modalAnimate(this.closest('.modal-window, .MW, .M'));
-    }
-})
-
 
 /**
  * Внешний вид кнопок при нажатии/отведении мыши
@@ -106,7 +94,7 @@ addEventToEls(filterDOM, 'mouseleave', function(event){
     }})
 })
 
-const buttonDOM = document.querySelectorAll('button');
+const buttonDOM = document.querySelectorAll('button, input[type=submit]');
 addEventToEls(buttonDOM, 'mouseup', function(event){
     each(buttonDOM, function(x){x.classList.remove('press');})
 })
@@ -157,18 +145,14 @@ function checkForInputs(inputs) {
     /**
      * Обьявление переменных
      */
-    let inputCheck = 1;
+    let inputCheck = 0;
 
 
     /**
      * Проверка на заполнение
      */
     inputs.forEach(function (x) {
-        if(x.getAttribute('type') == "select"){
-            if(x.querySelector('option:nth-child(1):selected').length > 0){
-                x.setAttribute('data-issue', '');
-            }
-        }else if (x.getAttribute('type') == "text" && !x.value || x.tagName == "TEXTAREA" && !x.value) {
+        if (x.getAttribute('type') == "text" && !x.value) {
             if(!x.classList.contains('non-binding'))
             {
                 x.parentNode.setAttribute('data-issue', '');
@@ -183,15 +167,403 @@ function checkForInputs(inputs) {
     
     return inputCheck;
 }
+let issueCounter;
+addEventToEls(".M [type=submit]",'click', function(event){
+    let inputs;
+    
+    inputs = this.closest('.M').querySelectorAll('input[type="text"]');
+    issueCounter = checkForInputs(inputs);
+})
 
-addEventToEls(".M__create-btn, .M__edit-btn",'click', function(event){
+addEventToEls("form",'submit', function(event){
     event.preventDefault();
 
-    let inputs, 
-        issueCounter; 
-    
-    inputs = this.closest('.M').querySelectorAll('input[type="text"],input[type="select"],textarea');
-    issueCounter = checkForInputs(inputs);
     if(issueCounter > 0)
-    return 0
+        return 0
+
+    document.querySelector('.M.active').click();
 })
+
+
+/**
+ * 
+ * Работа с тудушками
+ *
+ */
+
+addEventToEls('.filter_done', 'click', function(){
+    let todosChecked = document.querySelectorAll('.todo-item input[type=checkbox]:checked'),
+        todoItems = document.querySelectorAll('.todo-item');
+    each(todoItems, function(x){x.style.display = 'none';})
+    each(todosChecked, function(x){x.closest('.todo-item').style.display = 'table-row';})
+})
+
+addEventToEls('.filter_all', 'click', function(){
+    let todoItems = document.querySelectorAll('.todo-item');
+    each(todoItems, function(x){x.style.display = 'table-row';})
+})
+
+addEventToEls('.filter_new', 'click', function(){
+    let todosChecked = document.querySelectorAll('.todo-item_new'),
+        todoItems = document.querySelectorAll('.todo-item');
+    each(todoItems, function(x){x.style.display = 'none';})
+    each(todosChecked, function(x){x.style.display = 'table-row';})
+})
+
+addEventToEls('.header__add-task', 'click', function(){
+    let inputName   =  document.querySelector('.M_addTask input[type=text]'),
+        inputDate   =  document.querySelector('.M_addTask input[type=datetime-local]'),
+        markCircle  =  document.querySelector('.M_addTask input[type=color]'),
+        markColor   =  document.querySelector('.M_addTask .M__custom-input_mark span'),
+        textarea    =  document.querySelector('.M_addTask textarea');
+    
+    inputName.value     = null;
+    inputDate.value     = null;
+    markCircle.value    = null;
+    markColor.innerHTML = '#000000';
+    textarea.value      = null;
+})
+
+addEventToEls(".M_editTask [type=submit]",'click', function(event){
+    /**
+     * Инпуты, в которых будут заменяться данные
+     */
+    let inputName   =  document.querySelector('.M_editTask input[type=text]').value.trim(),
+        inputDate   =  document.querySelector('.M_editTask input[type=datetime-local]').value.trim(),
+        select      =  document.querySelector('.M_editTask select').options[document.querySelector('.M_editTask select').selectedIndex].text,
+        selectVal   =  document.querySelector('.M_editTask select').options[document.querySelector('.M_editTask select').selectedIndex].value,
+        markColor    =  document.querySelector('.M_editTask .M__custom-input_mark span').innerHTML,
+        textarea    =  document.querySelector('.M_editTask textarea').value.trim();
+    /**
+    * Данные редактируемой тудушки
+    */
+    let id             =  editedTodoID,
+        todo           =  document.querySelector('#' + id),
+        name           =  todo.querySelector('.todo-item__title a'),
+        deadlineDate   =  todo.querySelector('.todo-item__deadline span'),
+        deadlineTime   =  todo.querySelector('.todo-item__deadline p'),
+        T              =  inputDate.split('T')[0].split('-')[2], 
+        M              =  inputDate.split('T')[0].split('-')[1], 
+        Y              =  inputDate.split('T')[0].split('-')[0],
+        H              =  inputDate.split('T')[1].split(':')[0],
+        MN             =  inputDate.split('T')[1].split(':')[1],
+        date           =  T + '.' + M + '.' + Y,
+        time           =  H + ':' + MN,
+        priority       =  todo.querySelector('.todo-item__priority span'),
+        color          =  todo.querySelector('.todo-item__priority-indicator'),
+        describtion    =  todo.querySelector('.todo-item__title p');
+    name.innerHTML                    =  inputName;
+    deadlineDate.innerHTML            =  date;
+    deadlineTime.innerHTML            =  time;
+    priority.innerHTML                =  select;
+    todo.setAttribute('data-priority', selectVal);
+    color.style.backgroundColor       =  markColor;
+    describtion.innerHTML  = 
+        textarea == ''
+        ? '...' 
+        : textarea.trim();
+})
+
+addEventToEls(".M_addTask [type=submit]",'click', function(event){
+    /**
+     * Инпуты, в которых будут заменяться данные
+     */
+    let id          =  document.querySelectorAll('.todo-item').length,
+        inputName   =  document.querySelector('.M_addTask input[type=text]').value.trim(),
+        inputDate   =  document.querySelector('.M_addTask input[type=datetime-local]').value.trim(),
+        select      =  document.querySelector('.M_addTask select').options[document.querySelector('.M_addTask select').selectedIndex].text,
+        selectVal   =  document.querySelector('.M_addTask select').options[document.querySelector('.M_addTask select').selectedIndex].value,
+        markColor   =  document.querySelector('.M_addTask .M__custom-input_mark span').innerHTML,
+        textarea  = 
+            document.querySelector('.M_addTask textarea').value.trim() == ''
+            ? '...' 
+            : textarea.trim(),
+        T           =  inputDate.split('T')[0].split('-')[2], 
+        M           =  inputDate.split('T')[0].split('-')[1], 
+        Y           =  inputDate.split('T')[0].split('-')[0],
+        H           =  inputDate.split('T')[1].split(':')[0],
+        MN          =  inputDate.split('T')[1].split(':')[1],
+        date        =  T + '.' + M + '.' + Y,
+        time        =  H + ':' + MN;
+
+    document.querySelector('.filter_all').click();
+    each(document.querySelectorAll('.main__nav-panel .filter:not(.filter_priority-checkbox)'),function(x){x.classList.remove('active');})
+
+    document.querySelector('.filter_all').classList.add('active');
+
+    document.getElementById('todos-wrapper').insertAdjacentHTML('afterbegin', `
+        <tr class="todo-item todo-item_new" data-priority="` + selectVal + `" id="todo-item_` + id + `">
+            <td class="todo-item__title">
+                <div class="flexRow">
+                    <div class="todo-item__checkbox-wrapper">
+                        <input class="todo-item__checkbox" type="checkbox" />
+                        <div style="background: ` + markColor + `;"
+                            class="todo-item__priority-indicator"
+                        ></div>
+                    </div>
+                    <div class="flexCol">
+                        <a href="/krupnoeDelo/item.html">` + inputName + `</a>
+                        <p>
+                        ` + textarea + `
+                        </p>
+                    </div>
+                </div>
+            </td>
+            <td class="todo-item__deadline">
+                <span>` + date + `</span>
+                <p>` + time + `</p>
+            </td>
+            <td class="todo-item__priority">
+                <span>` + select + `</span>
+                <p></p> 
+            </td>
+            <td>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="19"
+                    height="20"
+                    viewBox="0 0 19 20"
+                    fill="none"
+                    data-toggle-modal-btn
+                    data-switching-modal="M_editTask"
+                >
+                    <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M17.4142 1.41421C16.6332 0.633165 15.3668 0.633165 14.5858 1.41421L13.1716 2.82843L16.7071 6.36396L18.1213 4.94975C18.9024 4.1687 18.9024 2.90237 18.1213 2.12132L17.4142 1.41421ZM1.04539 15.4815L0.443651 19.0919L4.05408 18.4901C4.46526 18.4216 4.84474 18.2263 5.1395 17.9316L16 7.07107L12.4645 3.53553L1.60396 14.396C1.30921 14.6908 1.11392 15.0703 1.04539 15.4815Z"
+                    fill="#333333"
+                    />
+                </svg>
+            </td>
+        </tr>`);
+    addEventToEls('.todo-item [data-toggle-modal-btn]', 'click', ItemDataToModal)
+    
+})
+
+
+addEventToEls('[data-filtrate]', 'click', sortTodos);
+
+function sortTodos(){
+    let todosList = document.querySelectorAll('.todo-item'),
+        todosArray = [],
+        parent = todosList[0].parentNode,
+        dataSort = this.getAttribute('data-filtrate');
+    each(todosList, function(x){
+        todosArray.push(parent.removeChild(x));
+    })
+    each(todosArray.sort(function(x) {
+        var priority = x.getAttribute('data-priority');
+        return priority == dataSort ? -1 : 1;
+    }), function(x) {
+        parent.appendChild(x)
+    });
+}
+
+window.onload = function(){ 
+    document.getElementById('todos-wrapper').insertAdjacentHTML('afterbegin', `
+    <tr class="todo-item todo-item_new" data-priority="medium" id="todo-item_1">
+        <td class="todo-item__title">
+            <div class="flexRow">
+                <div class="todo-item__checkbox-wrapper">
+                    <input class="todo-item__checkbox" type="checkbox" />
+                    <div style="background: #eb5757;"
+                        class="todo-item__priority-indicator"
+                    ></div>
+                </div>
+                <div class="flexCol">
+                    <a href="/krupnoeDelo/item.html">Сходить в магазин </a>
+                    <p>
+                        Купить следующий список продуктов: Молоко, огурцы, рыбу...
+                    </p>
+                </div>
+            </div>
+        </td>
+        <td class="todo-item__deadline">
+            <span>29.09.2020</span>
+            <p>18:32</p>
+        </td>
+        <td class="todo-item__priority">
+            <span>Средний</span>
+            <p></p> 
+        </td>
+        <td>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="19"
+                height="20"
+                viewBox="0 0 19 20"
+                fill="none"
+                data-toggle-modal-btn
+                data-switching-modal="M_editTask"
+            >
+                <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M17.4142 1.41421C16.6332 0.633165 15.3668 0.633165 14.5858 1.41421L13.1716 2.82843L16.7071 6.36396L18.1213 4.94975C18.9024 4.1687 18.9024 2.90237 18.1213 2.12132L17.4142 1.41421ZM1.04539 15.4815L0.443651 19.0919L4.05408 18.4901C4.46526 18.4216 4.84474 18.2263 5.1395 17.9316L16 7.07107L12.4645 3.53553L1.60396 14.396C1.30921 14.6908 1.11392 15.0703 1.04539 15.4815Z"
+                fill="#333333"
+                />
+            </svg>
+        </td>
+    </tr>
+    <tr class="todo-item todo-item_new" data-priority="high" id="todo-item_2">
+        <td class="todo-item__title">
+            <div class="flexRow">
+                <div class="todo-item__checkbox-wrapper">
+                <input class="todo-item__checkbox" type="checkbox" />
+                <div style="background: #f2c94c;"
+                    class="todo-item__priority-indicator"
+                ></div>
+                </div>
+                <div class="flexCol">
+                <a href="/krupnoeDelo/item.html">Помыть машину </a>
+                <p>...</p>
+                </div>
+            </div>
+        </td>
+        <td class="todo-item__deadline">
+            <span>29.09.2020</span>
+            <p>19:17</p>
+        </td>
+        <td class="todo-item__priority">
+            <span>Высокий</span>
+            <p></p>
+        </td>
+        <td>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="19"
+                height="20"
+                viewBox="0 0 19 20"
+                fill="none"
+                data-toggle-modal-btn
+                data-switching-modal="M_editTask"
+            >
+                <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M17.4142 1.41421C16.6332 0.633165 15.3668 0.633165 14.5858 1.41421L13.1716 2.82843L16.7071 6.36396L18.1213 4.94975C18.9024 4.1687 18.9024 2.90237 18.1213 2.12132L17.4142 1.41421ZM1.04539 15.4815L0.443651 19.0919L4.05408 18.4901C4.46526 18.4216 4.84474 18.2263 5.1395 17.9316L16 7.07107L12.4645 3.53553L1.60396 14.396C1.30921 14.6908 1.11392 15.0703 1.04539 15.4815Z"
+                fill="#333333"
+                />
+            </svg>
+        </td>
+    </tr>
+    <tr class="todo-item todo-item_new" data-priority="low" id="todo-item_3">
+        <td class="todo-item__title">
+            <div class="flexRow">
+                <div class="todo-item__checkbox-wrapper">
+                    <input class="todo-item__checkbox" type="checkbox" />
+                    <div style="background: #6fcf97;"
+                        class="todo-item__priority-indicator"
+                    ></div>
+                </div>
+                <div class="flexCol">
+                    <a href="/krupnoeDelo/item.html">Ужин </a>
+                    <p>Приготовить лазанью и Карбанару</p>
+                </div>
+            </div>
+        </td>
+        <td class="todo-item__deadline">
+            <span>29.09.2020</span>
+            <p>20:50</p>
+        </td>
+        <td class="todo-item__priority">
+            <span>Низкий</span>
+            <p></p> 
+        </td>
+        <td>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="19"
+                height="20"
+                viewBox="0 0 19 20"
+                fill="none"
+                data-toggle-modal-btn
+                data-switching-modal="M_editTask"
+            >
+                <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M17.4142 1.41421C16.6332 0.633165 15.3668 0.633165 14.5858 1.41421L13.1716 2.82843L16.7071 6.36396L18.1213 4.94975C18.9024 4.1687 18.9024 2.90237 18.1213 2.12132L17.4142 1.41421ZM1.04539 15.4815L0.443651 19.0919L4.05408 18.4901C4.46526 18.4216 4.84474 18.2263 5.1395 17.9316L16 7.07107L12.4645 3.53553L1.60396 14.396C1.30921 14.6908 1.11392 15.0703 1.04539 15.4815Z"
+                fill="#333333"
+                />
+            </svg>
+        </td>
+    </tr>`);
+    
+    addEventToEls('[data-toggle-modal-btn]', 'click', function(event){
+
+        let modal = this.getAttribute('data-switching-modal'),
+            modalClass = '.' + modal;
+        if(modal){
+            modalAnimate(document.querySelector(modalClass));
+        }
+        else if(this.classList.contains('modal-window') || this.classList.contains('MW') || this.classList.contains('M')){
+            if(event.target.className == this.getAttribute('class')){
+                modalAnimate(this);
+            }
+        }
+        else{
+            modalAnimate(this.closest('.modal-window, .MW, .M'));
+        }
+    })
+
+    addEventToEls('.todo-item [data-toggle-modal-btn]', 'click', ItemDataToModal)
+
+    addEventToEls('input[type=color]', 'change', function(){
+ 
+      let color  =  this.value,
+        markColor = this.closest('.M__custom-input').querySelector('span')
+        markColor.innerHTML  = color;
+    })
+}
+
+function ItemDataToModal(){
+    /**
+     * Данные редактируемой тудушки
+     */
+    let todo           =  this.closest('.todo-item'),
+        name           =  todo.querySelector('.todo-item__title a').innerHTML,
+        deadlineDate   =  todo.querySelector('.todo-item__deadline span').innerHTML,
+        deadlineTime   =  todo.querySelector('.todo-item__deadline p').innerHTML,
+        T = deadlineDate.split('.')[0], 
+        M = deadlineDate.split('.')[1], 
+        Y = deadlineDate.split('.')[2],
+        datetime = Y + '-' + M + '-' + T + "T" + deadlineTime;
+        priority       =  todo.getAttribute('data-priority'),
+        color          =  todo.querySelector('.todo-item__priority-indicator').style.backgroundColor,
+        describtion    =  todo.querySelector('.todo-item__title p').innerHTML;
+        
+        editedTodoID = todo.getAttribute('id');
+
+    /**
+     * Инпуты, в которых будут заменяться данные
+     */
+    let inputName   =  document.querySelector('.M_editTask input[type=text]'),
+        inputDate   =  document.querySelector('.M_editTask input[type=datetime-local]'),
+        select      =  document.querySelector('.M_editTask select'),
+        markCircle  =  document.querySelector('.M_editTask input[type=color]'),
+        markColor    =  document.querySelector('.M_editTask .M__custom-input_mark span'),
+        textarea    =  document.querySelector('.M_editTask textarea');
+    
+    /**
+     * RGB to HEX
+     */
+    color = color.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+    delete (color[0]);
+    for (var i = 1; i <= 3; ++i) {
+        color[i] = parseInt(color[i]).toString(16);
+        if (color[i].length == 1) color[i] = '0' + color[i];
+    } 
+    color ='#'+color.join('').toUpperCase(); 
+
+    inputName.value = name.trim();
+
+    inputDate.value = datetime.trim();
+    select.value = priority;
+    markCircle.value    = color;
+    markColor.innerHTML  = color;
+    textarea.value  = 
+        describtion == '...'
+        ? '' 
+        : describtion.trim();
+}
