@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="./static/css/widget.css" />
+  </head>
+  <body>
+    <widget id="widget" class="M widget">
+      <div class="widget__content">
+        <header>
+          <h1>Лента новостей</h1>
+        </header>
+        <div class="widget__news-wrapper"></div>
+      </div>
+    </widget>
+
+    <aside>
+      <button data-a-button="raised" data-toggle-widget>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          version="1.1"
+          id="Capa_1"
+          x="0px"
+          y="0px"
+          viewBox="0 0 512 512"
+          style="enable-background: new 0 0 512 512"
+          xml:space="preserve"
+        >
+          <g>
+            <g>
+              <path
+                d="M351.028,144.402H223.873c-11.207,0-20.291,9.083-20.291,20.291c0,11.207,9.083,20.291,20.291,20.291h127.155    c11.214,0,20.291-9.083,20.291-20.291C371.318,153.485,362.235,144.402,351.028,144.402z"
+              />
+            </g>
+          </g>
+          <g>
+            <g>
+              <path
+                d="M399.725,242.473H223.873c-11.207,0-20.291,9.083-20.291,20.291c0,11.207,9.083,20.291,20.291,20.291h175.852    c11.207,0,20.291-9.083,20.291-20.291C420.016,251.556,410.932,242.473,399.725,242.473z"
+              />
+            </g>
+          </g>
+          <g>
+            <g>
+              <path
+                d="M491.709,17.247H132.565c-11.207,0-20.291,9.083-20.291,20.291v191.408H76.428C34.284,228.946,0,263.237,0,305.374    v112.951c0,42.144,34.284,76.428,76.428,76.428c3.449,0,6.845-0.23,10.166-0.676h334.775c49.969,0,90.631-40.656,90.631-90.631    V37.538C512,26.33,502.917,17.247,491.709,17.247z M112.275,418.325c0,17.389-12.452,31.931-28.907,35.17h-6.939v0.676    c-19.77,0-35.847-16.084-35.847-35.847V305.374c0-19.763,16.084-35.847,35.847-35.847h35.847V418.325z M471.419,403.445    c0,27.129-22.915,50.05-50.05,50.05H144.273c5.485-10.531,8.583-22.496,8.583-35.17V57.828h318.563V403.445z"
+              />
+            </g>
+          </g>
+          <g>
+            <g>
+              <path
+                d="M351.028,334.464H223.873c-11.207,0-20.291,9.083-20.291,20.291c0,11.207,9.083,20.291,20.291,20.291h127.155    c11.214,0,20.291-9.083,20.291-20.291C371.318,343.547,362.235,334.464,351.028,334.464z"
+              />
+            </g>
+          </g>
+        </svg>
+      </button>
+    </aside>
+    <script>
+      /**
+       * Настройки
+       */
+      let activatedModals = 0,
+        modalsArr = [],
+        activatedMP = document.querySelectorAll("MP.active").length,
+        MWZindex = 112;
+
+      class Widget {
+        constructor() {
+          this.data = [
+            {
+              id: Date.now(),
+              title: "Title 1",
+              author: "Василий Васильевич",
+              time: "04.04.2020,&nbsp;13:30",
+              datetime: "2020-04-04T13:30:23+03:00",
+              text:
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quae sed laudantium, eaque quas placeat explicabo facilis, voluptas magni est, cum impedit! Eveniet blanditiis repellat tenetur accusantium consectetur quos amet.",
+              link: "#",
+              status: "",
+            },
+            {
+              id: Date.now(),
+              title: "Title 2",
+              author: "Петр Петрович",
+              time: "04.12.2020,&nbsp;23:08",
+              datetime: "2020-04-12T23:08:23+03:00",
+              text:
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quae sed laudantium, eaque quas placeat explicabo facilis, voluptas magni est, cum impedit! Eveniet blanditiis repellat tenetur accusantium consectetur quos amet.",
+              link: "#",
+              status: "read",
+            },
+          ];
+          this.arrSize = this.data.length;
+        }
+        loadData() {
+          let _this = this;
+          each(_this.data, function (x) {
+            var e = document.createElement("div");
+            e.classList.add("widget__object");
+            e.setAttribute("status", x.status);
+            e.setAttribute("id", x.id);
+            e.insertAdjacentHTML(
+              "beforeend",
+              `
+                <div class="flexCol">
+                <h2>` +
+                x.title +
+                `</h2>
+                <div class="flexRow">
+                    <a href="#">` +
+                x.author +
+                `</a>
+                <time datetime="` +
+                x.datetime +
+                `">` +
+                x.time +
+                `</time>
+                </div>
+                <div class="context">` +
+                x.text +
+                `</div>
+                <a class="link" href=` +
+                x.link +
+                `>
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    version="1.1"
+                    x="0px"
+                    y="0px"
+                    viewBox="0 0 306 306"
+                    style="enable-background: new 0 0 306 306"
+                    xml:space="preserve"
+                    >
+                    <g>
+                        <polygon
+                        points="94.35,0 58.65,35.7 175.95,153 58.65,270.3 94.35,306 247.35,153   "
+                        />
+                    </g>
+                    </svg>
+                </a>
+                </div>
+            `
+            );
+            document.querySelector(".widget__news-wrapper").append(e);
+
+            e.addEventListener("click", function () {
+              if (this.getAttribute("status") != "read") {
+                this.setAttribute("status", "read");
+
+                let id = this.getAttribute("id"),
+                  item = _this.getItem(id);
+
+                if (item) {
+                  item.status = "read";
+                }
+              }
+            });
+          });
+        }
+        getItem(id) {
+          return this.data.find((item) => parseInt(item.id) === parseInt(id));
+        }
+      }
+
+      /**
+       * Добавляет кроссбраузерный обработчик событий элементам
+       * @return null
+       */
+      function addEventToEls(els, evnt, func) {
+        let objOrNo = typeof els === "object";
+        if (!objOrNo && els !== null) {
+          els = document.querySelectorAll(els);
+        }
+
+        els.forEach(function (x) {
+          if (x.addEventListener) {
+            x.addEventListener(evnt, func, false);
+          } else if (x.attachEvent) {
+            x.attachEvent("on" + evnt, function () {
+              func.apply(x);
+            });
+          } else {
+            x["on" + evnt] = func;
+          }
+        });
+      }
+
+      /**
+       * ForEach по элементам
+       * @return null
+       */
+      function each(els, func) {
+        let objOrNo = typeof els === "object";
+        if (!objOrNo && els !== null) {
+          els = document.querySelectorAll(els);
+        }
+        els.forEach(function (x) {
+          func(x);
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const widget = new Widget();
+        var e = document.createElement("span");
+
+        e.insertAdjacentHTML("beforeend", widget.arrSize);
+        document.querySelector("aside button").prepend(e);
+
+        /**
+         * Открывает / закрывает модальные окна
+         * @return null
+         */
+        function modalAnimate(modal) {
+          modal.classList.contains("active")
+            ? modalDisactivate(modal)
+            : modalActivate(modal);
+        }
+        function modalActivate(modal) {
+          widget.loadData();
+          modalsArr.push(modal);
+          activatedModals++;
+          modal.style.zIndex = MWZindex;
+          MWZindex++;
+          modal.classList.add("active");
+          modal.setAttribute("data-active", "");
+        }
+        function modalDisactivate(modal) {
+          activatedModals--;
+          MWZindex--;
+          modalsArr.pop();
+          modal.classList.remove("active");
+          modal.removeAttribute("data-active");
+          var myNode = document.querySelector(".widget__news-wrapper");
+          while (myNode.firstChild) {
+            myNode.removeChild(myNode.firstChild);
+          }
+        }
+
+        addEventToEls("[data-toggle-widget]", "click", function (event) {
+          modalAnimate(document.querySelector("#widget"));
+        });
+      });
+    </script>
+  </body>
+</html>
