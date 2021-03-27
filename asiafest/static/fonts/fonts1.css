@@ -1,0 +1,37 @@
+
+@font-face{
+	font-family: "Segoe Ui";
+	src: url("Segoe ui.ttf");
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face{
+	font-family: "Chub Gothic";
+	src: url("chubgothic_1.ttf");
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face{
+	font-family: "BebasNeue Bold";
+	src: url("BebasNeue Bold.otf");
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face{
+	font-family: "BebasNeue Regular";
+	src: url("BebasNeue Regular.otf");
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face{
+	font-family: "Rhinos rocks";
+	src: url("Rhinos rocks.ttf");
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face{
+	font-family: "Jaapokki Regular";
+	src: url("Jaapokki-Regular.otf");
+	font-style: normal;
+	font-weight: normal;
+}
