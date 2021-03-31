@@ -1,0 +1,172 @@
+h1,
+h2,
+h3
+h4,
+h5,
+h6{
+  color: #000000;
+}
+
+p,
+a,
+button {
+  font-family: $font-roboto;
+}
+a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+h1, .like-h1 {
+  margin: 30px 0 15px 0;
+  
+  font-family: $font-roboto-slab;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 53px;
+
+  @media screen and (min-width: 360px){
+  }
+}
+h2, .like-h2 {
+  margin: 50px 0 15px 0;
+  
+  font-family: $font-roboto-slab;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 42px;
+
+  @media screen and (min-width: 360px){
+  }
+}
+h3, .like-h3 {
+  margin: 35px 0 15px 0;
+  
+  font-family: $font-roboto-slab;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+
+  @media screen and (min-width: 360px){
+  }
+}
+h4, .like-h4 {
+  margin: 20px 0 5px 0;
+  
+  font-family: $font-roboto;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 28px;
+
+  @media screen and (min-width: 360px){
+  }
+}
+h5, .like-h5 {
+  margin: 20px 0 10px 0;
+  
+  font-family: $font-roboto;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+
+  @media screen and (min-width: 360px){
+  }
+}
+.p1{
+  font-size: 14px;
+  line-height: 20px;
+  
+  @media screen and (min-width: 360px){
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &-cap{
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+  
+    @media screen and (min-width: 360px){
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+}
+.p2{
+  font-size: 12px;
+  line-height: 18px;
+  
+  @media screen and (min-width: 360px){
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &-cap{
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 700;
+  
+    @media screen and (min-width: 360px){
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
+.p3{
+  &-cap{
+  }
+}
+.field {
+  &-label{
+    font-size: 13px;
+    line-height: 16px;
+  
+    @media screen and (min-width: 360px){
+      font-size: 15px;
+      line-height: 18px;
+    }
+  }
+  &-data {
+    font-size: 14px;
+    line-height: 16px;
+    
+    @media screen and (min-width: 360px){
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
+}
+.tag{
+  font-size: 10px;
+  line-height: 12px;
+  
+  @media screen and (min-width: 360px){
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+.tabbar {
+  font-size: 10px;
+  line-height: 12px;
+}
+.btn {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  
+  @media screen and (min-width: 360px){
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+input,
+button {
+  outline: none;
+  letter-spacing: 0.02em;
+}
+input,
+select,
+textarea {
+  font-family: $font-roboto;
+  @extend .field-data;
+}
