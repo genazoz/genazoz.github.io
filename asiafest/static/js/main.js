@@ -89,7 +89,7 @@ $('.header__nav li').bind('click',function () {
         $('header').toggleClass('mobile-active');
     },600)
 });
-var event = new Date(2020, 7, 9);
+var event = new Date(2023, 7, 9);
 setInterval(function () {
     var remain = (event - new Date);
     var days = parseInt(remain/(1000*60*60*24)),
