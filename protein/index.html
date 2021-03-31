@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./static/css/main-colored.css">
+    <link rel="stylesheet" href="./static/css/common.css">
+    <link rel="stylesheet" href="./static/fonts/fonts1.css">
+    <link rel="stylesheet" href="./static/fontawesome/fontawesome-pro-5.7.2-web/css/all.css">
+    <title>Protein.com</title>
+</head>
+<body>
+    <style>
+        * ::-webkit-scrollBar{
+            /*width: 0;*/
+            width: 0px;
+            height: 2px;
+            transition: .5s all;
+            opacity: 0;
+            background: transparent;
+            background: #222222;
+        }
+        * ::-webkit-scrollBar-thumb{
+            border-radius: 10px;
+        }
+    </style>
+    <input id="toggle" type="checkbox" style='display: none;'>
+    <label class='menu-button'>
+        <div class="menu-button__flexRow">
+            <div class="toggle-wrapper">
+                <label for='toggle' class='label-ul'>
+                    <li class='one'></li>
+                    <li class='two'></li>
+                    <li class='three'></li>
+                </label>
+            </div>
+            <div class="logo-wrapper">
+                <div class="logo"><span>PS</span></div>
+            </div>
+            <div class="flexRow_icons">
+                <i class="fal fa-shopping-bag"></i>
+                <i class="fal fa-user"></i>
+            </div>
+        </div>
+        <div class="menu-button__input-wrapper">
+            <form method="POST" action="<?php esc_url( home_url( '/' ) );?>" class="menu-button__search">
+                <input class="search-input" value="" name="s"  placeholder="Поиск товара">
+            </form>
+        </div>
+    </label>
+    <input id="toggle-category" type="checkbox" style='display: none;'>
+    <div class='header-mobile'>
+        <ul class='strip-wrapper'>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul class='mobile-ul-menu one'>
+            <li class='animationLi'><a href="/">Домой</a></li>
+            <li class='li'><a href="/feedback">Связаться</a></li>
+            <li class='li'><label for='toggle-category'><a>Каталог</a></label></li>
+        </ul>
+
+        <!-- Переключатели стрелок подкатегорий для мобильников -->
+        <input id="toggle-subcategory1" type="checkbox" style='display: none;'>
+        <input id="toggle-subcategory2" type="checkbox" style='display: none;'>
+        <input id="toggle-subcategory3" type="checkbox" style='display: none;'>
+        <input id="toggle-subcategory4" type="checkbox" style='display: none;'>
+        <input id="toggle-subcategory5" type="checkbox" style='display: none;'>
+        <ul class='mobile-ul-menu two'>
+            <!-- <?php $i=0; foreach ($categories as $category): 
+            if($category['subcat']==0)
+                        {?>
+                <li class='li bd'>
+                        <label for="toggle-subcategory<?=++$i;?>"><i class="fa fa-chevron-down" aria-hidden="true"></i></label>
+                        <a href="/catalog/<?php echo $category['id'];?>">
+                            <?php  echo $category['name'];?>
+                        </a> 
+                    </li>
+                    <ul class='subcategory-mobile sub<?=$i;?>'>
+                            <?php foreach ($categories as $items): 
+                                if($items['subcat']==$category['id'])
+                                {?>
+                                <li>
+                                    <a href="/catalog/<?=$category['id'];?>/<?=$items['id'];?>"><?php echo $items['name'];?></a>
+                                </li>
+                            <?php }?>
+                        <?php endforeach ?> 
+                    </ul>
+                <?php }?>
+            <?php endforeach ?> -->
+            <li class='li'><label for='toggle-category'><a>Назад</a></label></li>
+        </ul>
+    </div>
+    <div class="loading-page">
+        <div class="counter">
+            <h1>0</h1>
+        </div>
+    </div>
+    <svg class="shape-overlays" viewBox="0 0 100 100" preserveAspectRatio="none">     
+        <path class="shape-overlays__path"></path>
+        <path class="shape-overlays__path"></path>
+        <path class="shape-overlays__path"></path>
+        <path class="shape-overlays__path"></path>
+    </svg>
+    <div class="cart-menu-wrapper">
+        <div class="cart-menu">
+            <div class="logo"><span>Корзина</span></div>
+            <ul class="woocommerce-mini-cart cart_list product_list_widget ">
+                <li class="woocommerce-mini-cart-item mini_cart_item">
+                    <a href="javascript:void(0)" class="remove remove_from_cart_button" aria-label="Удалить эту позицию">×</a>													
+                    <a class="img-href" href="">
+                        <img width="300" height="300" src="./static/img/item2.png" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="">						
+                    </a>
+                    <div class="count">1</div>
+                    <div class="text"> 
+                        <div class="name">Протеин</div>
+                        <span class="quantity"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">₽</span>3,000.00</span></span>					
+                    </div>
+                </li>
+                <li class="woocommerce-mini-cart-item mini_cart_item">
+                    <a href="javascript:void(0)" class="remove remove_from_cart_button" aria-label="Удалить эту позицию">×</a>													
+                    <a class="img-href" href="">
+                        <img width="300" height="300" src="./static/img/item5.png" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="">						
+                    </a>
+                    <div class="count">2</div>
+                    <div class="text"> 
+                        <div class="name">Протеин</div>
+                        <span class="quantity"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">₽</span>3,000.00</span></span>					
+                    </div>
+                </li>
+                <li class="woocommerce-mini-cart-item mini_cart_item">
+                    <a href="javascript:void(0)" class="remove remove_from_cart_button" aria-label="Удалить эту позицию">×</a>													
+                    <a class="img-href" href="">
+                        <img width="300" height="300" src="./static/img/item4.png" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="">						
+                    </a>
+                    <div class="count">3</div>
+                    <div class="text"> 
+                        <div class="name">Протеин</div>
+                        <span class="quantity"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">₽</span>3,000.00</span></span>					
+                    </div>
+                </li>
+                <li class="woocommerce-mini-cart-item mini_cart_item">
+                    <a href="javascript:void(0)" class="remove remove_from_cart_button" aria-label="Удалить эту позицию">×</a>													
+                    <a class="img-href" href="">
+                        <img width="300" height="300" src="./static/img/item3.png" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="">						
+                    </a>
+                    <div class="count">4</div>
+                    <div class="text"> 
+                        <div class="name">Протеин</div>
+                        <span class="quantity"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">₽</span>3,000.00</span></span>					
+                    </div>
+                </li>
+            </ul>
+            <div class="woocommerce-mini-cart__buttons buttons">
+                <p class="woocommerce-mini-cart__total total">
+                    <span>Подытог:</span> 
+                    <strong class="woocommerce-Price-amount amount">
+                        <span class="woocommerce-Price-currencySymbol">₽</span>
+                        9,700.00
+                    </strong>
+                </p>
+                <div class="flexRow">
+                    <a href="javascript:void(0)" class="button wc-forward go-to-cart-btn">В корзину</a>
+                    <a href="javascript:void(0)" class="button checkout wc-forward">Оформление заказа</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="side side_left">
+            <a href="/"><div class="logo"><span>PS</span></div></a>
+            <div class="menu-menu-container">
+                <ul>
+                    <li>
+                        <a href="item.html">Страница товара</a>
+                    </li>
+                    <li>
+                        <a href="shop.html">Магазин</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">(демоверсия)</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="side side_right">
+            <form method="POST" action="" class="header__search">
+                <input class="searh-input" value="" name="s"  placeholder="Поиск товара...">
+                <button class="fal fa-times"></button>
+                <button type="submit" class="fal fa-search"></button>
+            </form>
+            <div class="header__cart">
+                <i class="fal fa-shopping-bag"></i>
+            </div>
+            <!-- <div class="header__user">
+                <i class="fal fa-user"></i>
+            </div> -->
+            <!-- <menu class="hamburger">menu</menu> -->
+        </div>
+        <div class="category-menu">
+            <div class="category-menu__wrapper">
+				<aside class="catalogue-aside">
+                    <div class="cat-item">
+                        <div class="cat-item">Whey Pro</div>
+                        <div class="cat-item">Милкшейки</div>
+                        <div class="cat-item">Шейкеры</div>
+                        <div class="cat-item">Protein Bar</div>
+                        <div class="cat-item">Шейкеры</div>
+                        <div class="cat-item">Милкшейки</div>
+                        <div class="cat-item">Шейкеры</div>
+                        <div class="cat-item">Protein Bar</div>
+                        <div class="cat-item">Шейкеры</div>
+                        <div class="cat-item">Protein Bar</div>
+                    </div>
+                    <div class="cat-item">
+                        <div class="cat-item">Wealth</div>
+                        <div class="cat-item">Warrior</div>
+                        <div class="cat-item">Tamin</div>
+                        <div class="cat-item">Whey</div>
+                        <div class="cat-item">Warrior</div>
+                        <div class="cat-item">Warrior</div>
+                        <div class="cat-item">Tamin</div>
+                        <div class="cat-item">Whey</div>
+                        <div class="cat-item">Warrior</div>
+                        <div class="cat-item">Tamin</div>
+                        <div class="cat-item">Whey+</div>
+                    </div>
+				</aside>
+            </div>
+        </div>
+    </header>
+    <div class="background"></div>
+    <main>
+        <div class="row" id="fullpage">
+            <div class="section section_preview">
+                <div class="company-name">
+                    <span>Protein</span>
+                    <span>Store</span>
+                    <span>Spb</span>
+                </div>
+                <div class="circle-wrapper">
+                    <div class="image-wrapper image-wrapper_circle">
+                        <img src="static/img/Circle1.png" alt="circle">
+                    </div>
+                </div>
+                <div class="image-wrapper image-wrapper_protein">
+                    <img src="static/img/Protein1.png" alt="protein">
+                </div>
+                <div class="contacts">
+                    <div class="social-links">
+                        <h2>Cоц. сети</h2>
+                        <p>Cледите за нами в соц. сетях</p>
+                        <div class="social-links__soc-wrapper">
+                            <a href="javascript:void(0)" class="social-links__social">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="javascript:void(0)" class="social-links__social">
+                                <i class="fab fa-vk"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="subscribe-input">
+                        <h2>Присоединяйтесь!</h2>
+                        <p>Введите ваш e-mail ниже, чтобы быть в курсе всех новостей</p>
+                        <div class="subscribe-input__wrapper">
+                            <div class="subscribe-input__icon">
+                                <i class="far fa-at"></i>
+                            </div>
+                            <input type="text" placeholder="Введите email...">
+                        </div>
+                        <button>Отправить</button>
+                    </div>
+                </div>
+            </div>
+            <div class="section section_goods">
+                <h1>Новинки</h1>
+                <div class="goods-wrapper">
+                        <div class="item">
+                            <div class="item__img-wrapper">
+                                <a href="javascript:void(0)">
+                                    <img src="static/img/item1.png" alt="goods" class="item__img">
+                                </a>
+                                <div class="item__add-to-cart">
+                                    <i class="fal fa-shopping-bag"></i>
+                                </div>
+                            </div>
+                            <div class="item__flexCol">
+                                <div class="item__name">Whey Protein</div>
+                                <div class="item__price">1990Р</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item__img-wrapper">
+                                <a href="javascript:void(0)">
+                                    <img src="static/img/item1.png" alt="goods" class="item__img">
+                                </a>
+                                <div class="item__add-to-cart">
+                                    <i class="fal fa-shopping-bag"></i>
+                                </div>
+                            </div>
+                            <div class="item__flexCol">
+                                <div class="item__name">Whey Protein</div>
+                                <div class="item__price">1990Р</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item__img-wrapper">
+                                <a href="javascript:void(0)">
+                                    <img src="static/img/item1.png" alt="goods" class="item__img">
+                                </a>
+                                <div class="item__add-to-cart">
+                                    <i class="fal fa-shopping-bag"></i>
+                                    <i class="fal fa-spinner"></i>
+                                </div>
+                            </div>
+                            <div class="item__flexCol">
+                                <div class="item__name">Whey Protein</div>
+                                <div class="item__price">1990₽</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item__img-wrapper">
+                                <a href="javascript:void(0)">
+                                    <img src="static/img/item1.png" alt="goods" class="item__img">
+                                </a>
+                                <div class="item__add-to-cart">
+                                    <i class="fal fa-shopping-bag"></i>
+                                </div>
+                            </div>
+                            <div class="item__flexCol">
+                                <div class="item__name">Whey Protein</div>
+                                <div class="item__price">1990Р</div>
+                            </div>
+                        </div>
+                        <div class="item" special>
+                            <div class="item__type">special</div>
+                            <div class="item__img-wrapper">
+                                <a href="javascript:void(0)">
+                                    <img src="static/img/item1.png" alt="goods" class="item__img">
+                                </a>
+                                <a href="javascript:void(0)" class="item__add-to-cart" loading>
+                                    <i class="fal fa-shopping-bag"></i>
+                                    <i class="fal fa-spinner"></i>
+                                </a>
+                            </div>
+                            <div class="item__flexCol">
+                                <div class="item__name">Whey Protein</div>
+                                <div class="item__price">1990Р</div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="section section_about">
+                <div class="about__left-side">
+                    <h1>Что мы <br> предлагаем?</h1>
+                    <p>
+                        Have A Rest – это прежде всего комфорт, 
+                        красота, стиль и технологичность. Мы хотим,
+                        чтобы каждая твоя поездка была просто 
+                        незабываемой, а наши аксессуары не переставали 
+                        вдохновлять тебя на новые свершения.                    
+                    </p>
+                </div>
+                <span class="about__line about__line_fst"></span>
+                <span class="about__line about__line_scd"></span>
+                <div class="about__right-side">
+                    <h1>О нас?</h1>
+                    <p>
+                        Have A Rest – это прежде всего комфорт, 
+                        красота, стиль и технологичность. Мы хотим,
+                        чтобы каждая твоя поездка была просто 
+                        незабываемой, а наши аксессуары не переставали 
+                        вдохновлять тебя на новые свершения.                    
+                    </p>
+                </div>
+            </div>
+            <div class="section section_pay">
+                <div class="pay__left-side">
+                    <h1>Удобная оплата товара</h1>
+                    <p>
+                        Have A Rest – это прежде всего комфорт, 
+                        красота, стиль и технологичность. Мы хотим,
+                        чтобы каждая твоя поездка была просто 
+                        незабываемой, а наши аксессуары не переставали 
+                        вдохновлять тебя на новые свершения.                    
+                    </p>
+                    <button>Перейти в магазин</button>
+                </div>
+                <div class="pay__right-side">
+                    <div class="pay__img-wrapper">
+                        <img src="static/img/pay.png" alt="pay">
+                    </div>
+                </div>
+            </div>
+            <div class="section section_brands">
+                <div class="brands__img"></div>
+            </div>
+            <footer class="section section_footer fp-auto-height">
+                <div class="footer__left-side">
+                    <span>Санкт-Петербург</span>
+                    <span>8 (999) 209 65 - 43</span>
+                    <span>protein@gmail.com</span>
+                </div>
+                <div class="logo"><span>PS</span></div>
+                <div class="footer__right-side">
+                    <div class="social-links__soc-wrapper">
+                        <a href="javascript:void(0)" class="social-links__social">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="javascript:void(0)" class="social-links__social">
+                            <i class="fab fa-vk"></i>
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+    <script src="static/js/libs.min.js"></script>
+    <script src="static/js/main.js"></script>
+    <script src="static/js/common.js"></script>
+</body>
+</html>
