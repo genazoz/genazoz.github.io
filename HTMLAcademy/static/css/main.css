@@ -1,0 +1,122 @@
+@charset "UTF-8";
+/*------------------------------------------------------------------
+Project:	HTMLAcademy
+Version:	1.0
+Last change:	04/12/2020
+Assigned to:	genazoz.ru
+-------------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap");
+/*--------------------------------------------------
+	01. General Settings
+---------------------------------------------------*/
+html,
+body {
+  width: 100%;
+  min-width: 320px;
+  height: 100%;
+  background: #eaedf2;
+  font-family: "Roboto";
+  font-weight: 300;
+  font-size: 18px;
+}
+@media (max-width: 799px) {
+  html,
+  body {
+    font-size: 12px;
+  }
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+}
+
+ins {
+  text-decoration: unset;
+}
+
+li {
+  list-style-type: none;
+}
+
+input,
+button {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+body.hidden {
+  opacity: 0;
+}
+
+iframe {
+  width: 100%;
+  height: 100vh;
+  border: unset;
+}
+
+p {
+  font-size: 14px;
+  line-height: 16px;
+  color: #eaedf2;
+  font-weight: 400;
+}
+@media (max-width: 799px) {
+  p {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 10px;
+    line-height: 12px;
+    color: #eaedf2;
+  }
+}
+
+.flexRow {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.flexCol {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}

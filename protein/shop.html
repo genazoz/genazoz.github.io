@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./static/css/shop.css">
+    <link rel="stylesheet" href="./static/css/common.css">
+    <link rel="stylesheet" href="./static/fonts/fonts1.css">
+    <link rel="stylesheet" href="./static/fontawesome/fontawesome-pro-5.7.2-web/css/all.css">
+    <title>Protein.com</title>
+</head>
+<body>
+    <input id="toggle" type="checkbox" style='display: none;'>
+    <label class='menu-button'>
+        <div class="toggle-wrapper">
+            <label for='toggle' class='label-ul'>
+                <li class='one'></li>
+                <li class='two'></li>
+                <li class='three'></li>
+            </label>
+        </div>
+        <div class="flexRow">
+            <i class="fal fa-search"></i>
+            <i class="fal fa-shopping-bag"></i>
+            <i class="fal fa-user"></i>
+        </div>
+    </label>
+    <input id="toggle-category" type="checkbox" style='display: none;'>
+    <div class='header-mobile'>
+        <ul class='strip-wrapper'>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul class='mobile-ul-menu one'>
+            <li class='animationLi'><a href="/">Домой</a></li>
+            <li class='li'><a href="/feedback">Связаться</a></li>
+            <li class='li'><label for='toggle-category'><a>Каталог</a></label></li>
+        </ul>
+
+        <!-- Переключатели стрелок подкатегорий для мобильников -->
+        <input id="toggle-subcategory1" type="checkbox" style='display: none;'>
+        <input id="toggle-subcategory2" type="checkbox" style='display: none;'>
+        <input id="toggle-subcategory3" type="checkbox" style='display: none;'>
+        <input id="toggle-subcategory4" type="checkbox" style='display: none;'>
+        <input id="toggle-subcategory5" type="checkbox" style='display: none;'>
+        <ul class='mobile-ul-menu two'>
+            <!-- <?php $i=0; foreach ($categories as $category): 
+            if($category['subcat']==0)
+                        {?>
+                <li class='li bd'>
+                        <label for="toggle-subcategory<?=++$i;?>"><i class="fa fa-chevron-down" aria-hidden="true"></i></label>
+                        <a href="/catalog/<?php echo $category['id'];?>">
+                            <?php  echo $category['name'];?>
+                        </a> 
+                    </li>
+                    <ul class='subcategory-mobile sub<?=$i;?>'>
+                            <?php foreach ($categories as $items): 
+                                if($items['subcat']==$category['id'])
+                                {?>
+                                <li>
+                                    <a href="/catalog/<?=$category['id'];?>/<?=$items['id'];?>"><?php echo $items['name'];?></a>
+                                </li>
+                            <?php }?>
+                        <?php endforeach ?> 
+                    </ul>
+                <?php }?>
+            <?php endforeach ?> -->
+            <li class='li'><label for='toggle-category'><a>Назад</a></label></li>
+        </ul>
+    </div>
+    <header>
+        <div class="side side_left">
+            <a href="/index.html"><div class="logo"><span>PS</span></div></a>
+            <div class="menu-menu-container">
+                <ul>
+                    <li>
+                        <a href="item.html">Страница товара</a>
+                    </li>
+                    <li>
+                        <a href="shop.html">Магазин</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">(демоверсия)</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="side side_right">
+            <div class="header__search">
+                <i class="fal fa-search"></i>
+            </div>
+            <div class="header__cart">
+                <i class="fal fa-shopping-bag"></i>
+            </div>
+            <!-- <div class="header__user">
+                <i class="fal fa-user"></i>
+            </div> -->
+            <!-- <menu class="hamburger">menu</menu> -->
+        </div>
+    </header>
+    <main>
+        <div class="row">
+            <div class="section section_goods">
+                <h1>Все товары</h1>
+                <div class="goods-wrapper">
+                        <div class="item">
+                            <div class="item__img-wrapper">
+                                <img src="static/img/item1.png" alt="goods" class="item__img">
+                            </div>
+                            <div class="item__flexCol">
+                                <div class="flexRow">
+                                    <div class="item__name">Whey Protein</div>
+                                    <div class="item__add-to-cart">
+                                        <i class="fal fa-shopping-bag"></i>
+                                    </div>
+                                </div>
+                                <div class="item__price">1990Р</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item__img-wrapper">
+                                <img src="static/img/item1.png" alt="goods" class="item__img">
+                            </div>
+                            <div class="item__flexCol">
+                                <div class="flexRow">
+                                    <div class="item__name">Whey Protein</div>
+                                    <div class="item__add-to-cart">
+                                        <i class="fal fa-shopping-bag"></i>
+                                    </div>
+                                </div>
+                                <div class="item__price">1990Р</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item__img-wrapper">
+                                <img src="static/img/item1.png" alt="goods" class="item__img">
+                            </div>
+                            <div class="item__flexCol">
+                                <div class="flexRow">
+                                    <div class="item__name">Whey Protein</div>
+                                    <div class="item__add-to-cart">
+                                        <i class="fal fa-shopping-bag"></i>
+                                    </div>
+                                </div>
+                                <div class="item__price">1990Р</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item__img-wrapper">
+                                <img src="static/img/item2.png" alt="goods" class="item__img">
+                            </div>
+                            <div class="item__flexCol">
+                                <div class="flexRow">
+                                    <div class="item__name">Whey Protein</div>
+                                    <div class="item__add-to-cart">
+                                        <i class="fal fa-shopping-bag"></i>
+                                    </div>
+                                </div>
+                                <div class="item__price">1990Р</div>
+                            </div>
+                        </div>
+                        <div class="item" special>
+                            <div class="item__type">special</div>
+                            <div class="item__img-wrapper">
+                                <img src="static/img/item3.png" alt="goods" class="item__img">
+                            </div>
+                            <div class="item__flexCol">
+                                <div class="flexRow">
+                                    <div class="item__name">Whey Protein</div>
+                                    <div class="item__add-to-cart">
+                                        <i class="fal fa-shopping-bag"></i>
+                                    </div>
+                                </div>
+                                <div class="item__price">1990Р</div>
+                            </div>
+                        </div>
+                        <div class="item" special>
+                            <div class="item__type">special</div>
+                            <div class="item__img-wrapper">
+                                <img src="static/img/item4.png" alt="goods" class="item__img">
+                            </div>
+                            <div class="item__flexCol">
+                                <div class="flexRow">
+                                    <div class="item__name">Whey Protein</div>
+                                    <div class="item__add-to-cart">
+                                        <i class="fal fa-shopping-bag"></i>
+                                    </div>
+                                </div>
+                                <div class="item__price">1990Р</div>
+                            </div>
+                        </div>
+                        <div class="item" special>
+                            <div class="item__type">special</div>
+                            <div class="item__img-wrapper">
+                                <img src="static/img/item5.png" alt="goods" class="item__img">
+                            </div>
+                            <div class="item__flexCol">
+                                <div class="flexRow">
+                                    <div class="item__name">Whey Protein</div>
+                                    <div class="item__add-to-cart">
+                                        <i class="fal fa-shopping-bag"></i>
+                                    </div>
+                                </div>
+                                <div class="item__price">1990Р</div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <footer class="section section_footer">
+                <div class="footer__left-side">
+                    <span>Санкт-Петербург</span>
+                    <span>8 (999) 209 65 - 43</span>
+                    <span>protein@gmail.com</span>
+                </div>
+                <div class="logo"><span>PS</span></div>
+                <div class="footer__right-side">
+                    <div class="social-links__soc-wrapper">
+                        <a href="javascript:void(0)" class="social-links__social">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="javascript:void(0)" class="social-links__social">
+                            <i class="fab fa-vk"></i>
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+    <script src="static/js/libs.min.js"></script>
+</body>
+</html>

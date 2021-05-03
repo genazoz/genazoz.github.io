@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Some of the features and advantages that we provide for those of you who store data in this Data Warehouse.">
+    <meta name="keywords" content="Features advantages Data Warehouse Little Red Cap">
+    <meta name="author" content="Зозуля Геннадий">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Features actiTIME</title>
+    <link rel="icon" type="image/png" href="static/logo/logo.png">
+    <link rel="preload" href="static/css/style.css" as="style" type="text/css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="flexRow">
+                <svg width="49" height="35" viewBox="0 0 49 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect y="15" width="20" height="20" rx="10" fill="#9C69E2"/>
+                    <rect x="29" width="20" height="35" rx="10" fill="#F063B8"/>
+                </svg>
+                <nav role="navigation">
+                    <ul>
+                        <li>About</li>
+                        <li>Help</li>
+                        <li>Features</li>
+                    </ul>
+                </nav>
+            </div>
+            <button>Sign Up</button>
+            <div class="MM-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="3" viewBox="0 0 36 3" fill="none">
+                    <rect width="36" height="3" rx="1.5" fill="#212353"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="3" viewBox="0 0 36 3" fill="none">
+                    <rect width="36" height="3" rx="1.5" fill="#212353"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="3" viewBox="0 0 36 3" fill="none">
+                    <rect width="36" height="3" rx="1.5" fill="#212353"/>
+                </svg>
+            </div>
+        </div>
+        <ul class="mobile-menu">
+            <li><p>About</p></li>
+            <li class="mobile-menu__dropdown">
+            <p data-toggle="dropdown">
+                Help 
+                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="18" viewBox="0 0 11 18" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.91751 8.30225C6.29746 8.69087 6.29746 9.3118 5.91751 9.70042L0.686091 15.0512C0.306144 15.4399 0.306145 16.0608 0.686092 16.4494L1.48705 17.2686C1.87932 17.6699 2.52486 17.6699 2.91713 17.2686L10.3165 9.70037C10.6965 9.31175 10.6965 8.69082 10.3165 8.3022L8.80055 6.75163C8.80053 6.75162 8.80051 6.75162 8.8005 6.75163C8.80049 6.75164 8.80046 6.75164 8.80045 6.75163L2.91452 0.73136C2.52225 0.330138 1.87671 0.330139 1.48444 0.73136L0.683481 1.5506C0.303535 1.93922 0.303535 2.56015 0.683482 2.94876L5.91751 8.30225Z" fill="#212353"/>
+                </svg>
+            </p>
+            <ul class="mobile-menu__dropdown-menu hide">
+                <li><p href="#">User Guide</p></li>
+                <li><p href="#">Contact Support</p></li>
+            </ul>
+            </li>
+            <li><p>Features</p></li>
+            <button>Sign Up</button>
+        </ul>
+    </header>
+    <div id="app">
+        <router-view></router-view>
+    </div>
+    <footer>
+        <div class="wrapper">
+            <div class="flexRow">
+                <svg width="49" height="35" viewBox="0 0 49 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect y="15" width="20" height="20" rx="10" fill="white"/>
+                    <rect x="29" width="20" height="35" rx="10" fill="white"/>
+                </svg>
+                <nav role="navigation">
+                    <ul>
+                        <li>About Us</li>
+                        <li>Privacy Policy</li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="flexRow">
+                <input type="text" placeholder="Enter your email">
+                <button>Sign Up Now</button>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="static/js/libs.min.js"></script>
+    <script src="static/components/app.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+    <script type="text/javascript" src="static/js/main.js"></script>
+</body>
+
+</html>

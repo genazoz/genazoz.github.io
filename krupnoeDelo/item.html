@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./static/css/main.css" />
+    <title>To-Do List</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__flexRow">
+        <div class="header__icon-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="header__logo">To-Do List</div>
+      </div>
+      <div
+        class="header__add-task"
+        data-toggle-modal-btn
+        data-switching-modal="M_addTask"
+      >
+        <span></span><span></span>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="main__nav-panel">
+        <div class="filter filter_new">
+          <div class="filter__circle"></div>
+          <div class="filter__text"></div>
+        </div>
+        <div class="filter filter_done">
+          <div class="filter__circle"></div>
+          <div class="filter__text"></div>
+        </div>
+        <div class="filter filter_all active">
+          <div class="filter__circle normal"></div>
+          <div class="filter__text"></div>
+        </div>
+        <div class="filter filter_priority-checkbox">
+          <div class="filter__circle"></div>
+          <div class="filter__text">Приоритет</div>
+        </div>
+        <div class="filter filter_priority" style="transition-delay: 0s">
+          <div class="filter__circle"></div>
+          <div class="filter__text">Высокий</div>
+        </div>
+        <div class="filter filter_priority" style="transition-delay: 0.03s">
+          <div class="filter__circle"></div>
+          <div class="filter__text">Средний</div>
+        </div>
+        <div class="filter filter_priority" style="transition-delay: 0.08s">
+          <div class="filter__circle normal"></div>
+          <div class="filter__text">Низкий</div>
+        </div>
+      </div>
+      <div class="main__content todo">
+        <div class="todo-upper-panel">
+          <a href="/krupnoeDelo">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="12"
+              height="21"
+              viewBox="0 0 12 21"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11.3621 0.155173C11.5525 0.355139 11.5448 0.671627 11.3448 0.86207L1.225 10.5L11.3448 20.1379C11.5448 20.3284 11.5525 20.6449 11.3621 20.8448C11.1716 21.0448 10.8551 21.0525 10.6552 20.8621L0.155172 10.8621C0.0560825 10.7677 0 10.6368 0 10.5C0 10.3632 0.0560825 10.2323 0.155172 10.1379L10.6552 0.137932C10.8551 -0.0525111 11.1716 -0.0447918 11.3621 0.155173Z"
+                fill="#333333"
+              />
+            </svg>
+          </a>
+          <hr />
+          <h2>Сходить в магазин</h2>
+          <div class="flexRow">
+            <button style="pointer-events: none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24ZM18.0755 9.61647L10.2279 17.7187L5.87037 13.22C5.81508 13.1643 5.65915 13.0042 5.56323 12.7252C5.50806 12.5648 5.47634 12.3625 5.52154 12.1377C5.56719 11.9107 5.68426 11.6959 5.87152 11.5025C6.05842 11.3096 6.27018 11.1846 6.4996 11.1355C6.72737 11.0866 6.93203 11.1212 7.0926 11.18C7.27754 11.2478 7.4502 11.3621 7.58439 11.5067L10.2279 14.236L16.3866 7.87756C16.5379 7.73658 16.7158 7.62755 16.9124 7.56221C17.0736 7.50866 17.2791 7.47591 17.5063 7.52186C17.7381 7.56871 17.9557 7.6901 18.1464 7.88692C18.3368 8.08351 18.452 8.30578 18.488 8.54222C18.5233 8.77423 18.4761 8.97907 18.4106 9.13641C18.2979 9.40698 18.1345 9.5615 18.0755 9.61647Z"
+                  fill="#333333"
+                />
+              </svg>
+              <span>Выполнена</span>
+            </button>
+            <button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 30 30"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M19.5 5.18182H22.875C23.4963 5.18182 24 5.67023 24 6.27273H6C6 5.67023 6.50368 5.18182 7.125 5.18182H10.5C10.5 3.97683 11.5074 3 12.75 3H17.25C18.4926 3 19.5 3.97683 19.5 5.18182ZM7.06581 7.27705H22.8949L22.1053 25.6255C22.1053 25.6255 21.8073 27 20.6838 27H9.31533C8.19223 27 7.89428 25.6255 7.89428 25.6255L7.06581 7.27705ZM19.3875 9.54546H18.2625L17.7 25.2957H18.825L19.3875 9.54546ZM12.1875 25.2957L11.6252 9.54546H10.5L11.0623 25.2957H12.1875ZM14.4375 9.54546V25.2957H15.5625V9.54546H14.4375Z"
+                  fill="#333333"
+                />
+              </svg>
+              <span>Удалить</span>
+            </button>
+            <button data-toggle-modal-btn data-switching-modal="M_editTask">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="23"
+                height="20"
+                viewBox="0 0 19 20"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M17.4142 1.41421C16.6332 0.633165 15.3668 0.633165 14.5858 1.41421L13.1716 2.82843L16.7071 6.36396L18.1213 4.94975C18.9024 4.1687 18.9024 2.90237 18.1213 2.12132L17.4142 1.41421ZM1.04539 15.4815L0.443651 19.0919L4.05408 18.4901C4.46526 18.4216 4.84474 18.2263 5.1395 17.9316L16 7.07107L12.4645 3.53553L1.60396 14.396C1.30921 14.6908 1.11392 15.0703 1.04539 15.4815Z"
+                  fill="#333333"
+                />
+              </svg>
+              <span>Редактировать</span>
+            </button>
+          </div>
+        </div>
+        <div class="todo-info">
+          <div class="flexCol">
+            <p class="todo-info__subtitle">Статус задачи</p>
+            <div class="todo-info__title">Выполнена</div>
+          </div>
+          <hr />
+          <div class="flexCol">
+            <p class="todo-info__subtitle">Приоритет:</p>
+            <div class="todo-info__title">Высокий</div>
+          </div>
+          <hr />
+          <div class="flexCol">
+            <p class="todo-info__subtitle">Дедлайн</p>
+            <div class="todo-info__title">29.09.2020, 18:32</div>
+          </div>
+          <hr />
+          <div class="flexCol">
+            <p class="todo-info__subtitle">Метка</p>
+            <div class="mark yellow"></div>
+          </div>
+        </div>
+        <div class="todo-text">
+          Огибающая семейства поверхностей, конечно, естественно трансформирует
+          интеграл по бесконечной области. Однако не все знают, что
+          ортогональный определитель правомочен. Функция B(x,y) поддерживает
+          интеграл от функции комплексной переменной, откуда следует
+          доказываемое равенство. <br /><br />
+          Линейное уравнение категорически масштабирует линейно зависимый
+          критерий сходимости Коши, что неудивительно. Геометрическая
+          прогрессия, как следует из вышесказанного, детерменирована. Интеграл
+          Гамильтона оправдывает интеграл от функции, имеющий конечный разрыв.
+          По сути, прямоугольная матрица оправдывает аксиоматичный интеграл от
+          функции, обращающейся в бесконечность вдоль линии, при этом, вместо 13
+          можно взять любую другую константу.
+        </div>
+      </div>
+    </main>
+
+    <div class="M M_editTask" data-toggle-modal-btn>
+      <div class="M__cover"></div>
+      <div class="M__wrapper">
+        <div class="M__main-wrapper" data-modal-wrapper>
+          <div class="M__close-btn" data-toggle-modal-btn></div>
+          <h2 class="M__title">Редактирование задачи</h2>
+          <div class="M__content" data-modal-content>
+            <div class="M__input-wrapper M__input-wrapper_name">
+              <span class="M__input-title">Название</span>
+              <input
+                type="text"
+                placeholder="Введите название"
+                value="Сходить в магазин"
+              />
+              <p class="M__issue-message">Вы не ввели название</p>
+            </div>
+            <div class="M__input-wrapper M__input-wrapper_deadline">
+              <span class="M__input-title">Дедлайн</span>
+              <div class="M__custom-input">
+                <span>29.09.2020, 18:32</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 30 30"
+                  fill="none"
+                >
+                  <path
+                    d="M22.2 22.8H7.8C6.78 22.8 6 22.02 6 21V7.8C6 6.78 6.66 6 7.5 6H8.4V7.2H7.5C7.38 7.2 7.2 7.44 7.2 7.8V21C7.2 21.36 7.44 21.6 7.8 21.6H22.2C22.56 21.6 22.8 21.36 22.8 21V7.8C22.8 7.44 22.62 7.2 22.5 7.2H21.6V6H22.5C23.34 6 24 6.78 24 7.8V21C24 22.02 23.22 22.8 22.2 22.8Z"
+                    fill="black"
+                  />
+                  <path
+                    d="M10.2001 8.4C9.8401 8.4 9.6001 8.16 9.6001 7.8V5.4C9.6001 5.04 9.8401 4.8 10.2001 4.8C10.5601 4.8 10.8001 5.04 10.8001 5.4V7.8C10.8001 8.16 10.5601 8.4 10.2001 8.4Z"
+                    fill="black"
+                  />
+                  <path
+                    d="M19.8 8.4C19.44 8.4 19.2 8.16 19.2 7.8V5.4C19.2 5.04 19.44 4.8 19.8 4.8C20.16 4.8 20.4 5.04 20.4 5.4V7.8C20.4 8.16 20.16 8.4 19.8 8.4Z"
+                    fill="black"
+                  />
+                  <path d="M12 6H18V7.2H12V6Z" fill="black" />
+                  <path d="M7.19995 9.6H22.8V10.8H7.19995V9.6Z" fill="black" />
+                  <path d="M20.3999 12H21.5999V13.2H20.3999V12Z" fill="black" />
+                  <path d="M18 12H19.2V13.2H18V12Z" fill="black" />
+                  <path d="M15.6001 12H16.8001V13.2H15.6001V12Z" fill="black" />
+                  <path d="M13.2 12H14.4V13.2H13.2V12Z" fill="black" />
+                  <path d="M10.8 12H12V13.2H10.8V12Z" fill="black" />
+                  <path
+                    d="M20.3999 14.4H21.5999V15.6H20.3999V14.4Z"
+                    fill="black"
+                  />
+                  <path d="M18 14.4H19.2V15.6H18V14.4Z" fill="black" />
+                  <path
+                    d="M15.6001 14.4H16.8001V15.6H15.6001V14.4Z"
+                    fill="black"
+                  />
+                  <path d="M13.2 14.4H14.4V15.6H13.2V14.4Z" fill="black" />
+                  <path d="M10.8 14.4H12V15.6H10.8V14.4Z" fill="black" />
+                  <path
+                    d="M8.3999 14.4H9.5999V15.6H8.3999V14.4Z"
+                    fill="black"
+                  />
+                  <path
+                    d="M20.3999 16.8H21.5999V18H20.3999V16.8Z"
+                    fill="black"
+                  />
+                  <path d="M18 16.8H19.2V18H18V16.8Z" fill="black" />
+                  <path
+                    d="M15.6001 16.8H16.8001V18H15.6001V16.8Z"
+                    fill="black"
+                  />
+                  <path d="M13.2 16.8H14.4V18H13.2V16.8Z" fill="black" />
+                  <path d="M10.8 16.8H12V18H10.8V16.8Z" fill="black" />
+                  <path d="M8.3999 16.8H9.5999V18H8.3999V16.8Z" fill="black" />
+                  <path d="M18 19.2H19.2V20.4H18V19.2Z" fill="black" />
+                  <path
+                    d="M15.6001 19.2H16.8001V20.4H15.6001V19.2Z"
+                    fill="black"
+                  />
+                  <path d="M13.2 19.2H14.4V20.4H13.2V19.2Z" fill="black" />
+                  <path d="M10.8 19.2H12V20.4H10.8V19.2Z" fill="black" />
+                  <path
+                    d="M8.3999 19.2H9.5999V20.4H8.3999V19.2Z"
+                    fill="black"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="M__input-wrapper M__input-wrapper_priority">
+              <p class="M__input-title">Приоритет</p>
+              <div class="M__custom-input">
+                <span>Высокий</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="10"
+                  viewBox="0 0 18 10"
+                  fill="none"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M0.524041 0.110345C0.684013 -0.0420094 0.937204 -0.0358343 1.08956 0.124138L8.7999 8.22L16.5102 0.124138C16.6626 -0.0358343 16.9158 -0.0420094 17.0758 0.110345C17.2357 0.262699 17.2419 0.51589 17.0896 0.675862L9.08956 9.07586C9.01406 9.15513 8.90937 9.2 8.7999 9.2C8.69043 9.2 8.58574 9.15513 8.51025 9.07586L0.510248 0.675862C0.357894 0.51589 0.364069 0.262699 0.524041 0.110345Z"
+                    fill="#333333"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="M__input-wrapper M__input-wrapper_mark">
+              <p class="M__input-title">Метка</p>
+              <div class="M__custom-input">
+                <div class="mark mark_circle yellow"></div>
+                <span>#F2C94C</span>
+              </div>
+            </div>
+            <div class="M__textarea-wrapper M__input-wrapper_describtion">
+              <p class="M__input-title">Описание</p>
+              <textarea placeholder="Введите текст">
+Линейное уравнение категорически масштабирует линейно зависимый критерий сходимости Коши, что неудивительно. Геометрическая прогрессия, как следует из вышесказанного, детерменирована. Интеграл Гамильтона оправдывает интеграл от функции, имеющий конечный разрыв. По сути, прямоугольная матрица оправдывает аксиоматичный интеграл от функции, обращающейся в бесконечность вдоль линии, при этом, вместо 13 можно взять любую другую константу.
+              </textarea>
+              <p class="M__issue-message">Вы не заполнили описание</p>
+            </div>
+          </div>
+          <div class="M__footer">
+            <button data-toggle-modal-btn>Отменить</button>
+            <button data-enter-clickable class="M__edit-btn">Сохранить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="M M_addTask" data-toggle-modal-btn>
+      <div class="M__cover"></div>
+      <div class="M__wrapper">
+        <div class="M__main-wrapper" data-modal-wrapper>
+          <div class="M__close-btn" data-toggle-modal-btn></div>
+          <h2 class="M__title">Создание задачи</h2>
+          <div class="M__content" data-modal-content>
+            <div class="M__input-wrapper M__input-wrapper_name">
+              <span class="M__input-title">Название</span>
+              <input type="text" placeholder="Введите название" />
+              <p class="M__issue-message">Вы не ввели название</p>
+            </div>
+            <div class="M__input-wrapper M__input-wrapper_deadline">
+              <span class="M__input-title">Дедлайн</span>
+              <div class="M__custom-input">
+                <span>29.09.2020, 18:32</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 30 30"
+                  fill="none"
+                >
+                  <path
+                    d="M22.2 22.8H7.8C6.78 22.8 6 22.02 6 21V7.8C6 6.78 6.66 6 7.5 6H8.4V7.2H7.5C7.38 7.2 7.2 7.44 7.2 7.8V21C7.2 21.36 7.44 21.6 7.8 21.6H22.2C22.56 21.6 22.8 21.36 22.8 21V7.8C22.8 7.44 22.62 7.2 22.5 7.2H21.6V6H22.5C23.34 6 24 6.78 24 7.8V21C24 22.02 23.22 22.8 22.2 22.8Z"
+                    fill="black"
+                  />
+                  <path
+                    d="M10.2001 8.4C9.8401 8.4 9.6001 8.16 9.6001 7.8V5.4C9.6001 5.04 9.8401 4.8 10.2001 4.8C10.5601 4.8 10.8001 5.04 10.8001 5.4V7.8C10.8001 8.16 10.5601 8.4 10.2001 8.4Z"
+                    fill="black"
+                  />
+                  <path
+                    d="M19.8 8.4C19.44 8.4 19.2 8.16 19.2 7.8V5.4C19.2 5.04 19.44 4.8 19.8 4.8C20.16 4.8 20.4 5.04 20.4 5.4V7.8C20.4 8.16 20.16 8.4 19.8 8.4Z"
+                    fill="black"
+                  />
+                  <path d="M12 6H18V7.2H12V6Z" fill="black" />
+                  <path d="M7.19995 9.6H22.8V10.8H7.19995V9.6Z" fill="black" />
+                  <path d="M20.3999 12H21.5999V13.2H20.3999V12Z" fill="black" />
+                  <path d="M18 12H19.2V13.2H18V12Z" fill="black" />
+                  <path d="M15.6001 12H16.8001V13.2H15.6001V12Z" fill="black" />
+                  <path d="M13.2 12H14.4V13.2H13.2V12Z" fill="black" />
+                  <path d="M10.8 12H12V13.2H10.8V12Z" fill="black" />
+                  <path
+                    d="M20.3999 14.4H21.5999V15.6H20.3999V14.4Z"
+                    fill="black"
+                  />
+                  <path d="M18 14.4H19.2V15.6H18V14.4Z" fill="black" />
+                  <path
+                    d="M15.6001 14.4H16.8001V15.6H15.6001V14.4Z"
+                    fill="black"
+                  />
+                  <path d="M13.2 14.4H14.4V15.6H13.2V14.4Z" fill="black" />
+                  <path d="M10.8 14.4H12V15.6H10.8V14.4Z" fill="black" />
+                  <path
+                    d="M8.3999 14.4H9.5999V15.6H8.3999V14.4Z"
+                    fill="black"
+                  />
+                  <path
+                    d="M20.3999 16.8H21.5999V18H20.3999V16.8Z"
+                    fill="black"
+                  />
+                  <path d="M18 16.8H19.2V18H18V16.8Z" fill="black" />
+                  <path
+                    d="M15.6001 16.8H16.8001V18H15.6001V16.8Z"
+                    fill="black"
+                  />
+                  <path d="M13.2 16.8H14.4V18H13.2V16.8Z" fill="black" />
+                  <path d="M10.8 16.8H12V18H10.8V16.8Z" fill="black" />
+                  <path d="M8.3999 16.8H9.5999V18H8.3999V16.8Z" fill="black" />
+                  <path d="M18 19.2H19.2V20.4H18V19.2Z" fill="black" />
+                  <path
+                    d="M15.6001 19.2H16.8001V20.4H15.6001V19.2Z"
+                    fill="black"
+                  />
+                  <path d="M13.2 19.2H14.4V20.4H13.2V19.2Z" fill="black" />
+                  <path d="M10.8 19.2H12V20.4H10.8V19.2Z" fill="black" />
+                  <path
+                    d="M8.3999 19.2H9.5999V20.4H8.3999V19.2Z"
+                    fill="black"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="M__input-wrapper M__input-wrapper_priority">
+              <p class="M__input-title">Приоритет</p>
+              <div class="M__custom-input">
+                <span>Высокий</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="10"
+                  viewBox="0 0 18 10"
+                  fill="none"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M0.524041 0.110345C0.684013 -0.0420094 0.937204 -0.0358343 1.08956 0.124138L8.7999 8.22L16.5102 0.124138C16.6626 -0.0358343 16.9158 -0.0420094 17.0758 0.110345C17.2357 0.262699 17.2419 0.51589 17.0896 0.675862L9.08956 9.07586C9.01406 9.15513 8.90937 9.2 8.7999 9.2C8.69043 9.2 8.58574 9.15513 8.51025 9.07586L0.510248 0.675862C0.357894 0.51589 0.364069 0.262699 0.524041 0.110345Z"
+                    fill="#333333"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="M__input-wrapper M__input-wrapper_mark">
+              <p class="M__input-title">Метка</p>
+              <div class="M__custom-input">
+                <div class="mark mark_circle yellow"></div>
+                <span>#F2C94C</span>
+              </div>
+            </div>
+            <div class="M__textarea-wrapper M__input-wrapper_describtion">
+              <p class="M__input-title">Описание</p>
+              <textarea placeholder="Введите текст">
+Линейное уравнение категорически масштабирует линейно зависимый критерий сходимости Коши, что неудивительно. Геометрическая прогрессия, как следует из вышесказанного, детерменирована. Интеграл Гамильтона оправдывает интеграл от функции, имеющий конечный разрыв. По сути, прямоугольная матрица оправдывает аксиоматичный интеграл от функции, обращающейся в бесконечность вдоль линии, при этом, вместо 13 можно взять любую другую константу.
+              </textarea>
+              <p class="M__issue-message">Вы не заполнили описание</p>
+            </div>
+          </div>
+          <div class="M__footer">
+            <button data-toggle-modal-btn>Отменить</button
+            ><button data-enter-clickable class="M__edit-btn">Создать</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./static/js/main.js"></script>
+  </body>
+</html>
