@@ -166,7 +166,7 @@
           </div>
         </div>
       </div>
-      <header class="header">
+      <header class="header" id="header">
         <div class="container header__container">
           <button class="header__m-menu-btn" id="toggle-menu">
             <label for="radio-header-m-btn"></label>
@@ -317,7 +317,7 @@
               <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M17.3667 3.84172C16.941 3.41589 16.4357 3.0781 15.8795 2.84763C15.3232 2.61716 14.7271 2.49854 14.125 2.49854C13.5229 2.49854 12.9268 2.61716 12.3705 2.84763C11.8143 3.0781 11.309 3.41589 10.8833 3.84172L10 4.72506L9.11666 3.84172C8.25692 2.98198 7.09086 2.49898 5.875 2.49898C4.65914 2.49898 3.49307 2.98198 2.63333 3.84172C1.77359 4.70147 1.29059 5.86753 1.29059 7.08339C1.29059 8.29925 1.77359 9.46531 2.63333 10.3251L3.51666 11.2084L10 17.6917L16.4833 11.2084L17.3667 10.3251C17.7925 9.89943 18.1303 9.39407 18.3608 8.83785C18.5912 8.28164 18.7099 7.68546 18.7099 7.08339C18.7099 6.48132 18.5912 5.88514 18.3608 5.32893C18.1303 4.77271 17.7925 4.26735 17.3667 3.84172V3.84172Z" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
               </svg></a>
-            <hr class="header__buttons-separator"><a class="header__ico-link" href="javascript:void(0);">
+            <hr class="header__buttons-separator"><a class="header__ico-link header__ico-link--cart" href="javascript:void(0);">
               <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M16.0168 5.39833C16.0168 5.1805 15.799 5.01713 15.5812 5.01713H13.5662V4.58147C13.5662 2.56656 11.987 0.987305 9.97207 0.987305C8.01161 0.987305 6.43235 2.56656 6.43235 4.58147V5.01713H4.36298C4.14515 5.01713 3.98178 5.1805 3.98178 5.39833L3.00155 17.4333C2.9471 18.2502 3.60058 19.0126 4.4719 19.0126H15.5267C16.3436 19.0126 17.0515 18.2502 16.997 17.4333L16.0168 5.39833ZM7.24921 4.58147C7.24921 3.05667 8.50172 1.80416 9.97207 1.80416C11.4969 1.80416 12.7494 3.05667 12.7494 4.58147V5.01713H7.24921V4.58147ZM15.5267 18.1413H4.4719C4.0907 18.1413 3.81841 17.869 3.81841 17.4878L4.74418 5.83399H6.43235V7.90336C6.43235 8.44793 7.24921 8.44793 7.24921 7.90336V5.83399H12.7494V7.90336C12.7494 8.44793 13.5662 8.44793 13.5662 7.90336V5.83399H15.2L16.1257 17.4878C16.1802 17.869 15.8534 18.1413 15.5267 18.1413Z" fill="white" stroke="white" stroke-width="0.6"></path>
               </svg></a>
@@ -379,7 +379,7 @@
       <main class="main" data-scroll-section="">
         <section class="s-home-preview">
           <div class="container s-home-preview__container">
-            <h1 class="s-home-preview__title">Магазин украшений<br>российских<br>дизайнеров</h1><a class="button-a s-home-preview__button-link" href="/post__v1.html">
+            <h1 class="s-home-preview__title animation-text" data-scroll data-scroll-class="text-appear-a">Магазин украшений российских дизайнеров</h1><a class="button-a s-home-preview__button-link button-disappear" href="/post__v1.html" data-scroll data-scroll-class="button-appear-a">
               <div class="button-a__ico-wrapper">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
                   <path d="M8.5 6.16699L12.5 10.167L8.5 14.167" stroke="#262625" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -389,7 +389,7 @@
             <div class="s-home-preview__socials"><a class="s-home-preview__socials__link" href="javascript:void(0);"><img class="s-home-preview__socials__ico" src="./static/vk.svg" alt="soc-ico" title="vk"></a><a class="s-home-preview__socials__link" href="javascript:void(0);"><img class="s-home-preview__socials__ico" src="./static/facebook.svg" alt="soc-ico" title="facebook"></a><a class="s-home-preview__socials__link" href="javascript:void(0);"><img class="s-home-preview__socials__ico" src="./static/insta.svg" alt="soc-ico" title="instagram"></a></div>
           </div>
         </section>
-        <section class="s-new-goods">
+        <section class="s-new-goods" data-header-mode="dark-mode">
           <div class="container s-new-goods__container">
             <div class="s-new-goods__header">
               <p class="s-new-goods__title">Новинки</p><a class="button-b button-b--dark s-new-goods__button" href="javascript:void(0);">
@@ -403,14 +403,14 @@
             <div class="s-new-goods__content"><a class="s-new-goods__content-item" href="javascript:void(0);" data-toggle-modal-btn data-switching-modal="M-gallery"><img src="./static/new1.jpg" alt="new goods" title="new goods"></a><a class="s-new-goods__content-item" href="javascript:void(0);" data-toggle-modal-btn data-switching-modal="M-gallery"><img src="./static/new2.jpg" alt="new goods" title="new goods"></a><a class="s-new-goods__content-item" href="javascript:void(0);" data-toggle-modal-btn data-switching-modal="M-gallery"><img src="./static/new3.jpg" alt="new goods" title="new goods"></a><a class="s-new-goods__content-item" href="javascript:void(0);" data-toggle-modal-btn data-switching-modal="M-gallery"><img src="./static/new4.jpg" alt="new goods" title="new goods"></a><a class="s-new-goods__content-item" href="javascript:void(0);" data-toggle-modal-btn data-switching-modal="M-gallery"><img src="./static/new5.jpg" alt="new goods" title="new goods"></a><a class="s-new-goods__content-item" href="javascript:void(0);" data-toggle-modal-btn data-switching-modal="M-gallery"><img src="./static/new1.jpg" alt="new goods" title="new goods"></a><a class="s-new-goods__content-item" href="javascript:void(0);" data-toggle-modal-btn data-switching-modal="M-gallery"><img src="./static/new6.jpg" alt="new goods" title="new goods"></a><a class="s-new-goods__content-item" href="javascript:void(0);" data-toggle-modal-btn data-switching-modal="M-gallery"><img src="./static/new3.jpg" alt="new goods" title="new goods"></a></div>
           </div>
         </section>
-        <section class="s-preview-goods">
+        <section class="s-preview-goods" data-header-mode="dark-mode">
           <div class="container s-preview-goods__container">
             <div class="s-preview-goods__img-wrapper s-preview-goods__img-wrapper--top--right">
-              <div class="s-preview-goods__img-overflow img-disappear" data-scroll data-scroll-class="img-appear-a" data-scroll-repeat="true"><img class="s-preview-goods__img" src="./static/some1.jpg" alt="some pic" title="some pic"></div>
+              <div class="s-preview-goods__img-overflow img-disappear" data-scroll data-scroll-class="img-appear-a"><img class="s-preview-goods__img" src="./static/some1.jpg" alt="some pic" title="some pic"></div>
             </div>
             <div class="s-preview-goods__content">
-              <h2 class="s-preview-goods__title">Весенняя <br> коллекция</h2>
-              <p class="s-preview-goods__text">Серьги - украшения, которые привлекают внимание к чертам лица. Поэтому Дафна сделала подборку украшений, дополняющую и подчеркивающую вашу индивидуальность.</p><a class="button-b button-b--dark s-preview-goods__button" href="javascript:void(0);">
+              <h2 class="s-preview-goods__title animation-text" data-scroll data-scroll-class="text-appear-a">Весенняя коллекция</h2>
+              <p class="s-preview-goods__text animation-text" data-scroll data-scroll-class="text-appear-a-small">Серьги - украшения, которые привлекают внимание к чертам лица. Поэтому Дафна сделала подборку украшений, дополняющую и подчеркивающую вашу индивидуальность.</p><a class="button-b button-b--dark s-preview-goods__button button-disappear" href="javascript:void(0);" data-scroll data-scroll-class="button-appear-a">
                 <div class="button-b__ico-wrapper">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
                     <path d="M8.5 6.16699L12.5 10.167L8.5 14.167" stroke="#262625" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -483,14 +483,14 @@
                 <p class="button-b__text">Смотреть</p>
               </button>
             </div></a></section>
-        <section class="s-preview-goods s-preview-goods--full--slider">
+        <section class="s-preview-goods s-preview-goods--full--slider" data-header-mode="dark-mode">
           <div class="container s-preview-goods__container">
             <div class="s-preview-goods__img-wrapper s-preview-goods__img-wrapper--center--right">
-              <div class="s-preview-goods__img-overflow img-disappear" data-scroll data-scroll-class="img-appear-a" data-scroll-repeat="true"><img class="s-preview-goods__img" src="./static/some5.jpg" alt="some pic" title="some pic"></div>
+              <div class="s-preview-goods__img-overflow img-disappear" data-scroll data-scroll-class="img-appear-a"><img class="s-preview-goods__img" src="./static/some5.jpg" alt="some pic" title="some pic"></div>
             </div>
             <div class="s-preview-goods__content">
-              <h2 class="s-preview-goods__title" style="line-height: 100%;">Коллекции <br>Dafna</h2>
-              <p class="s-preview-goods__text">Серьги - украшения, которые привлекают внимание к чертам лица. Поэтому Дафна сделала подборку украшений, дополняющую и подчеркивающую вашу индивидуальность.Серьги - украшения, которые привлекают внимание к чертам лица. Поэтому Дафна сделала подборку украшений, дополняющую и подчеркивающую вашу индивидуальность.</p><a class="button-b button-b--dark s-preview-goods__button" href="javascript:void(0);">
+              <h2 class="s-preview-goods__title animation-text" data-scroll data-scroll-class="text-appear-a" style="line-height: 100%;">Коллекции Dafna</h2>
+              <p class="s-preview-goods__text animation-text" data-scroll data-scroll-class="text-appear-a-small">Серьги - украшения, которые привлекают внимание к чертам лица. Поэтому Дафна сделала подборку украшений, дополняющую и подчеркивающую вашу индивидуальность.Серьги - украшения, которые привлекают внимание к чертам лица. Поэтому Дафна сделала подборку украшений, дополняющую и подчеркивающую вашу индивидуальность.</p><a class="button-b button-b--dark s-preview-goods__button button-disappear" href="javascript:void(0);" data-scroll data-scroll-class="button-appear-a">
                 <div class="button-b__ico-wrapper">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
                     <path d="M8.5 6.16699L12.5 10.167L8.5 14.167" stroke="#262625" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -499,7 +499,7 @@
                 <p class="button-b__text">Смотреть</p></a>
             </div>
           </div>
-          <div class="goods-slider-a swiper-container s-preview-goods__slider">
+          <div class="goods-slider-a swiper-container s-preview-goods__slider" data-header-mode="dark-mode">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="goods-card-b"><a class="goods-card-b__img-wrapper" href="javascript:void(0);"><img class="goods-card-b__img" src="./static/earring4.jpg"></a>
@@ -551,14 +551,14 @@
             </div>
           </div>
         </section>
-        <section class="s-preview-goods s-preview-goods--particle-m">
+        <section class="s-preview-goods s-preview-goods--particle-m" data-header-mode="dark-mode">
           <div class="container s-preview-goods__container"><img class="s-preview-goods__particle" src="./static/particle1.jpg" alt="particle" title="particle" data-scroll data-scroll-speed="2">
             <div class="s-preview-goods__img-wrapper s-preview-goods__img-wrapper--bottom--left">
-              <div class="s-preview-goods__img-overflow img-disappear" data-scroll data-scroll-class="img-appear-a" data-scroll-repeat="true"><img class="s-preview-goods__img" src="./static/some2.jpg" alt="some pic" title="some pic"></div>
+              <div class="s-preview-goods__img-overflow img-disappear" data-scroll data-scroll-class="img-appear-a"><img class="s-preview-goods__img" src="./static/some2.jpg" alt="some pic" title="some pic"></div>
             </div>
             <div class="s-preview-goods__content">
-              <h2 class="s-preview-goods__title">Серьги</h2>
-              <p class="s-preview-goods__text">Серьги - украшения, которые привлекают внимание к чертам лица. Поэтому Дафна сделала подборку украшений, дополняющую и подчеркивающую вашу индивидуальность.</p><a class="button-b button-b--dark s-preview-goods__button" href="javascript:void(0);">
+              <h2 class="s-preview-goods__title animation-text" data-scroll data-scroll-class="text-appear-a">Серьги</h2>
+              <p class="s-preview-goods__text animation-text" data-scroll data-scroll-class="text-appear-a-small">Серьги - украшения, которые привлекают внимание к чертам лица. Поэтому Дафна сделала подборку украшений, дополняющую и подчеркивающую вашу индивидуальность.</p><a class="button-b button-b--dark s-preview-goods__button button-disappear" href="javascript:void(0);" data-scroll data-scroll-class="button-appear-a">
                 <div class="button-b__ico-wrapper">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
                     <path d="M8.5 6.16699L12.5 10.167L8.5 14.167" stroke="#262625" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -593,14 +593,14 @@
             </div>
           </div>
         </section>
-        <section class="s-preview-goods s-preview-goods--reverse">
+        <section class="s-preview-goods s-preview-goods--reverse" data-header-mode="dark-mode">
           <div class="container s-preview-goods__container"><img class="s-preview-goods__particle" src="./static/particle3.jpg" alt="particle" title="particle" data-scroll data-scroll-speed="2">
             <div class="s-preview-goods__img-wrapper s-preview-goods__img-wrapper--top--right">
-              <div class="s-preview-goods__img-overflow img-disappear" data-scroll data-scroll-class="img-appear-a" data-scroll-repeat="true"><img class="s-preview-goods__img" src="./static/some4.jpg" alt="some pic" title="some pic"></div>
+              <div class="s-preview-goods__img-overflow img-disappear" data-scroll data-scroll-class="img-appear-a"><img class="s-preview-goods__img" src="./static/some4.jpg" alt="some pic" title="some pic"></div>
             </div>
             <div class="s-preview-goods__content">
-              <h2 class="s-preview-goods__title">Кольца</h2>
-              <p class="s-preview-goods__text">Кольца - украшения, которые всегда на виду. Поэтому в коллекции Дафны можно найти кольца, подходящие к любому образу и настроению: от минималистичных и классических до ярких и массивных.</p><a class="button-b button-b--dark s-preview-goods__button" href="javascript:void(0);">
+              <h2 class="s-preview-goods__title animation-text" data-scroll data-scroll-class="text-appear-a">Кольца</h2>
+              <p class="s-preview-goods__text animation-text" data-scroll data-scroll-class="text-appear-a-small">Кольца - украшения, которые всегда на виду. Поэтому в коллекции Дафны можно найти кольца, подходящие к любому образу и настроению: от минималистичных и классических до ярких и массивных.</p><a class="button-b button-b--dark s-preview-goods__button button-disappear" href="javascript:void(0);" data-scroll data-scroll-class="button-appear-a">
                 <div class="button-b__ico-wrapper">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
                     <path d="M8.5 6.16699L12.5 10.167L8.5 14.167" stroke="#262625" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -635,14 +635,14 @@
             </div>
           </div>
         </section>
-        <section class="s-preview-goods">
+        <section class="s-preview-goods" data-header-mode="dark-mode">
           <div class="container s-preview-goods__container"><img class="s-preview-goods__particle" src="./static/particle2.jpg" alt="particle" title="particle" data-scroll data-scroll-speed="2">
             <div class="s-preview-goods__img-wrapper s-preview-goods__img-wrapper--top--right">
-              <div class="s-preview-goods__img-overflow img-disappear" data-scroll data-scroll-class="img-appear-a" data-scroll-repeat="true"><img class="s-preview-goods__img" src="./static/some3.jpg" alt="some pic" title="some pic"></div>
+              <div class="s-preview-goods__img-overflow img-disappear" data-scroll data-scroll-class="img-appear-a"><img class="s-preview-goods__img" src="./static/some3.jpg" alt="some pic" title="some pic"></div>
             </div>
             <div class="s-preview-goods__content">
-              <h2 class="s-preview-goods__title">Украшения <br> на шею</h2>
-              <p class="s-preview-goods__text">Подвески – простой и изящный способ завершить повседневный образ. Коллекция Дафны состоит из множества подвесок, чтобы найти подходящую любому образу и случаю.</p><a class="button-b button-b--dark s-preview-goods__button" href="javascript:void(0);">
+              <h2 class="s-preview-goods__title animation-text" data-scroll data-scroll-class="text-appear-a">Украшения на шею</h2>
+              <p class="s-preview-goods__text animation-text" data-scroll data-scroll-class="text-appear-a-small">Подвески – простой и изящный способ завершить повседневный образ. Коллекция Дафны состоит из множества подвесок, чтобы найти подходящую любому образу и случаю.</p><a class="button-b button-b--dark s-preview-goods__button button-disappear" href="javascript:void(0);" data-scroll data-scroll-class="button-appear-a">
                 <div class="button-b__ico-wrapper">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
                     <path d="M8.5 6.16699L12.5 10.167L8.5 14.167" stroke="#262625" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -714,7 +714,7 @@
                 <p class="button-b__text">Смотреть</p>
               </button>
             </div></a></section>
-        <section class="s-text-caterories">
+        <section class="s-text-caterories" data-header-mode="dark-mode">
           <div class="container container--mobile32 s-text-caterories__container">
             <div class="s-text-caterories__item"><a class="s-text-caterories__link" href="javascript:void(0);">Моносерьги</a><img class="s-text-caterories__img s-text-caterories__img" src="./static/category.jpg" alt="category" title="category"></div>
             <div class="s-text-caterories__item"><a class="s-text-caterories__link" href="javascript:void(0);">Броши</a><img class="s-text-caterories__img s-text-caterories__img" src="./static/category.jpg" alt="category" title="category"></div>
@@ -722,7 +722,7 @@
             <div class="s-text-caterories__item"><a class="s-text-caterories__link" href="javascript:void(0);">Подвесы</a><img class="s-text-caterories__img s-text-caterories__img" src="./static/category.jpg" alt="category" title="category"></div>
           </div>
         </section>
-        <section class="s-sertificates">
+        <section class="s-sertificates" data-header-mode="dark-mode">
           <div class="container container--mobile24 s-sertificates__container">
             <div class="s-sertificates__img-wrapper"><img class="s-sertificates__img" src="./static/sertificates.png" alt="sertificates img" title="sertificates img"></div>
             <div class="s-sertificates__content-wrapper">
@@ -737,7 +737,7 @@
             </div>
           </div>
         </section>
-        <section class="s-who-is-dafna">
+        <section class="s-who-is-dafna" data-header-mode="dark-mode">
           <div class="s-who-is-dafna__motion-background" data-scroll data-scroll-speed="2"></div>
           <div class="container s-who-is-dafna__container">
             <h2 class="s-who-is-dafna__title">Кто такая Dafna?</h2>
