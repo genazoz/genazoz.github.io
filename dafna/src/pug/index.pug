@@ -1,0 +1,403 @@
+extends ./templates/_layout
+
+block variables
+  -
+    var appId = 'Landing';
+    var title = 'Dafna';
+    var description = 'Dafna Landing';
+
+block content
+  include components/_modal-gallery.pug
+  include layouts/_header.pug
+  include layouts/_header-m.pug
+  main.main(data-scroll-section='')
+    section.s-home-preview
+      .container.s-home-preview__container
+        h1.s-home-preview__title.animation-text(data-scroll, data-scroll-class="text-appear-a")
+          | Магазин украшений российских дизайнеров
+        a.button-a.s-home-preview__button-link.button-disappear(href='/post__v1.html', data-scroll, data-scroll-class="button-appear-a")
+          .button-a__ico-wrapper
+            svg(xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewbox='0 0 20 20' fill='none')
+              path(d='M8.5 6.16699L12.5 10.167L8.5 14.167' stroke='#262625' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+          p.button-a__text
+            | Каталог
+        .s-home-preview__socials
+          a.s-home-preview__socials__link(href="javascript:void(0);")
+            img.s-home-preview__socials__ico(src="../static/svg/vk.svg", alt="soc-ico", title="vk")
+          a.s-home-preview__socials__link(href="javascript:void(0);")
+            img.s-home-preview__socials__ico(src="../static/svg/facebook.svg", alt="soc-ico", title="facebook")
+          a.s-home-preview__socials__link(href="javascript:void(0);")
+            img.s-home-preview__socials__ico(src="../static/svg/insta.svg", alt="soc-ico", title="instagram")
+    section.s-new-goods(data-header-mode="dark-mode")
+      .container.s-new-goods__container
+        .s-new-goods__header
+          p.s-new-goods__title Новинки
+          a.button-b.button-b--dark.s-new-goods__button(href='javascript:void(0);')
+            .button-b__ico-wrapper
+              svg(xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewbox='0 0 20 20' fill='none')
+                path(d='M8.5 6.16699L12.5 10.167L8.5 14.167' stroke='#262625' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+            p.button-b__text
+              | Смотреть
+        .s-new-goods__content
+          a.s-new-goods__content-item(href="javascript:void(0);" data-toggle-modal-btn data-switching-modal="M-gallery")
+            img(src="../static/img/new1.jpg", alt="new goods", title="new goods")
+          a.s-new-goods__content-item(href="javascript:void(0);" data-toggle-modal-btn data-switching-modal="M-gallery")
+            img(src="../static/img/new2.jpg", alt="new goods", title="new goods")
+          a.s-new-goods__content-item(href="javascript:void(0);" data-toggle-modal-btn data-switching-modal="M-gallery")
+            img(src="../static/img/new3.jpg", alt="new goods", title="new goods")
+          a.s-new-goods__content-item(href="javascript:void(0);" data-toggle-modal-btn data-switching-modal="M-gallery")
+            img(src="../static/img/new4.jpg", alt="new goods", title="new goods")
+          a.s-new-goods__content-item(href="javascript:void(0);" data-toggle-modal-btn data-switching-modal="M-gallery")
+            img(src="../static/img/new5.jpg", alt="new goods", title="new goods")
+          a.s-new-goods__content-item(href="javascript:void(0);" data-toggle-modal-btn data-switching-modal="M-gallery")
+            img(src="../static/img/new1.jpg", alt="new goods", title="new goods")
+          a.s-new-goods__content-item(href="javascript:void(0);" data-toggle-modal-btn data-switching-modal="M-gallery")
+            img(src="../static/img/new6.jpg", alt="new goods", title="new goods")
+          a.s-new-goods__content-item(href="javascript:void(0);" data-toggle-modal-btn data-switching-modal="M-gallery")
+            img(src="../static/img/new3.jpg", alt="new goods", title="new goods")
+    section.s-preview-goods(data-header-mode="dark-mode")
+      .container.s-preview-goods__container
+        .s-preview-goods__img-wrapper.s-preview-goods__img-wrapper--top--right
+          .s-preview-goods__img-overflow.img-disappear(data-scroll, data-scroll-class="img-appear-a")
+            img.s-preview-goods__img(src="../static/img/some1.jpg", alt="some pic", title="some pic")
+        .s-preview-goods__content
+          h2.s-preview-goods__title.animation-text(data-scroll, data-scroll-class="text-appear-a") Весенняя коллекция
+          p.s-preview-goods__text.animation-text(data-scroll, data-scroll-class="text-appear-a-small") Серьги - украшения, которые привлекают внимание к чертам лица. Поэтому Дафна сделала подборку украшений, дополняющую и подчеркивающую вашу индивидуальность.
+          a.button-b.button-b--dark.s-preview-goods__button.button-disappear(href='javascript:void(0);', data-scroll, data-scroll-class="button-appear-a")
+            .button-b__ico-wrapper
+              svg(xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewbox='0 0 20 20' fill='none')
+                path(d='M8.5 6.16699L12.5 10.167L8.5 14.167' stroke='#262625' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+            p.button-b__text
+              | Смотреть
+          .goods-slider-a.swiper-container.s-preview-goods__slider
+            .swiper-wrapper
+              .swiper-slide
+                .goods-card-b
+                  a.goods-card-b__img-wrapper(href='javascript:void(0);')
+                    img.goods-card-b__img(src='../static/img/earring1.jpg')
+                  .goods-card-b__content-wrapper
+                    a.goods-card-b__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                    p.goods-card-b__price 7200₽
+              .swiper-slide
+                .goods-card-b
+                  a.goods-card-b__img-wrapper(href='javascript:void(0);')
+                    img.goods-card-b__img(src='../static/img/earring2.jpg')
+                  .goods-card-b__content-wrapper
+                    a.goods-card-b__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                    p.goods-card-b__price 7200₽
+              .swiper-slide
+                .goods-card-b
+                  a.goods-card-b__img-wrapper(href='javascript:void(0);')
+                    img.goods-card-b__img(src='../static/img/earring3.jpg')
+                  .goods-card-b__content-wrapper
+                    a.goods-card-b__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                    p.goods-card-b__price 7200₽
+    section.s-advertisements
+      a.preview-block(href="javascript:void(0);")
+        .preview-block__img-wrapper
+          img(src="../static/img/adv1.jpg", alt="advertisement", title="advertisement")
+        .preview-block__content-wrapper
+          h2.preview-block__title
+              | Новая коллекция повесок
+          p.preview-block__text
+            | Новая коллекция подвесок новая коллекция подвесок
+          button.preview-block__button.button-b(href='javascript:void(0);')
+            .button-b__ico-wrapper
+              svg(xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewbox='0 0 20 20' fill='none')
+                path(d='M8.5 6.16699L12.5 10.167L8.5 14.167' stroke='#262625' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+            p.button-b__text
+              | Смотреть
+      a.preview-block(href="javascript:void(0);")
+        .preview-block__img-wrapper
+          img(src="../static/img/adv2.jpg", alt="advertisement img", title="advertisement img")
+        .preview-block__content-wrapper
+          h2.preview-block__title
+            | Скидка 99% <br> на все серьги
+          button.preview-block__button.button-b(href='javascript:void(0);')
+            .button-b__ico-wrapper
+              svg(xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewbox='0 0 20 20' fill='none')
+                path(d='M8.5 6.16699L12.5 10.167L8.5 14.167' stroke='#262625' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+            p.button-b__text
+              | Смотреть
+      a.preview-block(href="javascript:void(0);")
+        .preview-block__img-wrapper
+          img(src="../static/img/adv3.jpg", alt="advertisement img", title="advertisement img")
+        .preview-block__content-wrapper
+          h2.preview-block__title
+            | Свежие <br> модели колец
+          button.preview-block__button.button-b(href='javascript:void(0);')
+            .button-b__ico-wrapper
+              svg(xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewbox='0 0 20 20' fill='none')
+                path(d='M8.5 6.16699L12.5 10.167L8.5 14.167' stroke='#262625' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+            p.button-b__text
+              | Смотреть
+    section.s-preview-goods.s-preview-goods--full--slider(data-header-mode="dark-mode")
+      .container.s-preview-goods__container
+        .s-preview-goods__img-wrapper.s-preview-goods__img-wrapper--center--right
+          .s-preview-goods__img-overflow.img-disappear(data-scroll, data-scroll-class="img-appear-a")
+            img.s-preview-goods__img(src="../static/img/some5.jpg", alt="some pic", title="some pic")
+        .s-preview-goods__content
+          h2.s-preview-goods__title.animation-text(data-scroll, data-scroll-class="text-appear-a", style="line-height: 100%;") Коллекции Dafna
+          p.s-preview-goods__text.animation-text(data-scroll, data-scroll-class="text-appear-a-small") Серьги - украшения, которые привлекают внимание к чертам лица. Поэтому Дафна сделала подборку украшений, дополняющую и подчеркивающую вашу индивидуальность.Серьги - украшения, которые привлекают внимание к чертам лица. Поэтому Дафна сделала подборку украшений, дополняющую и подчеркивающую вашу индивидуальность.
+          a.button-b.button-b--dark.s-preview-goods__button.button-disappear(href='javascript:void(0);', data-scroll, data-scroll-class="button-appear-a")
+            .button-b__ico-wrapper
+              svg(xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewbox='0 0 20 20' fill='none')
+                path(d='M8.5 6.16699L12.5 10.167L8.5 14.167' stroke='#262625' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+            p.button-b__text
+              | Смотреть
+      .goods-slider-a.swiper-container.s-preview-goods__slider(data-header-mode="dark-mode")
+        .swiper-wrapper
+            .swiper-slide
+              .goods-card-b
+                a.goods-card-b__img-wrapper(href='javascript:void(0);')
+                  img.goods-card-b__img(src='../static/img/earring4.jpg')
+                .goods-card-b__content-wrapper
+                  a.goods-card-b__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                  p.goods-card-b__price 7200₽
+            .swiper-slide
+              .goods-card-b
+                a.goods-card-b__img-wrapper(href='javascript:void(0);')
+                  img.goods-card-b__img(src='../static/img/earring4.jpg')
+                .goods-card-b__content-wrapper
+                  a.goods-card-b__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                  p.goods-card-b__price 7200₽
+            .swiper-slide
+              .goods-card-b
+                a.goods-card-b__img-wrapper(href='javascript:void(0);')
+                  img.goods-card-b__img(src='../static/img/earring1.jpg')
+                .goods-card-b__content-wrapper
+                  a.goods-card-b__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                  p.goods-card-b__price 7200₽
+            .swiper-slide
+              .goods-card-b
+                a.goods-card-b__img-wrapper(href='javascript:void(0);')
+                  img.goods-card-b__img(src='../static/img/earring3.jpg')
+                .goods-card-b__content-wrapper
+                  a.goods-card-b__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                  p.goods-card-b__price 7200₽
+            .swiper-slide
+              .goods-card-b
+                a.goods-card-b__img-wrapper(href='javascript:void(0);')
+                  img.goods-card-b__img(src='../static/img/earring3.jpg')
+                .goods-card-b__content-wrapper
+                  a.goods-card-b__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                  p.goods-card-b__price 7200₽
+        .goods-slider-a__nav-wrapper
+          .swiper-button-prev
+            svg(xmlns='http://www.w3.org/2000/svg' width='53' height='25' viewbox='0 0 53 25' fill='none')
+              path(d='M52 12.6338H3.20614M12.5263 1.63477L2 12.6338L12.5263 23.6328' stroke='black' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round')
+          .swiper-button-next
+            svg(xmlns='http://www.w3.org/2000/svg' width='52' height='25' viewbox='0 0 52 25' fill='none')
+              path(d='M39.4737 1.63477L50 12.6338L39.4737 23.6328M2.14995e-06 12.6338H48.7939H2.14995e-06Z' stroke='black' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round')
+    section.s-preview-goods.s-preview-goods--particle-m(data-header-mode="dark-mode")
+      .container.s-preview-goods__container
+        img.s-preview-goods__particle(src="../static/img/particle1.jpg", alt="particle", title="particle", data-scroll, data-scroll-speed="2")
+        .s-preview-goods__img-wrapper.s-preview-goods__img-wrapper--bottom--left
+          .s-preview-goods__img-overflow.img-disappear(data-scroll, data-scroll-class="img-appear-a")
+            img.s-preview-goods__img(src="../static/img/some2.jpg", alt="some pic", title="some pic")
+        .s-preview-goods__content
+          h2.s-preview-goods__title.animation-text(data-scroll, data-scroll-class="text-appear-a") Серьги
+          p.s-preview-goods__text.animation-text(data-scroll, data-scroll-class="text-appear-a-small") Серьги - украшения, которые привлекают внимание к чертам лица. Поэтому Дафна сделала подборку украшений, дополняющую и подчеркивающую вашу индивидуальность.
+          a.button-b.button-b--dark.s-preview-goods__button.button-disappear(href='javascript:void(0);', data-scroll, data-scroll-class="button-appear-a")
+            .button-b__ico-wrapper
+              svg(xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewbox='0 0 20 20' fill='none')
+                path(d='M8.5 6.16699L12.5 10.167L8.5 14.167' stroke='#262625' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+            p.button-b__text
+              | Смотреть
+          .goods-slider-a.swiper-container.s-preview-goods__slider
+            .swiper-wrapper
+              .swiper-slide
+                .goods-card-b
+                  a.goods-card-b__img-wrapper(href='javascript:void(0);')
+                    img.goods-card-b__img(src='../static/img/earring-gold1.jpg')
+                  .goods-card-b__content-wrapper
+                    a.goods-card-b__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                    p.goods-card-b__price 7200₽
+              .swiper-slide
+                .goods-card-b
+                  a.goods-card-b__img-wrapper(href='javascript:void(0);')
+                    img.goods-card-b__img(src='../static/img/earring-gold2.jpg')
+                  .goods-card-b__content-wrapper
+                    a.goods-card-b__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                    p.goods-card-b__price 7200₽
+              .swiper-slide
+                .goods-card-b
+                  a.goods-card-b__img-wrapper(href='javascript:void(0);')
+                    img.goods-card-b__img(src='../static/img/earring-gold3.jpg')
+                  .goods-card-b__content-wrapper
+                    a.goods-card-b__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                    p.goods-card-b__price 7200₽
+    section.s-preview-goods.s-preview-goods--reverse(data-header-mode="dark-mode")
+      .container.s-preview-goods__container
+        img.s-preview-goods__particle(src="../static/img/particle3.jpg", alt="particle", title="particle", data-scroll, data-scroll-speed="2")
+        .s-preview-goods__img-wrapper.s-preview-goods__img-wrapper--top--right
+          .s-preview-goods__img-overflow.img-disappear(data-scroll, data-scroll-class="img-appear-a")
+            img.s-preview-goods__img(src="../static/img/some4.jpg", alt="some pic", title="some pic")
+        .s-preview-goods__content
+          h2.s-preview-goods__title.animation-text(data-scroll, data-scroll-class="text-appear-a") Кольца
+          p.s-preview-goods__text.animation-text(data-scroll, data-scroll-class="text-appear-a-small") Кольца - украшения, которые всегда на виду. Поэтому в коллекции Дафны можно найти кольца, подходящие к любому образу и настроению: от минималистичных и классических до ярких и массивных.
+          a.button-b.button-b--dark.s-preview-goods__button.button-disappear(href='javascript:void(0);', data-scroll, data-scroll-class="button-appear-a")
+            .button-b__ico-wrapper
+              svg(xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewbox='0 0 20 20' fill='none')
+                path(d='M8.5 6.16699L12.5 10.167L8.5 14.167' stroke='#262625' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+            p.button-b__text
+              | Смотреть
+          .goods-slider-a.swiper-container.s-preview-goods__slider
+            .swiper-wrapper
+              .swiper-slide
+                .goods-card-b
+                  a.goods-card-b__img-wrapper(href='javascript:void(0);')
+                    img.goods-card-b__img(src='../static/img/ring1.jpg')
+                  .goods-card-b__content-wrapper
+                    a.goods-card-b__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                    p.goods-card-b__price 7200₽
+              .swiper-slide
+                .goods-card-b
+                  a.goods-card-b__img-wrapper(href='javascript:void(0);')
+                    img.goods-card-b__img(src='../static/img/ring2.jpg')
+                  .goods-card-b__content-wrapper
+                    a.goods-card-b__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                    p.goods-card-b__price 7200₽
+              .swiper-slide
+                .goods-card-b
+                  a.goods-card-b__img-wrapper(href='javascript:void(0);')
+                    img.goods-card-b__img(src='../static/img/ring3.jpg')
+                  .goods-card-b__content-wrapper
+                    a.goods-card-b__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                    p.goods-card-b__price 7200₽
+    section.s-preview-goods(data-header-mode="dark-mode")
+      .container.s-preview-goods__container
+        img.s-preview-goods__particle(src="../static/img/particle2.jpg", alt="particle", title="particle", data-scroll, data-scroll-speed="2")
+        .s-preview-goods__img-wrapper.s-preview-goods__img-wrapper--top--right
+          .s-preview-goods__img-overflow.img-disappear(data-scroll, data-scroll-class="img-appear-a")
+            img.s-preview-goods__img(src="../static/img/some3.jpg", alt="some pic", title="some pic")
+        .s-preview-goods__content
+          h2.s-preview-goods__title.animation-text(data-scroll, data-scroll-class="text-appear-a") Украшения на шею
+          p.s-preview-goods__text.animation-text(data-scroll, data-scroll-class="text-appear-a-small") Подвески – простой и изящный способ завершить повседневный образ. Коллекция Дафны состоит из множества подвесок, чтобы найти подходящую любому образу и случаю.
+          a.button-b.button-b--dark.s-preview-goods__button.button-disappear(href='javascript:void(0);', data-scroll, data-scroll-class="button-appear-a")
+            .button-b__ico-wrapper
+              svg(xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewbox='0 0 20 20' fill='none')
+                path(d='M8.5 6.16699L12.5 10.167L8.5 14.167' stroke='#262625' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+            p.button-b__text
+              | Смотреть
+          .goods-slider-a.swiper-container.s-preview-goods__slider
+            .swiper-wrapper
+              .swiper-slide
+                .goods-card-b
+                  a.goods-card-b__img-wrapper(href='javascript:void(0);')
+                    img.goods-card-b__img(src='../static/img/chain1.jpg')
+                  .goods-card-b__content-wrapper
+                    a.goods-card-b__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                    p.goods-card-b__price 7200₽
+              .swiper-slide
+                .goods-card-b
+                  a.goods-card-b__img-wrapper(href='javascript:void(0);')
+                    img.goods-card-b__img(src='../static/img/chain2.jpg')
+                  .goods-card-b__content-wrapper
+                    a.goods-card-b__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                    p.goods-card-b__price 7200₽
+              .swiper-slide
+                .goods-card-b
+                  a.goods-card-b__img-wrapper(href='javascript:void(0);')
+                    img.goods-card-b__img(src='../static/img/chain3.jpg')
+                  .goods-card-b__content-wrapper
+                    a.goods-card-b__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                    p.goods-card-b__price 7200₽
+    section.s-categories-list
+      a.preview-block(href="javascript:void(0);")
+        .preview-block__img-wrapper
+          img(src="../static/img/category1.jpg", alt="category img", title="category img")
+        .preview-block__content-wrapper
+          h2.preview-block__title
+              | Браслеты
+          button.preview-block__button.button-b(href='javascript:void(0);')
+            .button-b__ico-wrapper
+              svg(xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewbox='0 0 20 20' fill='none')
+                path(d='M8.5 6.16699L12.5 10.167L8.5 14.167' stroke='#262625' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+            p.button-b__text
+              | Смотреть
+      a.preview-block(href="javascript:void(0);")
+        .preview-block__img-wrapper
+          img(src="../static/img/category2.jpg", alt="category img", title="category img")
+        .preview-block__content-wrapper
+          h2.preview-block__title
+            | Каффы
+          button.preview-block__button.button-b(href='javascript:void(0);')
+            .button-b__ico-wrapper
+              svg(xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewbox='0 0 20 20' fill='none')
+                path(d='M8.5 6.16699L12.5 10.167L8.5 14.167' stroke='#262625' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+            p.button-b__text
+              | Смотреть
+      a.preview-block(href="javascript:void(0);")
+        .preview-block__img-wrapper
+          img(src="../static/img/category3.jpg", alt="category img", title="category img")
+        .preview-block__content-wrapper
+          h2.preview-block__title
+            | Унисекс
+          button.preview-block__button.button-b(href='javascript:void(0);')
+            .button-b__ico-wrapper
+              svg(xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewbox='0 0 20 20' fill='none')
+                path(d='M8.5 6.16699L12.5 10.167L8.5 14.167' stroke='#262625' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+            p.button-b__text
+              | Смотреть
+    section.s-text-caterories(data-header-mode="dark-mode")
+      .container.container--mobile32.s-text-caterories__container
+        .s-text-caterories__item
+          a.s-text-caterories__link(href="javascript:void(0);") Моносерьги
+          img.s-text-caterories__img(src="../static/img/category.jpg", alt="category", title="category").s-text-caterories__img
+        .s-text-caterories__item
+          a.s-text-caterories__link(href="javascript:void(0);") Броши
+          img.s-text-caterories__img(src="../static/img/category.jpg", alt="category", title="category").s-text-caterories__img
+        .s-text-caterories__item
+          a.s-text-caterories__link(href="javascript:void(0);") Украшения для волос
+          img.s-text-caterories__img(src="../static/img/category.jpg", alt="category", title="category").s-text-caterories__img
+        .s-text-caterories__item
+          a.s-text-caterories__link(href="javascript:void(0);") Подвесы
+          img.s-text-caterories__img(src="../static/img/category.jpg", alt="category", title="category").s-text-caterories__img
+    section.s-sertificates(data-header-mode="dark-mode")
+      .container.container--mobile24.s-sertificates__container
+        .s-sertificates__img-wrapper
+          img.s-sertificates__img(src="../static/img/sertificates.png", alt="sertificates img", title="sertificates img")
+        .s-sertificates__content-wrapper
+          h2.s-sertificates__title
+            | Подарочные <br>сертификаты
+          p.s-sertificates__text
+            | Позвольте близкому человеку самому выбрать или создать <br> «то самое» украшение, а Дафна в этом поможет.
+          a.button-b.button-b--dark.s-sertificates__button(href='javascript:void(0);')
+            .button-b__ico-wrapper
+              svg(xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewbox='0 0 20 20' fill='none')
+                path(d='M8.5 6.16699L12.5 10.167L8.5 14.167' stroke='#262625' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+            p.button-b__text
+              | Смотреть
+    section.s-who-is-dafna(data-header-mode="dark-mode")
+      .s-who-is-dafna__motion-background(data-scroll, data-scroll-speed="2")
+      .container.s-who-is-dafna__container
+        h2.s-who-is-dafna__title
+          | Кто такая Dafna?
+        p.s-who-is-dafna__text DAFNA - уникальная возможность для ценителей лаконичного дизайна познакомиться с молодыми ювелирными брендами. Тончайшая ручная работа, внимание к деталям, природный минимализм современных форм - это то, что ценит Дафна в своих украшениях. Они создают незабываемый образ, передают индивидуальность и настроение их хозяйки и являются особым элементом, обязательным и неповторимым, без которого невозможно выйти из дома, как без сумочки или капли парфюма.
+        a.button-a.button-a--dark.s-who-is-dafna__button(href='javascript:void(0);')
+          .button-a__ico-wrapper
+            svg(xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewbox='0 0 20 20' fill='none')
+              path(d='M8.5 6.16699L12.5 10.167L8.5 14.167' stroke='#262625' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+          p.button-a__text
+            | Узнать больше
+
+    // CONTENT
+
+  include layouts/_footer.pug
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

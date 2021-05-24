@@ -1,0 +1,52 @@
+footer.footer(data-scroll-section='')
+  .container.footer__container
+    .footer__socials
+      a.footer__socials-link(href="javascript:void(0);")
+        .footer__socials-ico
+          img.fixed-socials__ico(src="../static/svg/vk--dark.svg", alt="soc-ico", title="instagram")
+      a.footer__socials-link(href="javascript:void(0);")
+        .footer__socials-ico
+          img.fixed-socials__ico(src="../static/svg/facebook--dark.svg", alt="soc-ico", title="instagram")
+      a.footer__socials-link(href="javascript:void(0);")
+        .footer__socials-ico
+          img.fixed-socials__ico(src="../static/svg/insta--dark.svg", alt="soc-ico", title="instagram")
+    .footer__top
+      form.subscribe-form.footer__subscribe-form.check-inputs-container(action="#")
+        p.subscribe-form__title Подпишитесь на новости
+        .subscribe-form__input-wrapper
+          input.subscribe-form__input.no-style(type="email", placeholder="Введите ваш Email")
+          button.button-submit.subscribe-form__button-submit.check-inputs-btn.is-disabled
+            svg.button-submit__ico(xmlns='http://www.w3.org/2000/svg' width='25' height='8' viewbox='0 0 25 8' fill='none')
+              path(d='M24.3536 4.35355C24.5488 4.15829 24.5488 3.84171 24.3536 3.64645L21.1716 0.464466C20.9763 0.269204 20.6597 0.269204 20.4645 0.464466C20.2692 0.659728 20.2692 0.976311 20.4645 1.17157L23.2929 4L20.4645 6.82843C20.2692 7.02369 20.2692 7.34027 20.4645 7.53553C20.6597 7.7308 20.9763 7.7308 21.1716 7.53553L24.3536 4.35355ZM0 4.5H24V3.5H0V4.5Z' fill='black')
+            svg.button-submit-ico.button-submit__ico--succeed(xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewbox='0 0 16 16' fill='none')
+              path(d='M13.3327 4L5.99935 11.3333L2.66602 8' stroke='#9E2720' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+        p.subscribe-form__text
+          | Подписываясь на новости вы соглашаетесь с политикой конфиденциальности Dafna
+      ul.footer__nav
+        li
+          ul.footer__nav-list
+            li.footer__nav-item
+              a(href='javascript:void(0);') Кто такая Dafna
+            li.footer__nav-item
+              a(href='javascript:void(0);') Адреса магазинов
+            li.footer__nav-item
+              a(href='javascript:void(0);') Партнерам
+            li.footer__nav-item
+              a(href='javascript:void(0);') Доставка
+            li.footer__nav-item
+              a(href='javascript:void(0);') Оплата
+        li
+          ul.footer__nav-list
+            li.footer__nav-item
+              a(href='javascript:void(0);') Обмен и возврат
+            li.footer__nav-item
+              a(href='javascript:void(0);') Гарантия
+            li.footer__nav-item
+              a(href='javascript:void(0);') Условия продажи
+            li.footer__nav-item
+              a(href='javascript:void(0);') Политика конфиденциальности
+    .footer__copyright
+      p.footer__copyright-text
+        span.t-ttu &copy; DAFNA, 2021
+      p.footer__madeby-text Сделано в
+        a(href="https://its.agency" target='_blank') its.agency
