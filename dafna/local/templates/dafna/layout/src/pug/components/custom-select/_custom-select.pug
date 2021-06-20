@@ -1,0 +1,23 @@
+mixin SelectBoxCh(name, text, options)
+  .custom-select(data-accordeon='')
+    .custom-select__wrapper(data-accordeon-trigger='' data-accordeon-button='')
+      .custom-select__item #{text}
+        svg.custom-select__icon(xmlns='http://www.w3.org/2000/svg' width='16' height='17' viewbox='0 0 16 17' fill='none' data-accordeon-button='')
+          path(d='M4 6.5L8 10.5L12 6.5' stroke='#161616' stroke-linecap='round' stroke-linejoin='round')
+      .custom-select__toggled(data-accordeon-toggled='')
+        each option, index in options
+          div.custom-select__option
+            input(type="checkbox" id=option.value value=option.value name=name checked=option.checked)
+            label(for=option.value) #{option.name}
+
+mixin SelectBoxRd(name, text, options)
+  .custom-select(data-accordeon='')
+    .custom-select__wrapper(data-accordeon-trigger='' data-accordeon-button='')
+      .custom-select__item #{text}
+        svg.custom-select__icon(xmlns='http://www.w3.org/2000/svg' width='16' height='17' viewbox='0 0 16 17' fill='none' data-accordeon-button='')
+          path(d='M4 6.5L8 10.5L12 6.5' stroke='#161616' stroke-linecap='round' stroke-linejoin='round')
+      .custom-select__toggled(data-accordeon-toggled='')
+        each option, index in options
+          div.custom-select__option
+            input(type="radio" id=option.value value=option.value name=name checked=option.checked)
+            label(for=option.value) #{option.name}

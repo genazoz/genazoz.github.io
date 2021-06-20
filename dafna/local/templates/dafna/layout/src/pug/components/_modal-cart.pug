@@ -1,0 +1,178 @@
+include ./custom-select/_custom-select-color.pug
+include ./custom-select/_custom-select.pug
+
+.M.M-cart(data-toggle-modal-btn)
+  //- .active(data-active)
+  .M__cover.M-cart__cover
+  .M__wrapper.M-cart__wrapper
+    //- .is-active
+    .M__main-wrapper.M-cart__main-wrapper(data-modal-wrapper)
+      //- (data-active)
+      .M-cart__header
+        p.M-cart__title Моя корзина
+        button.M-cart__close-button(data-toggle-modal-btn)
+          svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none')
+            path(d='M18 6L6 18' stroke='#232323' stroke-linecap='round' stroke-linejoin='round')
+            path(d='M6 6L18 18' stroke='#232323' stroke-linecap='round' stroke-linejoin='round')
+      .M__content.M-cart__content
+        .M-cart__products
+          .M-cart__product
+            .M-cart__product-img
+              img(src="../static/img/20.jpg", alt="goods")
+            .M-cart__product-infos-container
+              p.M-cart__product-name Серьги Virtue
+              .M-cart__product-like(data-tippy-a data-tippy-content="В избранное")
+                svg(xmlns='http://www.w3.org/2000/svg' width='17' height='15' viewbox='0 0 17 15' fill='none')
+                  path(d='M14.8434 2.14929C14.4768 1.78493 14.0417 1.4959 13.5627 1.2987C13.0837 1.1015 12.5704 1 12.0519 1C11.5335 1 11.0201 1.1015 10.5411 1.2987C10.0621 1.4959 9.62698 1.78493 9.26046 2.14929L8.49981 2.90512L7.73916 2.14929C6.99882 1.41366 5.9947 1.00038 4.94771 1.00038C3.90071 1.00038 2.89659 1.41366 2.15626 2.14929C1.41592 2.88493 1 3.88267 1 4.92302C1 5.96336 1.41592 6.9611 2.15626 7.69674L2.91691 8.45256L8.49981 14L14.0827 8.45256L14.8434 7.69674C15.21 7.33255 15.5009 6.90014 15.6994 6.42422C15.8979 5.94829 16 5.43818 16 4.92302C16 4.40785 15.8979 3.89774 15.6994 3.42182C15.5009 2.94589 15.21 2.51348 14.8434 2.14929V2.14929Z' stroke='black' stroke-linecap='round' stroke-linejoin='round')
+              .M-cart__product-size-m Размер: 17.5
+              .M-cart__product-material-m Материал: Серебро
+              .M-cart__product-select
+                +SelectBoxRd('radio-filters-mbl2', '-', [
+                  {name: '1.0', value: 'r23', checked: true},
+                  {name: '14.0', value: 'r24'},
+                  {name: '12.0', value: 'r25'},
+                  {name: '22.0', value: 'r26'},
+                  {name: '18.0', value: 'r27'},
+                  {name: '28.0', value: 'r28'}
+                ])
+              .M-cart__product-select
+                +SelectBoxColor('radio-color', 'Серебро', '#E5E5E5', [
+                  {name: 'Серебро', color: '#E5E5E5', value: 'r1', checked: true},
+                  {name: 'Золото', color: '#F4EAB3', value: 'r2'},
+                  {name: 'Платина', color: '#E8E8E8', value: 'r3'},
+                ])
+              .M-cart__product-quantity
+                  .quantity-toggle
+                    button.quantity-toggle__button.quantity-toggle__button--minus.is-disabled
+                      svg(xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewbox='0 0 16 16' fill='none')
+                        path(d='M3.3335 8H12.6668' stroke='black' stroke-linecap='round' stroke-linejoin='round')
+                    input.quantity-toggle__input(type='text' value='1' readonly='')
+                    button.quantity-toggle__button.quantity-toggle__button--plus
+                      svg(xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewbox='0 0 16 16' fill='none')
+                        path(d='M8 3.3335V12.6668' stroke='black' stroke-linecap='round' stroke-linejoin='round')
+                        path(d='M3.3335 8H12.6668' stroke='black' stroke-linecap='round' stroke-linejoin='round')
+              p.M-cart__product-price 6000 ₽
+              button.M-cart__product-remove-button
+                svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none')
+                  path(d='M18 6L6 18' stroke='#232323' stroke-linecap='round' stroke-linejoin='round')
+                  path(d='M6 6L18 18' stroke='#232323' stroke-linecap='round' stroke-linejoin='round')
+          .M-cart__product
+            .M-cart__product-img
+              img(src="../static/img/20.jpg", alt="goods", title="")
+            .M-cart__product-infos-container
+              p.M-cart__product-name Серьги Virtue
+              .M-cart__product-like(data-tippy-a data-tippy-content="В избранное")
+                svg(xmlns='http://www.w3.org/2000/svg' width='17' height='15' viewbox='0 0 17 15' fill='none')
+                  path(d='M14.8434 2.14929C14.4768 1.78493 14.0417 1.4959 13.5627 1.2987C13.0837 1.1015 12.5704 1 12.0519 1C11.5335 1 11.0201 1.1015 10.5411 1.2987C10.0621 1.4959 9.62698 1.78493 9.26046 2.14929L8.49981 2.90512L7.73916 2.14929C6.99882 1.41366 5.9947 1.00038 4.94771 1.00038C3.90071 1.00038 2.89659 1.41366 2.15626 2.14929C1.41592 2.88493 1 3.88267 1 4.92302C1 5.96336 1.41592 6.9611 2.15626 7.69674L2.91691 8.45256L8.49981 14L14.0827 8.45256L14.8434 7.69674C15.21 7.33255 15.5009 6.90014 15.6994 6.42422C15.8979 5.94829 16 5.43818 16 4.92302C16 4.40785 15.8979 3.89774 15.6994 3.42182C15.5009 2.94589 15.21 2.51348 14.8434 2.14929V2.14929Z' stroke='black' stroke-linecap='round' stroke-linejoin='round')
+              .M-cart__product-size-m Размер: 17.5
+              .M-cart__product-material-m Материал: Серебро
+              .M-cart__product-select
+                +SelectBoxRd('radio-filters-mbl2', '-', [
+                  {name: '1.0', value: 'r23', checked: true},
+                  {name: '14.0', value: 'r24'},
+                  {name: '12.0', value: 'r25'},
+                  {name: '22.0', value: 'r26'},
+                  {name: '18.0', value: 'r27'},
+                  {name: '28.0', value: 'r28'}
+                ])
+              .M-cart__product-select
+                +SelectBoxColor('radio-color', 'Серебро', '#E5E5E5', [
+                  {name: 'Серебро', color: '#E5E5E5', value: 'r1', checked: true},
+                  {name: 'Золото', color: '#F4EAB3', value: 'r2'},
+                  {name: 'Платина', color: '#E8E8E8', value: 'r3'},
+                ])
+              .M-cart__product-quantity
+                  .quantity-toggle
+                    button.quantity-toggle__button.quantity-toggle__button--minus.is-disabled
+                      svg(xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewbox='0 0 16 16' fill='none')
+                        path(d='M3.3335 8H12.6668' stroke='black' stroke-linecap='round' stroke-linejoin='round')
+                    input.quantity-toggle__input(type='text' value='1' readonly='')
+                    button.quantity-toggle__button.quantity-toggle__button--plus
+                      svg(xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewbox='0 0 16 16' fill='none')
+                        path(d='M8 3.3335V12.6668' stroke='black' stroke-linecap='round' stroke-linejoin='round')
+                        path(d='M3.3335 8H12.6668' stroke='black' stroke-linecap='round' stroke-linejoin='round')
+              p.M-cart__product-price 6000 ₽
+              button.M-cart__product-remove-button
+                svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none')
+                  path(d='M18 6L6 18' stroke='#232323' stroke-linecap='round' stroke-linejoin='round')
+                  path(d='M6 6L18 18' stroke='#232323' stroke-linecap='round' stroke-linejoin='round')
+        .M-cart__addition
+          .M-cart__addition-title Возможно вам потребуется
+          .M-cart__goods-slider.swiper-container
+            .swiper-wrapper
+              .swiper-slide
+                .goods-card-c.M-cart__addition-goods-card
+                  .goods-card-c__img-wrapper
+                    img.goods-card-c__img(src='../static/img/cart1.jpg' alt="goods")
+                  .goods-card-c__content-wrapper
+                      a.goods-card-c__title(href='javascript:void(0);') Подарочная упаковка
+                      .goods-card-c__price 500 ₽
+                  .goods-card-c__footer
+                    .goods-card-c__footer-select
+                      +SelectBoxRd('radio-filters-mbl3', 'Средняя', [
+                        {name: '1.0', value: 'r23', checked: true},
+                        {name: '14.0', value: 'r24'},
+                        {name: '12.0', value: 'r25'},
+                        {name: '22.0', value: 'r26'},
+                        {name: '18.0', value: 'r27'},
+                        {name: '28.0', value: 'r28'}
+                      ])
+                    .goods-card-c__footer-button(data-tippy-a data-tippy-content="Добавить к заказу")
+                      svg(xmlns='http://www.w3.org/2000/svg' width='11' height='14' viewbox='0 0 11 14' fill='none')
+                        path(fill-rule='evenodd' clip-rule='evenodd' d='M9.76382 3.30827C9.76382 3.1449 9.60045 3.02237 9.43708 3.02237H7.92589V2.69563C7.92589 1.18444 6.74145 0 5.23026 0C3.75992 0 2.57548 1.18444 2.57548 2.69563V3.02237H1.02345C0.860078 3.02237 0.737549 3.1449 0.737549 3.30827L0.00237766 12.3345C-0.0384652 12.9472 0.451649 13.519 1.10513 13.519H9.39623C10.0089 13.519 10.5398 12.9472 10.499 12.3345L9.76382 3.30827ZM3.18812 2.69563C3.18812 1.55203 4.12751 0.612642 5.23026 0.612642C6.37386 0.612642 7.31325 1.55203 7.31325 2.69563V3.02237H3.18812V2.69563ZM9.39623 12.8655H1.10513C0.819235 12.8655 0.615021 12.6613 0.615021 12.3754L1.30935 3.63501H2.57548V5.18704C2.57548 5.59547 3.18812 5.59547 3.18812 5.18704V3.63501H7.31325V5.18704C7.31325 5.59547 7.92589 5.59547 7.92589 5.18704V3.63501H9.15118L9.84551 12.3754C9.88635 12.6613 9.64129 12.8655 9.39623 12.8655Z' fill='#222222')
+              .swiper-slide
+                .goods-card-c.M-cart__addition-goods-card
+                  .goods-card-c__img-wrapper
+                    img.goods-card-c__img(src='../static/img/cart2.jpg' alt="goods")
+                  .goods-card-c__content-wrapper
+                      a.goods-card-c__title(href='javascript:void(0);') Салфетки
+                      .goods-card-c__price 500 ₽
+                  .goods-card-c__footer
+                    .goods-card-c__footer-select
+                      +SelectBoxRd('radio-filters-mbl3', 'Средняя', [
+                        {name: '1.0', value: 'r23', checked: true},
+                        {name: '14.0', value: 'r24'},
+                        {name: '12.0', value: 'r25'},
+                        {name: '22.0', value: 'r26'},
+                        {name: '18.0', value: 'r27'},
+                        {name: '28.0', value: 'r28'}
+                      ])
+                    .goods-card-c__footer-button(data-tippy-a data-tippy-content="Добавить к заказу")
+                      svg(xmlns='http://www.w3.org/2000/svg' width='11' height='14' viewbox='0 0 11 14' fill='none')
+                        path(fill-rule='evenodd' clip-rule='evenodd' d='M9.76382 3.30827C9.76382 3.1449 9.60045 3.02237 9.43708 3.02237H7.92589V2.69563C7.92589 1.18444 6.74145 0 5.23026 0C3.75992 0 2.57548 1.18444 2.57548 2.69563V3.02237H1.02345C0.860078 3.02237 0.737549 3.1449 0.737549 3.30827L0.00237766 12.3345C-0.0384652 12.9472 0.451649 13.519 1.10513 13.519H9.39623C10.0089 13.519 10.5398 12.9472 10.499 12.3345L9.76382 3.30827ZM3.18812 2.69563C3.18812 1.55203 4.12751 0.612642 5.23026 0.612642C6.37386 0.612642 7.31325 1.55203 7.31325 2.69563V3.02237H3.18812V2.69563ZM9.39623 12.8655H1.10513C0.819235 12.8655 0.615021 12.6613 0.615021 12.3754L1.30935 3.63501H2.57548V5.18704C2.57548 5.59547 3.18812 5.59547 3.18812 5.18704V3.63501H7.31325V5.18704C7.31325 5.59547 7.92589 5.59547 7.92589 5.18704V3.63501H9.15118L9.84551 12.3754C9.88635 12.6613 9.64129 12.8655 9.39623 12.8655Z' fill='#222222')
+              .swiper-slide
+                .goods-card-c.M-cart__addition-goods-card
+                  .goods-card-c__img-wrapper
+                    img.goods-card-c__img(src='../static/img/cart3.jpg' alt="goods")
+                  .goods-card-c__content-wrapper
+                      a.goods-card-c__title(href='javascript:void(0);') Застежки
+                      .goods-card-c__price 500 ₽
+                  .goods-card-c__footer
+                    .goods-card-c__footer-select
+                      +SelectBoxRd('radio-filters-mbl3', 'Средняя', [
+                        {name: '1.0', value: 'r23', checked: true},
+                        {name: '14.0', value: 'r24'},
+                        {name: '12.0', value: 'r25'},
+                        {name: '22.0', value: 'r26'},
+                        {name: '18.0', value: 'r27'},
+                        {name: '28.0', value: 'r28'}
+                      ])
+                    .goods-card-c__footer-button(data-tippy-a data-tippy-content="Добавить к заказу")
+                      svg(xmlns='http://www.w3.org/2000/svg' width='11' height='14' viewbox='0 0 11 14' fill='none')
+                        path(fill-rule='evenodd' clip-rule='evenodd' d='M9.76382 3.30827C9.76382 3.1449 9.60045 3.02237 9.43708 3.02237H7.92589V2.69563C7.92589 1.18444 6.74145 0 5.23026 0C3.75992 0 2.57548 1.18444 2.57548 2.69563V3.02237H1.02345C0.860078 3.02237 0.737549 3.1449 0.737549 3.30827L0.00237766 12.3345C-0.0384652 12.9472 0.451649 13.519 1.10513 13.519H9.39623C10.0089 13.519 10.5398 12.9472 10.499 12.3345L9.76382 3.30827ZM3.18812 2.69563C3.18812 1.55203 4.12751 0.612642 5.23026 0.612642C6.37386 0.612642 7.31325 1.55203 7.31325 2.69563V3.02237H3.18812V2.69563ZM9.39623 12.8655H1.10513C0.819235 12.8655 0.615021 12.6613 0.615021 12.3754L1.30935 3.63501H2.57548V5.18704C2.57548 5.59547 3.18812 5.59547 3.18812 5.18704V3.63501H7.31325V5.18704C7.31325 5.59547 7.92589 5.59547 7.92589 5.18704V3.63501H9.15118L9.84551 12.3754C9.88635 12.6613 9.64129 12.8655 9.39623 12.8655Z' fill='#222222')
+        .M-cart__footer-top
+          form.subscribe-form.M-cart__subscribe-form.check-inputs-container(action="#")
+            p.subscribe-form__title Промокод
+            .subscribe-form__input-wrapper
+              input.subscribe-form__input.promocode-mask-on.no-style(type="text", placeholder="Введите промокод")
+              button.button-submit.subscribe-form__button-submit.check-inputs-btn.is-disabled
+                svg.button-submit__ico(xmlns='http://www.w3.org/2000/svg' width='25' height='8' viewbox='0 0 25 8' fill='none')
+                  path(d='M24.3536 4.35355C24.5488 4.15829 24.5488 3.84171 24.3536 3.64645L21.1716 0.464466C20.9763 0.269204 20.6597 0.269204 20.4645 0.464466C20.2692 0.659728 20.2692 0.976311 20.4645 1.17157L23.2929 4L20.4645 6.82843C20.2692 7.02369 20.2692 7.34027 20.4645 7.53553C20.6597 7.7308 20.9763 7.7308 21.1716 7.53553L24.3536 4.35355ZM0 4.5H24V3.5H0V4.5Z' fill='black')
+                svg.button-submit-ico.button-submit__ico--succeed(xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewbox='0 0 16 16' fill='none')
+                  path(d='M13.3327 4L5.99935 11.3333L2.66602 8' stroke='#9E2720' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+          .M-cart__total
+            .M-cart__total-price  Итого:
+              span 14 500 ₽
+            .M-cart__total-text Стоимость доставки будет рассчитана на следующем шаге
+    .M-cart__footer-bottom
+      .M-cart__footer-submit-button Оформить заказ

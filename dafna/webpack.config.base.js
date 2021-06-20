@@ -2,10 +2,10 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    main: [path.resolve(__dirname, './src/javascripts/entry.js')]
+    main: [path.resolve(__dirname, './local/templates/dafna/layout/src/javascripts/entry.js')]
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, './local/templates/dafna/layout/dist'),
     filename: 'js/[name].js'
   },
   module: {
@@ -65,13 +65,13 @@ module.exports = {
       },
     ]
   },
-  // resolve: {
-  //   extensions: ['.js', '.png', '.jpg', '.css', '.scss'],
-  //   alias: {
-  //     static: path.resolve(__dirname, 'src/static'),
-  //     components: path.resolve(__dirname, 'src/pug/components')
-  //   }
-  // },
+  resolve: {
+    extensions: ['.js', '.png', '.jpg', '.css', '.scss'],
+    alias: {
+      static: path.resolve(__dirname, './local/templates/dafna/layout/src/static'),
+      // components: path.resolve(__dirname, './local/templates/dafna/layout/src/pug/components')
+    }
+  },
   plugins: [
   ]
 };

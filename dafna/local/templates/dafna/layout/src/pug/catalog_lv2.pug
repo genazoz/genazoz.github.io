@@ -1,0 +1,310 @@
+extends ./templates/_layout
+
+block variables
+  -
+    var appId = 'Catalog';
+    var title = 'Catalog';
+    var description = 'Description: This page is catalog page.';
+
+block content
+  include layouts/_header.pug
+  include layouts/_header-m.pug
+  include components/custom-select/_custom-select.pug
+
+
+  main.main(data-scroll-section='')
+    section.s-catalog.s--top(data-header-mode="dark-mode")
+      .container.s-catalog__container
+        h1.section-title.s-catalog__title Кольца
+        .s-catalog__fixed-scroll
+          .filters-line(data-scroll, data-scroll-sticky, data-scroll-target=".s-catalog__fixed-scroll", data-scroll-class="filters-line--fixed", data-scroll-repeat)
+            .filters-line__item
+              +SelectBoxCh('radio-material', 'Тип украшения', [
+                {name: 'Серебро (238)', value: 'r1', checked: true},
+                {name: 'Ювелирный сплав (230)', value: 'r2'},
+                {name: 'Натуральные камни (34)', value: 'r3'},
+                {name: 'Фарфор (89)', value: 'r4'},
+                {name: 'Стекло (1)', value: 'r5'}
+              ])
+            .filters-line__item
+              +SelectBoxCh('radio-covering', 'Размер', [
+                {name: 'Серебро (238)', value: 'r6', checked: true},
+                {name: 'Ювелирный сплав (230)', value: 'r7'},
+                {name: 'Натуральные камни (34)', value: 'r8'},
+                {name: 'Фарфор (89)', value: 'r9'},
+                {name: 'Стекло (1)', value: 'r10'}
+              ])
+            .filters-line__item
+              +SelectBoxCh('radio-insert', 'Стиль', [
+                {name: 'Серебро (238)', value: 'r11', checked: true},
+                {name: 'Ювелирный сплав (230)', value: 'r12'},
+                {name: 'Натуральные камни (34)', value: 'r13'},
+                {name: 'Фарфор (89)', value: 'r14'},
+                {name: 'Стекло (1)', value: 'r15'}
+              ])
+            .filters-line__item
+              .custom-select.custom-select--range(data-accordeon='')
+                .custom-select__wrapper(data-accordeon-trigger='' data-accordeon-button='')
+                  .custom-select__item Цена
+                    svg.custom-select__icon(xmlns='http://www.w3.org/2000/svg' width='16' height='17' viewbox='0 0 16 17' fill='none' data-accordeon-button='')
+                      path(d='M4 6.5L8 10.5L12 6.5' stroke='#161616' stroke-linecap='round' stroke-linejoin='round')
+                form.custom-select__toggled(action='#' data-accordeon-toggled='')
+                  .range-slider
+                    .range-slider__result
+                      .range-slider__result-item.range-slider__result-item-from
+                        input.js-input-from(type='number' value='0' min='0' max='150000' step='1')
+                      .range-slider__result-item.range-slider__result-item-to
+                        input.js-input-to(type='number' value='150000' min='0' max='150000' step='1')
+                    .range-slider__item
+                    //- (range-min='0' range-max='150000' range-step='1' range-min-value='0' range-max-value='150000')
+            .filters-line__item
+              +SelectBoxCh('radio-material', 'Материал', [
+                {name: 'Серебро (238)', value: 'r1', checked: true},
+                {name: 'Ювелирный сплав (230)', value: 'r2'},
+                {name: 'Натуральные камни (34)', value: 'r3'},
+                {name: 'Фарфор (89)', value: 'r4'},
+                {name: 'Стекло (1)', value: 'r5'}
+              ])
+            .filters-line__item
+              +SelectBoxCh('radio-covering', 'Покрытие', [
+                {name: 'Серебро (238)', value: 'r6', checked: true},
+                {name: 'Ювелирный сплав (230)', value: 'r7'},
+                {name: 'Натуральные камни (34)', value: 'r8'},
+                {name: 'Фарфор (89)', value: 'r9'},
+                {name: 'Стекло (1)', value: 'r10'}
+              ])
+            .filters-line__item
+              +SelectBoxCh('radio-insert', 'Вставка', [
+                {name: 'Серебро (238)', value: 'r11', checked: true},
+                {name: 'Ювелирный сплав (230)', value: 'r12'},
+                {name: 'Натуральные камни (34)', value: 'r13'},
+                {name: 'Фарфор (89)', value: 'r14'},
+                {name: 'Стекло (1)', value: 'r15'}
+              ])
+            a.filters-line-discard
+              svg.filters-line-discard-icon(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none')
+                circle(cx='12' cy='12' r='12' fill='#F5F5F5')
+                path(d='M16 8L8 16M8 8L16 16' stroke='#232323' stroke-linecap='round' stroke-linejoin='round')
+              span.filters-line-discard-text Сбросить
+            .filters-line__item.filters-line__item--alone
+              +SelectBoxCh('radio-sorting', 'Популярные', [
+                {name: 'Популярные', value: 'r16', checked: true},
+                {name: 'Дорогие', value: 'r17'},
+                {name: 'Дешевые', value: 'r18'},
+                {name: 'Акции', value: 'r19'},
+                {name: 'Новинки', value: 'r20'}
+              ])
+          .s-catalog__goods-list
+            .goods-card-a.s-catalog__goods-card
+              .goods-card-a__like-wrapper
+                svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none')
+                  path(d='M20.8401 4.60987C20.3294 4.09888 19.7229 3.69352 19.0555 3.41696C18.388 3.14039 17.6726 2.99805 16.9501 2.99805C16.2276 2.99805 15.5122 3.14039 14.8448 3.41696C14.1773 3.69352 13.5709 4.09888 13.0601 4.60987L12.0001 5.66987L10.9401 4.60987C9.90843 3.57818 8.50915 2.99858 7.05012 2.99858C5.59109 2.99858 4.19181 3.57818 3.16012 4.60987C2.12843 5.64156 1.54883 7.04084 1.54883 8.49987C1.54883 9.95891 2.12843 11.3582 3.16012 12.3899L4.22012 13.4499L12.0001 21.2299L19.7801 13.4499L20.8401 12.3899C21.3511 11.8791 21.7565 11.2727 22.033 10.6052C22.3096 9.93777 22.4519 9.22236 22.4519 8.49987C22.4519 7.77738 22.3096 7.06198 22.033 6.39452C21.7565 5.72706 21.3511 5.12063 20.8401 4.60987V4.60987Z' stroke='#646464' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+              .goods-card-a__img-slider-wrapper
+                a.goods-card-a__img-slider.swiper-container(href='javascript:void(0);')
+                  .swiper-wrapper
+                    .swiper-slide
+                      img.goods-card-a__img(src='../static/img/earring-gold5.jpg' alt="goods")
+                    .swiper-slide
+                      img.goods-card-a__img(src='../static/img/earring-gold3.jpg' alt="goods")
+                    .swiper-slide
+                      img.goods-card-a__img(src='../static/img/earring-gold6.jpg' alt="goods")
+                    .swiper-slide
+                      img.goods-card-a__img(src='../static/img/earring-gold4.jpg' alt="goods")
+                  .goods-card-a__pagination
+              .goods-card-a__content-wrapper
+                a.goods-card-a__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                .goods-card-a__price 7200₽
+            .goods-card-a.s-catalog__goods-card
+              .goods-card-a__like-wrapper
+                svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none')
+                  path(d='M20.8401 4.60987C20.3294 4.09888 19.7229 3.69352 19.0555 3.41696C18.388 3.14039 17.6726 2.99805 16.9501 2.99805C16.2276 2.99805 15.5122 3.14039 14.8448 3.41696C14.1773 3.69352 13.5709 4.09888 13.0601 4.60987L12.0001 5.66987L10.9401 4.60987C9.90843 3.57818 8.50915 2.99858 7.05012 2.99858C5.59109 2.99858 4.19181 3.57818 3.16012 4.60987C2.12843 5.64156 1.54883 7.04084 1.54883 8.49987C1.54883 9.95891 2.12843 11.3582 3.16012 12.3899L4.22012 13.4499L12.0001 21.2299L19.7801 13.4499L20.8401 12.3899C21.3511 11.8791 21.7565 11.2727 22.033 10.6052C22.3096 9.93777 22.4519 9.22236 22.4519 8.49987C22.4519 7.77738 22.3096 7.06198 22.033 6.39452C21.7565 5.72706 21.3511 5.12063 20.8401 4.60987V4.60987Z' stroke='#646464' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+              a.goods-card-a__img-wrapper(href='javascript:void(0);')
+                img.goods-card-a__img(src='../static/img/earring5.jpg' alt="goods")
+              .goods-card-a__content-wrapper
+                a.goods-card-a__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                .goods-card-a__price 7200₽
+            .goods-card-a.s-catalog__goods-card
+              .goods-card-a__like-wrapper
+                svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none')
+                  path(d='M20.8401 4.60987C20.3294 4.09888 19.7229 3.69352 19.0555 3.41696C18.388 3.14039 17.6726 2.99805 16.9501 2.99805C16.2276 2.99805 15.5122 3.14039 14.8448 3.41696C14.1773 3.69352 13.5709 4.09888 13.0601 4.60987L12.0001 5.66987L10.9401 4.60987C9.90843 3.57818 8.50915 2.99858 7.05012 2.99858C5.59109 2.99858 4.19181 3.57818 3.16012 4.60987C2.12843 5.64156 1.54883 7.04084 1.54883 8.49987C1.54883 9.95891 2.12843 11.3582 3.16012 12.3899L4.22012 13.4499L12.0001 21.2299L19.7801 13.4499L20.8401 12.3899C21.3511 11.8791 21.7565 11.2727 22.033 10.6052C22.3096 9.93777 22.4519 9.22236 22.4519 8.49987C22.4519 7.77738 22.3096 7.06198 22.033 6.39452C21.7565 5.72706 21.3511 5.12063 20.8401 4.60987V4.60987Z' stroke='#646464' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+              a.goods-card-a__img-wrapper(href='javascript:void(0);')
+                img.goods-card-a__img(src='../static/img/chain2.jpg' alt="goods")
+              .goods-card-a__content-wrapper
+                a.goods-card-a__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                .goods-card-a__price 7200₽
+            .goods-card-a.s-catalog__goods-card
+              .goods-card-a__like-wrapper
+                svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none')
+                  path(d='M20.8401 4.60987C20.3294 4.09888 19.7229 3.69352 19.0555 3.41696C18.388 3.14039 17.6726 2.99805 16.9501 2.99805C16.2276 2.99805 15.5122 3.14039 14.8448 3.41696C14.1773 3.69352 13.5709 4.09888 13.0601 4.60987L12.0001 5.66987L10.9401 4.60987C9.90843 3.57818 8.50915 2.99858 7.05012 2.99858C5.59109 2.99858 4.19181 3.57818 3.16012 4.60987C2.12843 5.64156 1.54883 7.04084 1.54883 8.49987C1.54883 9.95891 2.12843 11.3582 3.16012 12.3899L4.22012 13.4499L12.0001 21.2299L19.7801 13.4499L20.8401 12.3899C21.3511 11.8791 21.7565 11.2727 22.033 10.6052C22.3096 9.93777 22.4519 9.22236 22.4519 8.49987C22.4519 7.77738 22.3096 7.06198 22.033 6.39452C21.7565 5.72706 21.3511 5.12063 20.8401 4.60987V4.60987Z' stroke='#646464' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+              a.goods-card-a__img-wrapper(href='javascript:void(0);')
+                img.goods-card-a__img(src='../static/img/earring2.jpg' alt="goods")
+              .goods-card-a__content-wrapper
+                a.goods-card-a__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                .goods-card-a__price 7200₽
+            .goods-card-a.s-catalog__goods-card
+              .goods-card-a__like-wrapper
+                svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none')
+                  path(d='M20.8401 4.60987C20.3294 4.09888 19.7229 3.69352 19.0555 3.41696C18.388 3.14039 17.6726 2.99805 16.9501 2.99805C16.2276 2.99805 15.5122 3.14039 14.8448 3.41696C14.1773 3.69352 13.5709 4.09888 13.0601 4.60987L12.0001 5.66987L10.9401 4.60987C9.90843 3.57818 8.50915 2.99858 7.05012 2.99858C5.59109 2.99858 4.19181 3.57818 3.16012 4.60987C2.12843 5.64156 1.54883 7.04084 1.54883 8.49987C1.54883 9.95891 2.12843 11.3582 3.16012 12.3899L4.22012 13.4499L12.0001 21.2299L19.7801 13.4499L20.8401 12.3899C21.3511 11.8791 21.7565 11.2727 22.033 10.6052C22.3096 9.93777 22.4519 9.22236 22.4519 8.49987C22.4519 7.77738 22.3096 7.06198 22.033 6.39452C21.7565 5.72706 21.3511 5.12063 20.8401 4.60987V4.60987Z' stroke='#646464' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+              a.goods-card-a__img-wrapper(href='javascript:void(0);')
+                img.goods-card-a__img(src='../static/img/chain3.jpg' alt="goods")
+              .goods-card-a__content-wrapper
+                a.goods-card-a__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                .goods-card-a__price 7200₽
+            .goods-card-a.s-catalog__goods-card
+              .goods-card-a__like-wrapper
+                svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none')
+                  path(d='M20.8401 4.60987C20.3294 4.09888 19.7229 3.69352 19.0555 3.41696C18.388 3.14039 17.6726 2.99805 16.9501 2.99805C16.2276 2.99805 15.5122 3.14039 14.8448 3.41696C14.1773 3.69352 13.5709 4.09888 13.0601 4.60987L12.0001 5.66987L10.9401 4.60987C9.90843 3.57818 8.50915 2.99858 7.05012 2.99858C5.59109 2.99858 4.19181 3.57818 3.16012 4.60987C2.12843 5.64156 1.54883 7.04084 1.54883 8.49987C1.54883 9.95891 2.12843 11.3582 3.16012 12.3899L4.22012 13.4499L12.0001 21.2299L19.7801 13.4499L20.8401 12.3899C21.3511 11.8791 21.7565 11.2727 22.033 10.6052C22.3096 9.93777 22.4519 9.22236 22.4519 8.49987C22.4519 7.77738 22.3096 7.06198 22.033 6.39452C21.7565 5.72706 21.3511 5.12063 20.8401 4.60987V4.60987Z' stroke='#646464' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+              a.goods-card-a__img-wrapper(href='javascript:void(0);')
+                img.goods-card-a__img(src='../static/img/earring3.jpg' alt="goods")
+              .goods-card-a__content-wrapper
+                a.goods-card-a__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                .goods-card-a__price 7200₽
+            .goods-card-a.s-catalog__goods-card
+              .goods-card-a__like-wrapper
+                svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none')
+                  path(d='M20.8401 4.60987C20.3294 4.09888 19.7229 3.69352 19.0555 3.41696C18.388 3.14039 17.6726 2.99805 16.9501 2.99805C16.2276 2.99805 15.5122 3.14039 14.8448 3.41696C14.1773 3.69352 13.5709 4.09888 13.0601 4.60987L12.0001 5.66987L10.9401 4.60987C9.90843 3.57818 8.50915 2.99858 7.05012 2.99858C5.59109 2.99858 4.19181 3.57818 3.16012 4.60987C2.12843 5.64156 1.54883 7.04084 1.54883 8.49987C1.54883 9.95891 2.12843 11.3582 3.16012 12.3899L4.22012 13.4499L12.0001 21.2299L19.7801 13.4499L20.8401 12.3899C21.3511 11.8791 21.7565 11.2727 22.033 10.6052C22.3096 9.93777 22.4519 9.22236 22.4519 8.49987C22.4519 7.77738 22.3096 7.06198 22.033 6.39452C21.7565 5.72706 21.3511 5.12063 20.8401 4.60987V4.60987Z' stroke='#646464' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+              a.goods-card-a__img-wrapper(href='javascript:void(0);')
+                img.goods-card-a__img(src='../static/img/earring4.jpg' alt="goods")
+              .goods-card-a__content-wrapper
+                a.goods-card-a__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                .goods-card-a__price 7200₽
+            .goods-card-a.s-catalog__goods-card
+              .goods-card-a__like-wrapper
+                svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none')
+                  path(d='M20.8401 4.60987C20.3294 4.09888 19.7229 3.69352 19.0555 3.41696C18.388 3.14039 17.6726 2.99805 16.9501 2.99805C16.2276 2.99805 15.5122 3.14039 14.8448 3.41696C14.1773 3.69352 13.5709 4.09888 13.0601 4.60987L12.0001 5.66987L10.9401 4.60987C9.90843 3.57818 8.50915 2.99858 7.05012 2.99858C5.59109 2.99858 4.19181 3.57818 3.16012 4.60987C2.12843 5.64156 1.54883 7.04084 1.54883 8.49987C1.54883 9.95891 2.12843 11.3582 3.16012 12.3899L4.22012 13.4499L12.0001 21.2299L19.7801 13.4499L20.8401 12.3899C21.3511 11.8791 21.7565 11.2727 22.033 10.6052C22.3096 9.93777 22.4519 9.22236 22.4519 8.49987C22.4519 7.77738 22.3096 7.06198 22.033 6.39452C21.7565 5.72706 21.3511 5.12063 20.8401 4.60987V4.60987Z' stroke='#646464' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+              a.goods-card-a__img-wrapper(href='javascript:void(0);')
+                img.goods-card-a__img(src='../static/img/earring5.jpg' alt="goods")
+              .goods-card-a__content-wrapper
+                a.goods-card-a__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                .goods-card-a__price 7200₽
+            .goods-card-a.s-catalog__goods-card.s-catalog__goods-card--double
+              .goods-card-a__like-wrapper
+                svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none')
+                  path(d='M20.8401 4.60987C20.3294 4.09888 19.7229 3.69352 19.0555 3.41696C18.388 3.14039 17.6726 2.99805 16.9501 2.99805C16.2276 2.99805 15.5122 3.14039 14.8448 3.41696C14.1773 3.69352 13.5709 4.09888 13.0601 4.60987L12.0001 5.66987L10.9401 4.60987C9.90843 3.57818 8.50915 2.99858 7.05012 2.99858C5.59109 2.99858 4.19181 3.57818 3.16012 4.60987C2.12843 5.64156 1.54883 7.04084 1.54883 8.49987C1.54883 9.95891 2.12843 11.3582 3.16012 12.3899L4.22012 13.4499L12.0001 21.2299L19.7801 13.4499L20.8401 12.3899C21.3511 11.8791 21.7565 11.2727 22.033 10.6052C22.3096 9.93777 22.4519 9.22236 22.4519 8.49987C22.4519 7.77738 22.3096 7.06198 22.033 6.39452C21.7565 5.72706 21.3511 5.12063 20.8401 4.60987V4.60987Z' stroke='#646464' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+              a.goods-card-a__img-wrapper(href='javascript:void(0);')
+                img.goods-card-a__img(src='../static/img/earring-gold7.jpg' alt="goods")
+              .goods-card-a__content-wrapper
+                a.goods-card-a__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                .goods-card-a__price 7200₽
+            .goods-card-a.s-catalog__goods-card.s-catalog__goods-card--double
+              .goods-card-a__like-wrapper
+                svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none')
+                  path(d='M20.8401 4.60987C20.3294 4.09888 19.7229 3.69352 19.0555 3.41696C18.388 3.14039 17.6726 2.99805 16.9501 2.99805C16.2276 2.99805 15.5122 3.14039 14.8448 3.41696C14.1773 3.69352 13.5709 4.09888 13.0601 4.60987L12.0001 5.66987L10.9401 4.60987C9.90843 3.57818 8.50915 2.99858 7.05012 2.99858C5.59109 2.99858 4.19181 3.57818 3.16012 4.60987C2.12843 5.64156 1.54883 7.04084 1.54883 8.49987C1.54883 9.95891 2.12843 11.3582 3.16012 12.3899L4.22012 13.4499L12.0001 21.2299L19.7801 13.4499L20.8401 12.3899C21.3511 11.8791 21.7565 11.2727 22.033 10.6052C22.3096 9.93777 22.4519 9.22236 22.4519 8.49987C22.4519 7.77738 22.3096 7.06198 22.033 6.39452C21.7565 5.72706 21.3511 5.12063 20.8401 4.60987V4.60987Z' stroke='#646464' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+              a.goods-card-a__img-wrapper(href='javascript:void(0);')
+                img.goods-card-a__img(src='../static/img/ring-gold1.jpg' alt="goods")
+              .goods-card-a__content-wrapper
+                a.goods-card-a__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                .goods-card-a__price 7200₽
+            .goods-card-a.s-catalog__goods-card
+              .goods-card-a__like-wrapper
+                svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none')
+                  path(d='M20.8401 4.60987C20.3294 4.09888 19.7229 3.69352 19.0555 3.41696C18.388 3.14039 17.6726 2.99805 16.9501 2.99805C16.2276 2.99805 15.5122 3.14039 14.8448 3.41696C14.1773 3.69352 13.5709 4.09888 13.0601 4.60987L12.0001 5.66987L10.9401 4.60987C9.90843 3.57818 8.50915 2.99858 7.05012 2.99858C5.59109 2.99858 4.19181 3.57818 3.16012 4.60987C2.12843 5.64156 1.54883 7.04084 1.54883 8.49987C1.54883 9.95891 2.12843 11.3582 3.16012 12.3899L4.22012 13.4499L12.0001 21.2299L19.7801 13.4499L20.8401 12.3899C21.3511 11.8791 21.7565 11.2727 22.033 10.6052C22.3096 9.93777 22.4519 9.22236 22.4519 8.49987C22.4519 7.77738 22.3096 7.06198 22.033 6.39452C21.7565 5.72706 21.3511 5.12063 20.8401 4.60987V4.60987Z' stroke='#646464' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+              a.goods-card-a__img-wrapper(href='javascript:void(0);')
+                img.goods-card-a__img(src='../static/img/earring-gold4.jpg' alt="goods")
+              .goods-card-a__content-wrapper
+                a.goods-card-a__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                .goods-card-a__price 7200₽
+            .goods-card-a.s-catalog__goods-card
+              .goods-card-a__like-wrapper
+                svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none')
+                  path(d='M20.8401 4.60987C20.3294 4.09888 19.7229 3.69352 19.0555 3.41696C18.388 3.14039 17.6726 2.99805 16.9501 2.99805C16.2276 2.99805 15.5122 3.14039 14.8448 3.41696C14.1773 3.69352 13.5709 4.09888 13.0601 4.60987L12.0001 5.66987L10.9401 4.60987C9.90843 3.57818 8.50915 2.99858 7.05012 2.99858C5.59109 2.99858 4.19181 3.57818 3.16012 4.60987C2.12843 5.64156 1.54883 7.04084 1.54883 8.49987C1.54883 9.95891 2.12843 11.3582 3.16012 12.3899L4.22012 13.4499L12.0001 21.2299L19.7801 13.4499L20.8401 12.3899C21.3511 11.8791 21.7565 11.2727 22.033 10.6052C22.3096 9.93777 22.4519 9.22236 22.4519 8.49987C22.4519 7.77738 22.3096 7.06198 22.033 6.39452C21.7565 5.72706 21.3511 5.12063 20.8401 4.60987V4.60987Z' stroke='#646464' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+              a.goods-card-a__img-wrapper(href='javascript:void(0);')
+                img.goods-card-a__img(src='../static/img/earring-gold5.jpg' alt="goods")
+              .goods-card-a__content-wrapper
+                a.goods-card-a__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                .goods-card-a__price 7200₽
+            .goods-card-a.s-catalog__goods-card
+              .goods-card-a__like-wrapper
+                svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none')
+                  path(d='M20.8401 4.60987C20.3294 4.09888 19.7229 3.69352 19.0555 3.41696C18.388 3.14039 17.6726 2.99805 16.9501 2.99805C16.2276 2.99805 15.5122 3.14039 14.8448 3.41696C14.1773 3.69352 13.5709 4.09888 13.0601 4.60987L12.0001 5.66987L10.9401 4.60987C9.90843 3.57818 8.50915 2.99858 7.05012 2.99858C5.59109 2.99858 4.19181 3.57818 3.16012 4.60987C2.12843 5.64156 1.54883 7.04084 1.54883 8.49987C1.54883 9.95891 2.12843 11.3582 3.16012 12.3899L4.22012 13.4499L12.0001 21.2299L19.7801 13.4499L20.8401 12.3899C21.3511 11.8791 21.7565 11.2727 22.033 10.6052C22.3096 9.93777 22.4519 9.22236 22.4519 8.49987C22.4519 7.77738 22.3096 7.06198 22.033 6.39452C21.7565 5.72706 21.3511 5.12063 20.8401 4.60987V4.60987Z' stroke='#646464' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+              a.goods-card-a__img-wrapper(href='javascript:void(0);')
+                img.goods-card-a__img(src='../static/img/earring-gold6.jpg' alt="goods")
+              .goods-card-a__content-wrapper
+                a.goods-card-a__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                .goods-card-a__price 7200₽
+            .goods-card-a.s-catalog__goods-card
+              .goods-card-a__like-wrapper
+                svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none')
+                  path(d='M20.8401 4.60987C20.3294 4.09888 19.7229 3.69352 19.0555 3.41696C18.388 3.14039 17.6726 2.99805 16.9501 2.99805C16.2276 2.99805 15.5122 3.14039 14.8448 3.41696C14.1773 3.69352 13.5709 4.09888 13.0601 4.60987L12.0001 5.66987L10.9401 4.60987C9.90843 3.57818 8.50915 2.99858 7.05012 2.99858C5.59109 2.99858 4.19181 3.57818 3.16012 4.60987C2.12843 5.64156 1.54883 7.04084 1.54883 8.49987C1.54883 9.95891 2.12843 11.3582 3.16012 12.3899L4.22012 13.4499L12.0001 21.2299L19.7801 13.4499L20.8401 12.3899C21.3511 11.8791 21.7565 11.2727 22.033 10.6052C22.3096 9.93777 22.4519 9.22236 22.4519 8.49987C22.4519 7.77738 22.3096 7.06198 22.033 6.39452C21.7565 5.72706 21.3511 5.12063 20.8401 4.60987V4.60987Z' stroke='#646464' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+              a.goods-card-a__img-wrapper(href='javascript:void(0);')
+                img.goods-card-a__img(src='../static/img/earring6.jpg' alt="goods")
+              .goods-card-a__content-wrapper
+                a.goods-card-a__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                .goods-card-a__price 7200₽
+            .goods-card-a.s-catalog__goods-card.s-catalog__goods-card--quad
+              .goods-card-a__quad-content
+                .goods-card-a__like-wrapper
+                  svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none')
+                    path(d='M20.8401 4.60987C20.3294 4.09888 19.7229 3.69352 19.0555 3.41696C18.388 3.14039 17.6726 2.99805 16.9501 2.99805C16.2276 2.99805 15.5122 3.14039 14.8448 3.41696C14.1773 3.69352 13.5709 4.09888 13.0601 4.60987L12.0001 5.66987L10.9401 4.60987C9.90843 3.57818 8.50915 2.99858 7.05012 2.99858C5.59109 2.99858 4.19181 3.57818 3.16012 4.60987C2.12843 5.64156 1.54883 7.04084 1.54883 8.49987C1.54883 9.95891 2.12843 11.3582 3.16012 12.3899L4.22012 13.4499L12.0001 21.2299L19.7801 13.4499L20.8401 12.3899C21.3511 11.8791 21.7565 11.2727 22.033 10.6052C22.3096 9.93777 22.4519 9.22236 22.4519 8.49987C22.4519 7.77738 22.3096 7.06198 22.033 6.39452C21.7565 5.72706 21.3511 5.12063 20.8401 4.60987V4.60987Z' stroke='#646464' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+                a.goods-card-a__img-wrapper(href='javascript:void(0);')
+                  img.goods-card-a__img(src='../static/img/ring4.jpg' alt="goods")
+                .goods-card-a__content-wrapper
+                  a.goods-card-a__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                  .goods-card-a__price 7200₽
+              a.goods-card-a__quad-img-wrapper(href='javascript:void(0);')
+                img.goods-card-a__quad-img(src='../static/img/some.jpg' alt="goods")
+            .goods-card-a.s-catalog__goods-card
+              .goods-card-a__like-wrapper
+                svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none')
+                  path(d='M20.8401 4.60987C20.3294 4.09888 19.7229 3.69352 19.0555 3.41696C18.388 3.14039 17.6726 2.99805 16.9501 2.99805C16.2276 2.99805 15.5122 3.14039 14.8448 3.41696C14.1773 3.69352 13.5709 4.09888 13.0601 4.60987L12.0001 5.66987L10.9401 4.60987C9.90843 3.57818 8.50915 2.99858 7.05012 2.99858C5.59109 2.99858 4.19181 3.57818 3.16012 4.60987C2.12843 5.64156 1.54883 7.04084 1.54883 8.49987C1.54883 9.95891 2.12843 11.3582 3.16012 12.3899L4.22012 13.4499L12.0001 21.2299L19.7801 13.4499L20.8401 12.3899C21.3511 11.8791 21.7565 11.2727 22.033 10.6052C22.3096 9.93777 22.4519 9.22236 22.4519 8.49987C22.4519 7.77738 22.3096 7.06198 22.033 6.39452C21.7565 5.72706 21.3511 5.12063 20.8401 4.60987V4.60987Z' stroke='#646464' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+              a.goods-card-a__img-wrapper(href='javascript:void(0);')
+                img.goods-card-a__img(src='../static/img/ring2.jpg' alt="goods")
+              .goods-card-a__content-wrapper
+                a.goods-card-a__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                .goods-card-a__price 7200₽
+            .goods-card-a.s-catalog__goods-card
+              .goods-card-a__like-wrapper
+                svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none')
+                  path(d='M20.8401 4.60987C20.3294 4.09888 19.7229 3.69352 19.0555 3.41696C18.388 3.14039 17.6726 2.99805 16.9501 2.99805C16.2276 2.99805 15.5122 3.14039 14.8448 3.41696C14.1773 3.69352 13.5709 4.09888 13.0601 4.60987L12.0001 5.66987L10.9401 4.60987C9.90843 3.57818 8.50915 2.99858 7.05012 2.99858C5.59109 2.99858 4.19181 3.57818 3.16012 4.60987C2.12843 5.64156 1.54883 7.04084 1.54883 8.49987C1.54883 9.95891 2.12843 11.3582 3.16012 12.3899L4.22012 13.4499L12.0001 21.2299L19.7801 13.4499L20.8401 12.3899C21.3511 11.8791 21.7565 11.2727 22.033 10.6052C22.3096 9.93777 22.4519 9.22236 22.4519 8.49987C22.4519 7.77738 22.3096 7.06198 22.033 6.39452C21.7565 5.72706 21.3511 5.12063 20.8401 4.60987V4.60987Z' stroke='#646464' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+              a.goods-card-a__img-wrapper(href='javascript:void(0);')
+                img.goods-card-a__img(src='../static/img/ring1.jpg' alt="goods")
+              .goods-card-a__content-wrapper
+                a.goods-card-a__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                .goods-card-a__price 7200₽
+            .goods-card-a.s-catalog__goods-card
+              .goods-card-a__like-wrapper
+                svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none')
+                  path(d='M20.8401 4.60987C20.3294 4.09888 19.7229 3.69352 19.0555 3.41696C18.388 3.14039 17.6726 2.99805 16.9501 2.99805C16.2276 2.99805 15.5122 3.14039 14.8448 3.41696C14.1773 3.69352 13.5709 4.09888 13.0601 4.60987L12.0001 5.66987L10.9401 4.60987C9.90843 3.57818 8.50915 2.99858 7.05012 2.99858C5.59109 2.99858 4.19181 3.57818 3.16012 4.60987C2.12843 5.64156 1.54883 7.04084 1.54883 8.49987C1.54883 9.95891 2.12843 11.3582 3.16012 12.3899L4.22012 13.4499L12.0001 21.2299L19.7801 13.4499L20.8401 12.3899C21.3511 11.8791 21.7565 11.2727 22.033 10.6052C22.3096 9.93777 22.4519 9.22236 22.4519 8.49987C22.4519 7.77738 22.3096 7.06198 22.033 6.39452C21.7565 5.72706 21.3511 5.12063 20.8401 4.60987V4.60987Z' stroke='#646464' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+              a.goods-card-a__img-wrapper(href='javascript:void(0);')
+                img.goods-card-a__img(src='../static/img/earring-gold3.jpg' alt="goods")
+              .goods-card-a__content-wrapper
+                a.goods-card-a__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                .goods-card-a__price 7200₽
+            .goods-card-a.s-catalog__goods-card
+              .goods-card-a__like-wrapper
+                svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none')
+                  path(d='M20.8401 4.60987C20.3294 4.09888 19.7229 3.69352 19.0555 3.41696C18.388 3.14039 17.6726 2.99805 16.9501 2.99805C16.2276 2.99805 15.5122 3.14039 14.8448 3.41696C14.1773 3.69352 13.5709 4.09888 13.0601 4.60987L12.0001 5.66987L10.9401 4.60987C9.90843 3.57818 8.50915 2.99858 7.05012 2.99858C5.59109 2.99858 4.19181 3.57818 3.16012 4.60987C2.12843 5.64156 1.54883 7.04084 1.54883 8.49987C1.54883 9.95891 2.12843 11.3582 3.16012 12.3899L4.22012 13.4499L12.0001 21.2299L19.7801 13.4499L20.8401 12.3899C21.3511 11.8791 21.7565 11.2727 22.033 10.6052C22.3096 9.93777 22.4519 9.22236 22.4519 8.49987C22.4519 7.77738 22.3096 7.06198 22.033 6.39452C21.7565 5.72706 21.3511 5.12063 20.8401 4.60987V4.60987Z' stroke='#646464' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round')
+              a.goods-card-a__img-wrapper(href='javascript:void(0);')
+                img.goods-card-a__img(src='../static/img/earring-gold2.jpg' alt="goods")
+              .goods-card-a__content-wrapper
+                a.goods-card-a__title(href='javascript:void(0);') Серьги Virtue в покрытии золотом
+                .goods-card-a__price 7200₽
+        .s-catalog__footer
+          nav.pagination(aria-label='navigation')
+            ul.pagination__list
+              li.pagination__item
+                a.pagination__link.disabled(href='javascript:void(0)')
+                  svg(width='7' height='12' viewbox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg')
+                    path(d='M6 1.33325L1.33333 5.99992L6 10.6666' stroke='white' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round')
+              li.pagination__item
+                a.pagination__link.is-active(href='javascript:void(0)') 1
+              li.pagination__item
+                a.pagination__link(href='javascript:void(0)') 2
+              li.pagination__item
+                a.pagination__link(href='javascript:void(0)') 3
+              li.pagination__item
+                a.pagination__link(href='javascript:void(0)') 4
+              li.pagination__item
+                a.pagination__link(href='javascript:void(0)') 5
+              li.pagination__item
+                a.pagination__link(href='javascript:void(0)') ...
+              li.pagination__item
+                a.pagination__link(href='javascript:void(0)') 15
+              li.pagination__item
+                a.pagination__link(href='javascript:void(0)')
+                  svg(width='7' height='12' viewbox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg')
+                    path(d='M1 1.33325L5.66667 5.99992L1 10.6666' stroke='white' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round')
+
+          button.s-catalog__show-more Показать больше
+
+  include layouts/_footer.pug
