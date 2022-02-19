@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang=ru>
+
+    <head>
+        <meta charset=utf-8>
+        <meta http-equiv=X-UA-Compatible content="IE=edge">
+        <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <title>Webpack template</title>
+        <meta name=description content=template>
+        <meta name=keywords content=template>
+        <meta name=robots content="index, follow">
+        <link href="/assets/css/common.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <header class="header wrapper">
+            <div class="header__wrapper container--full"><a class=header__logo href=index.html><img src=assets/img/svg/logo.svg width=223px height=49px></a>
+                <nav class=header__nav><a class=header__nav-link href=#>О компании</a><a class=header__nav-link href=#>Решения</a><a class=header__nav-link href=#>Услуги</a><a class=header__nav-link href=#>Проекты</a><a class=header__nav-link href=#>Новости</a><a class=header__nav-link href=#>Контакты</a></nav>
+                <div class=header__contacts>
+                    <div class="header__title header__mobile-only">Контакты</div><a class=header__phone href=tel:88123267877>+7 (812) 326 78 77</a><a class=header__email href=mailto:info@west-e.ru>info@west-e.ru</a>
+                </div>
+                <div class="header__contacts header__mobile-only">
+                    <div class=header__title>Адрес</div>
+                    <div class=header__address>197341, г. Санкт-Петербург, Коломяжский пр., 27</div>
+                </div>
+                <div class="header__contacts header__mobile-only"><a class=header__social href=#>Facebook</a><a class=header__social href=#>Instagram</a><a class=header__social href=#>Telegram</a></div>
+                <div class=header__right-content><select class="select-a js-slim-select header__language">
+                        <option value=val1>Рус</option>
+                        <option value=val2>Eng</option>
+                    </select><button class=header__hamburger type=button><span></span><span></span><span></span></button></div>
+            </div>
+        </header>
+        <main>
+            <script>
+                document.body.classList.add("main-page")
+
+            </script>
+            <section class="s-preview s-preview--main container">
+                <div class=s-preview__wrapper>
+                    <div class=s-preview__content>
+                        <h1 class=s-preview__title>
+                            <div class=s-preview__title-overflow><span>Инжиниринговое</span></div>
+                            <div class=s-preview__title-overflow><span>предприятие полного цикла</span></div>
+                        </h1>
+                        <div class=s-preview__subtitle>
+                            <div class=s-preview__subtitle-overflow><span>От разработки до изготовления</span></div>
+                            <div class=s-preview__subtitle-overflow><span>и введения оборудования в эксплуатацию</span></div>
+                        </div>
+                        <picture class=s-preview__img width=700px height=700px>
+                            <source type=image/webp data-srcset=assets/img/webp/factory.webp>
+                            <source type=image/jpeg data-srcset=assets/img/factory.png><img class="lazy lazyload" data-src=assets/img/factory.png alt="">
+                        </picture>
+                    </div>
+                </div>
+                <div class="socials s-preview__socials">
+                    <div class=socials__link><svg class=i-instagram-a>
+                            <use xlink:href=#i-instagram-a></use>
+                        </svg></div>
+                    <div class=socials__link><svg class=i-facebook-a>
+                            <use xlink:href=#i-facebook-a></use>
+                        </svg></div>
+                    <div class=socials__link><svg class=i-telegram-a>
+                            <use xlink:href=#i-telegram-a></use>
+                        </svg></div>
+                </div>
+            </section>
+            <section class="s-main-line bg-white">
+                <div class=s-main-line__aside>
+                    <h3 class=s-main-line__title>Основные направления нашей компании</h3>
+                    <h6 class=s-main-line__subtitle>ООО «Вест-Инжиниринг» выполняет полный комплекс работ по созданию и модернизации АСУ ТП для электроэнергетических объектов, включая</h6>
+                    <picture class=s-main-line__img width=700px height=700px>
+                        <source type=image/webp data-srcset=assets/img/webp/factory.webp>
+                        <source type=image/jpeg data-srcset=assets/img/factory.jpg><img class="lazy lazyload" data-src=assets/img/factory.jpg alt="">
+                    </picture>
+                </div>
+                <div class=s-main-line__content>
+                    <div class=s-main-line__counter>01</div>
+                    <h5> Разработка проекта</h5>
+                    <p>Здесь предлагается не большое описание направления комплекс работ по созданию и модернизации АСУ</p><a class="btn-icon-b btn-icon-b--border" href=javascript:void(0)><span class=btn-icon-b__text>подробнее</span><span class=btn-icon-b__circle><svg class=i-plus-a>
+                                <use xlink:href=#i-plus-a></use>
+                            </svg></span></a>
+                </div>
+            </section>
+            <section class=s-our-advantages>
+                <div class=infoblock-c>
+                    <div class=infoblock-c__wrapper>
+                        <div class=infoblock-c__left>
+                            <h3 class=infoblock-c__title>Наши преимущества</h3>
+                            <div class=infoblock-c__text>Компания ООО «Вест-Инжиниринг» - это производственное предприятие полного цикла, от разработки (идеи) до изготовления и введения оборудования в эксплуатацию на объекте использования. Компания специализируется на создании нового .</div>
+                        </div>
+                        <div class=infoblock-c__video-wrapper><video poster=assets/img/video1.jpg></video></div>
+                    </div>
+                </div>
+                <div class="infoblock-d s-our-advantages__list">
+                    <div class=infoblock-d__wrapper>
+                        <div class=infoblock-d__item>
+                            <div class=infoblock-d__ico><svg class=i-disk>
+                                    <use xlink:href=#i-disk></use>
+                                </svg></div>
+                            <h4 class=infoblock-d__title>Более 15 лет </h4>
+                            <div class=infoblock-d__text>на рынке промышленной автоматизации</div>
+                        </div>
+                        <div class=infoblock-d__item>
+                            <div class=infoblock-d__ico><svg class=i-shapes>
+                                    <use xlink:href=#i-shapes></use>
+                                </svg></div>
+                            <h4 class=infoblock-d__title>Собственное </h4>
+                            <div class=infoblock-d__text>проектно - конструкторское подразделение</div>
+                        </div>
+                        <div class=infoblock-d__item>
+                            <div class=infoblock-d__ico><svg class=i-hexagon>
+                                    <use xlink:href=#i-hexagon></use>
+                                </svg></div>
+                            <h4 class=infoblock-d__title>Более 220 </h4>
+                            <div class=infoblock-d__text>человек - постоянный штат компании </div>
+                        </div>
+                        <div class=infoblock-d__item>
+                            <div class=infoblock-d__ico><svg class=i-cancel>
+                                    <use xlink:href=#i-cancel></use>
+                                </svg></div>
+                            <h4 class=infoblock-d__title>Более 5000 м²</h4>
+                            <div class=infoblock-d__text>cовременное высокотехнологичное производство в Санкт-Петербурге</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="s-news container--min">
+                <div class=s-news__preview>
+                    <h3 class=s-news__title>Новости</h3><a class="infoblock-b s-news__infoblock-b" href=javascript:void(0)>
+                        <div class="date-line date-line--lg infoblock-b__date-line"><span>22 августа 2022 г.</span></div>
+                        <div class="infoblock-b__img img">
+                            <div class=infoblock-b__overlay>
+                                <div class="btn-icon-b btn-icon-b--border infoblock-b__overlay-button"><span class=btn-icon-b__text>подробнее</span><span class=btn-icon-b__circle><svg class=i-plus-a>
+                                            <use xlink:href=#i-plus-a></use>
+                                        </svg></span></div>
+                            </div>
+                            <picture class=img__i width=700px height=700px>
+                                <source type=image/webp data-srcset=assets/img/webp/slider-13.webp>
+                                <source type=image/jpeg data-srcset=assets/img/slider-13.jpg><img class="lazy lazyload" data-src=assets/img/slider-13.jpg alt="">
+                            </picture>
+                        </div>
+                        <div class=infoblock-b__content>
+                            <div class=infoblock-b__title>Пусконаладочные работы</div>
+                            <div class=infoblock-b__text>Неотъемлемой частью производственного и технологического процесса являются узконаправленные специальные</div>
+                        </div>
+                    </a>
+                </div>
+                <div class=s-news__list><a class="infoblock-b s-news__infoblock-b" href=javascript:void(0)>
+                        <div class="date-line date-line--sm infoblock-b__date-line"><span>5 апреля 2021 г.</span></div>
+                        <div class=infoblock-b__content>
+                            <div class=infoblock-b__title>Пусконаладочные работы</div>
+                            <div class=infoblock-b__text>Неотъемлемой частью производственного и технологического процесса являются узконаправленные специальные</div>
+                        </div>
+                    </a><a class="infoblock-b s-news__infoblock-b" href=javascript:void(0)>
+                        <div class="date-line date-line--sm infoblock-b__date-line"><span>5 апреля 2021 г.</span></div>
+                        <div class=infoblock-b__content>
+                            <div class=infoblock-b__title>Пусконаладочные работы</div>
+                            <div class=infoblock-b__text>Неотъемлемой частью производственного и технологического процесса являются узконаправленные специальные</div>
+                        </div>
+                    </a><a class="infoblock-b s-news__infoblock-b" href=javascript:void(0)>
+                        <div class="date-line date-line--sm infoblock-b__date-line"><span>5 апреля 2021 г.</span></div>
+                        <div class=infoblock-b__content>
+                            <div class=infoblock-b__title>Пусконаладочные работы</div>
+                            <div class=infoblock-b__text>Неотъемлемой частью производственного и технологического процесса являются узконаправленные специальные</div>
+                        </div>
+                    </a><a class="btn-icon-b btn-icon-b--border-blue s-news__show-all-button" href=javascript:void(0)><span class=btn-icon-b__text>все статьи</span><span class=btn-icon-b__circle><svg class=i-arrow-right-a>
+                                <use xlink:href=#i-arrow-right-a></use>
+                            </svg></span></a></div>
+            </section>
+            <section class=s-our-projects>
+                <div class="s-our-projects__logo-wrapper container--min"><img class=s-our-projects__logo src=assets/img/svg/we.svg width=838px height=359px></div>
+                <div class="container--min slider-b--white slider-b swiper-container js-slider-b">
+                    <div class=slider-b__header>
+                        <div class=slider-b__header-left>
+                            <h3 class="tag slider-b__title">Наши проекты</h3>
+                            <div class=slider-b__subtitle>Неотъемлемой частью производственного и технологического процесса являются узконаправленные специальные </div>
+                        </div>
+                        <div class=slider-b__header-right>
+                            <div class=slider-counter><span class=slider-counter__current>01</span><span class=slider-counter__hr></span><span class=slider-counter__total>01</span></div>
+                        </div>
+                    </div>
+                    <div class="slider-b__inner swiper-wrapper">
+                        <div class="slider-b__slide swiper-slide"><a class=infoblock-b href=javascript:void(0)>
+                                <div class="infoblock-b__img img">
+                                    <div class=infoblock-b__overlay>
+                                        <div class="btn-icon-b btn-icon-b--border infoblock-b__overlay-button"><span class=btn-icon-b__text>подробнее</span><span class=btn-icon-b__circle><svg class=i-plus-a>
+                                                    <use xlink:href=#i-plus-a></use>
+                                                </svg></span></div>
+                                    </div>
+                                    <picture class=img__i width=700px height=700px>
+                                        <source type=image/webp data-srcset=assets/img/webp/slider-13.webp>
+                                        <source type=image/jpeg data-srcset=assets/img/slider-13.jpg><img class="lazy lazyload" data-src=assets/img/slider-13.jpg alt="">
+                                    </picture>
+                                </div>
+                                <div class=infoblock-b__content>
+                                    <div class=infoblock-b__title>Текущий проект компании</div>
+                                    <div class=infoblock-b__text>ООО «Вест-Инжиниринг» выполняет полный комплекс работ по созданию и модернизации АСУ ТП для электроэнергетических </div>
+                                </div>
+                            </a></div>
+                        <div class="slider-b__slide swiper-slide"><a class=infoblock-b href=javascript:void(0)>
+                                <div class="infoblock-b__img img">
+                                    <div class=infoblock-b__overlay>
+                                        <div class="btn-icon-b btn-icon-b--border infoblock-b__overlay-button"><span class=btn-icon-b__text>подробнее</span><span class=btn-icon-b__circle><svg class=i-plus-a>
+                                                    <use xlink:href=#i-plus-a></use>
+                                                </svg></span></div>
+                                    </div>
+                                    <picture class=img__i width=700px height=700px>
+                                        <source type=image/webp data-srcset=assets/img/webp/slider-14.webp>
+                                        <source type=image/jpeg data-srcset=assets/img/slider-14.jpg><img class="lazy lazyload" data-src=assets/img/slider-14.jpg alt="">
+                                    </picture>
+                                </div>
+                                <div class=infoblock-b__content>
+                                    <div class=infoblock-b__title>Текущий проект компании</div>
+                                    <div class=infoblock-b__text>ООО «Вест-Инжиниринг» выполняет полный комплекс работ по созданию и модернизации АСУ ТП для электроэнергетических </div>
+                                </div>
+                            </a></div>
+                        <div class="slider-b__slide swiper-slide"><a class=infoblock-b href=javascript:void(0)>
+                                <div class="infoblock-b__img img">
+                                    <div class=infoblock-b__overlay>
+                                        <div class="btn-icon-b btn-icon-b--border infoblock-b__overlay-button"><span class=btn-icon-b__text>подробнее</span><span class=btn-icon-b__circle><svg class=i-plus-a>
+                                                    <use xlink:href=#i-plus-a></use>
+                                                </svg></span></div>
+                                    </div>
+                                    <picture class=img__i width=700px height=700px>
+                                        <source type=image/webp data-srcset=assets/img/webp/slider-15.webp>
+                                        <source type=image/jpeg data-srcset=assets/img/slider-15.jpg><img class="lazy lazyload" data-src=assets/img/slider-15.jpg alt="">
+                                    </picture>
+                                </div>
+                                <div class=infoblock-b__content>
+                                    <div class=infoblock-b__title>Текущий проект компании</div>
+                                    <div class=infoblock-b__text>ООО «Вест-Инжиниринг» выполняет полный комплекс работ по созданию и модернизации АСУ ТП для электроэнергетических </div>
+                                </div>
+                            </a></div>
+                    </div>
+                    <div class=slider-b__footer>
+                        <div class="slider-nav slider-b__nav slider-nav--white">
+                            <div class=slider-nav__left><svg class=i-arrow-left-b>
+                                    <use xlink:href=#i-arrow-left-b></use>
+                                </svg></div>
+                            <div class=slider-nav__right><svg class=i-arrow-right-b>
+                                    <use xlink:href=#i-arrow-right-b></use>
+                                </svg></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="s-our-customer container--left">
+                <div class="infoblock-a s-our-customer__infoblock-a">
+                    <div class=infoblock-a__aside>
+                        <h3 class=infoblock-a__title>Наши заказчики</h3>
+                    </div>
+                    <div class=infoblock-a__content>
+                        <h6>ООО «Вест-Инжиниринг» это в первую очередь современная высокоэффективная инжиниринговая компания.</h6>
+                        <div class="icons-list-a s-our-customer__icons-list-a"><svg class=i-pocatom>
+                                <use xlink:href=#i-pocatom></use>
+                            </svg><svg class=i-vodokanal>
+                                <use xlink:href=#i-vodokanal></use>
+                            </svg><svg class=i-metropoliten>
+                                <use xlink:href=#i-metropoliten></use>
+                            </svg><svg class=i-rosneft>
+                                <use xlink:href=#i-rosneft></use>
+                            </svg><svg class=i-t2>
+                                <use xlink:href=#i-t2></use>
+                            </svg><svg class=i-gazprom>
+                                <use xlink:href=#i-gazprom></use>
+                            </svg></div>
+                    </div>
+                </div>
+            </section>
+            <section class="s-consult-form container--left">
+                <div class=s-consult-form__aside>
+                    <h3 class=s-consult-form__title>Узнать подробности</h3>
+                    <div class=s-consult-form__subtitle>Проконсультируем и подготовим коммерческое предложение</div>
+                </div>
+                <form class="form s-consult-form__form check-inputs-container" action=#><input type=hidden value="Главный стилист бренда"><input class=is-required type=text placeholder=Имя><input class=is-required type=email value="" placeholder=Email><input class="is-required tel-mask-on" type=text placeholder="+7 (_ _ _) _ _ _ - _ _ - _ _"><input class=is-required placeholder=Комментарий>
+                    <div class=form__footer><button class="btn-icon btn-icon--border form__button check-inputs-btn"><span class=btn-icon__circle><svg class=i-arrow-right-a>
+                                    <use xlink:href=#i-arrow-right-a></use>
+                                </svg></span><span class=btn-icon__text>Отправить сообщение</span></button>
+                        <p class=personal-agreement><input type=checkbox><span>Нажав на кнопку, вы соглашаетесь на обработку<a href=javascript:void(0)> персональных данных</a></span></p>
+                    </div>
+                </form>
+            </section>
+        </main>
+        <footer class=footer>
+            <div class="footer__top container--full"><a class=footer__logo href=index.html><img src=assets/img/svg/logo.svg></a>
+                <div class=footer__menu>
+                    <ul class="footer__menu-list footer__menu-list--socials">
+                        <li><a href=#>Facebook</a></li>
+                        <li><a href=#>Instagram</a></li>
+                        <li><a href=#>Telegram</a></li>
+                    </ul>
+                    <ul class=footer__menu-list>
+                        <li><a href=#>О компании</a></li>
+                        <li><a href=#>Продукция</a></li>
+                        <li><a href=#>Услуги</a></li>
+                    </ul>
+                    <ul class=footer__menu-list>
+                        <li><a href=#>Проекты</a></li>
+                        <li><a href=#>Новости</a></li>
+                    </ul>
+                    <ul class=footer__menu-list>
+                        <li>Контакты</li>
+                        <li><a class=color-gray href=tel:88123267877>+7 (812) 326 78 77</a></li>
+                        <li class=color-gray><a class=color-gray href=mailto:info@west-e.ru>info@west-e.ru</a></li>
+                    </ul>
+                    <ul class=footer__menu-list>
+                        <li>Адрес</li>
+                        <li class=color-gray>197341,<br>г. Санкт-Петербург,<br>Коломяжский пр., 27</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom container--full">
+                <p class=footer__copyright><span class=footer__copyright-top>2021 © ООО «Вест-Инжиниринг» Все права защищены.</span></p><span class=footer__production>Создание сайта<a class=footer__production-link href=https://its.agency/ target=_blank rel=nofollow> its.agency</a></span>
+            </div>
+        </footer>
+        <script type="text/javascript" src="/js/runtime.js"></script>
+        <script type="text/javascript" src="/js/vendors.js"></script>
+        <script type="text/javascript" src="/js/common.js"></script>
+        <script type="text/javascript" src="/js/main.js"></script>
+    </body>
+
+</html>

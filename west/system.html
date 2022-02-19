@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang=ru>
+
+    <head>
+        <meta charset=utf-8>
+        <meta http-equiv=X-UA-Compatible content="IE=edge">
+        <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <title>Webpack template</title>
+        <meta name=description content=template>
+        <meta name=keywords content=template>
+        <meta name=robots content="index, follow">
+        <link href="/assets/css/common.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <header class="header wrapper">
+            <div class="header__wrapper container--full"><a class=header__logo href=index.html><img src=assets/img/svg/logo.svg width=223px height=49px></a>
+                <nav class=header__nav><a class=header__nav-link href=#>О компании</a><a class=header__nav-link href=#>Решения</a><a class=header__nav-link href=#>Услуги</a><a class=header__nav-link href=#>Проекты</a><a class=header__nav-link href=#>Новости</a><a class=header__nav-link href=#>Контакты</a></nav>
+                <div class=header__contacts>
+                    <div class="header__title header__mobile-only">Контакты</div><a class=header__phone href=tel:88123267877>+7 (812) 326 78 77</a><a class=header__email href=mailto:info@west-e.ru>info@west-e.ru</a>
+                </div>
+                <div class="header__contacts header__mobile-only">
+                    <div class=header__title>Адрес</div>
+                    <div class=header__address>197341, г. Санкт-Петербург, Коломяжский пр., 27</div>
+                </div>
+                <div class="header__contacts header__mobile-only"><a class=header__social href=#>Facebook</a><a class=header__social href=#>Instagram</a><a class=header__social href=#>Telegram</a></div>
+                <div class=header__right-content><select class="select-a js-slim-select header__language">
+                        <option value=val1>Рус</option>
+                        <option value=val2>Eng</option>
+                    </select><button class=header__hamburger type=button><span></span><span></span><span></span></button></div>
+            </div>
+        </header>
+        <main>
+            <section class="s-preview container">
+                <div class=s-preview__wrapper>
+                    <ul class="breadcrumbs crumbs--default s-preview__breadcrumbs">
+                        <li><a class=breadcrumbs__link href=/main.html>Главная</a></li>
+                        <li><a class=breadcrumbs__link href=/main.html>Решения</a></li>
+                        <li><a class=breadcrumbs__link href=/main.html>Системы</a></li>
+                    </ul>
+                    <div class=s-preview__content>
+                        <h1 class=s-preview__title>Система автоматического управления дизель-генераторными установками САУ ДГУ</h1>
+                        <p class=s-preview__subtitle>Класс безопасности по НП-001, САЭ – 2О, СНЭ НЭ – 3Н.</p>
+                        <picture class=s-preview__img width=700px height=700px>
+                            <source type=image/webp data-srcset=assets/img/webp/factory.webp>
+                            <source type=image/jpeg data-srcset=assets/img/factory.png><img class="lazy lazyload" data-src=assets/img/factory.png alt="">
+                        </picture>
+                        <div class=s-preview__buttons><button class="btn-icon btn-icon--blue s-preview__button"><span class=btn-icon__circle><svg class=i-download>
+                                        <use xlink:href=#i-download></use>
+                                    </svg></span><span class=btn-icon__text>Скачать <br> презентацию</span></button><button class="btn-icon btn-icon--white s-preview__button"><span class=btn-icon__circle><svg class=i-documents>
+                                        <use xlink:href=#i-documents></use>
+                                    </svg></span><span class=btn-icon__text>Запросить коммерческое<br> предложение</span></button></div>
+                    </div>
+                    <nav class="menu-a s-preview__menu"><a class=menu-a__link href=#infoblock-system-features>Возможности системы</a><a class=menu-a__link href=#infoblock-system-functions>Функции системы</a><a class=menu-a__link href=#slider-implementation-objects>Объекты внедрения</a></nav>
+                </div>
+                <div class="socials s-preview__socials">
+                    <div class=socials__link><svg class=i-instagram-a>
+                            <use xlink:href=#i-instagram-a></use>
+                        </svg></div>
+                    <div class=socials__link><svg class=i-facebook-a>
+                            <use xlink:href=#i-facebook-a></use>
+                        </svg></div>
+                    <div class=socials__link><svg class=i-telegram-a>
+                            <use xlink:href=#i-telegram-a></use>
+                        </svg></div>
+                </div>
+            </section>
+            <section class="s-system bg-gray">
+                <div class="s-system__content container--left">
+                    <h3 class=s-system__title>САУ ДГУ предназначена для автоматического управления и передачи электроэнергии от синхронного генератора потребителю</h3>
+                    <div class="infoblock-a s-system__infoblock-a">
+                        <div class="infoblock-a__aside infoblock-a__aside--center">
+                            <h3 class=infoblock-a__title>Преимущества</h3>
+                            <h6 class=infoblock-a__subtitle>Внедрение комплексного подхода позволит:</h6>
+                        </div>
+                        <div class=infoblock-a__content>
+                            <h6>САУ ДГУ является системой разработки WE на базе:</h6>
+                            <ul>
+                                <li>ПЛК SIMATEC ET 200SP Siemens;</li>
+                                <li>ПЛК Wago;</li>
+                                <li>Источников бесперебойного питания АПС Энергия (опционально).</li>
+                                <li>Микропроцессорных терминалов защит генератора BE1-11g Basler Electric;</li>
+                            </ul>
+                            <div class="infoblock-a__list s-system__infoblock-a-list">
+                                <div class=infoblock-a__list-item><img src=assets/img/svg/circles.svg width=99px height=99px>Снизить расходы на закупку типового оборудования СКУ ПЗ;</div>
+                                <div class=infoblock-a__list-item><img src=assets/img/svg/delete.svg width=99px height=99px>Снижения расходов на проектирование новых блоков АС;</div>
+                                <div class=infoblock-a__list-item><img src=assets/img/svg/mountains.svg width=99px height=99px>Обеспечивает максимальную унификацию и применение только проверенных высоконадежных решений, соответствующих современным требованиям АЭС;</div>
+                                <div class=infoblock-a__list-item><img src=assets/img/svg/triangles.svg width=99px height=99px>Снижение расходов при вводе в эксплуатацию и обслуживание в период эксплуатации.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infoblock-a s-system__infoblock-a infoblock-system-features">
+                        <div class=infoblock-a__aside>
+                            <h3 class=infoblock-a__title>Возможности системы</h3>
+                        </div>
+                        <div class=infoblock-a__content>
+                            <p>САУ ДГУ может иметь в своем составе систему электропитания оборудования, состоящую из РУ-0,4 кВ и РУ-24 В. Система может поставляться со шкафом фазы и нейтрали, предназначенным для подключения выводов генератора к системе электроснабжения АС, а также обеспечения необходимых измерений электрических параметров генератора для защиты и управления ДГ.</p>
+                            <p>Основным органом управления (при работе в местном режиме) является панель оператора SIMATIC HMI TP1500 Comfort, расположенная на двери шкафа ПУ. Разработка программного обеспечения для панели оператора выполняется в инструментальном ПО TIA Portal</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-a swiper-container js-slider-a">
+                    <div class=slider-a__header>
+                        <div class="slider-nav slider-a__nav">
+                            <div class=slider-nav__left><svg class=i-arrow-left-b>
+                                    <use xlink:href=#i-arrow-left-b></use>
+                                </svg></div>
+                            <div class=slider-nav__right><svg class=i-arrow-right-b>
+                                    <use xlink:href=#i-arrow-right-b></use>
+                                </svg></div>
+                        </div>
+                    </div>
+                    <div class="slider-a__inner swiper-wrapper">
+                        <div class="slider-a__slide swiper-slide">
+                            <div class=infoblock-b>
+                                <div class="infoblock-b__img img">
+                                    <picture class=img__i width=700px height=700px>
+                                        <source type=image/webp data-srcset=assets/img/webp/slider-1.webp>
+                                        <source type=image/jpeg data-srcset=assets/img/slider-1.jpg><img class="lazy lazyload" data-src=assets/img/slider-1.jpg alt="">
+                                    </picture>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-a__slide swiper-slide">
+                            <div class=infoblock-b>
+                                <div class="infoblock-b__img img">
+                                    <picture class=img__i width=700px height=700px>
+                                        <source type=image/webp data-srcset=assets/img/webp/slider-2.webp>
+                                        <source type=image/jpeg data-srcset=assets/img/slider-2.jpg><img class="lazy lazyload" data-src=assets/img/slider-2.jpg alt="">
+                                    </picture>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-a__slide swiper-slide">
+                            <div class=infoblock-b>
+                                <div class="infoblock-b__img img">
+                                    <picture class=img__i width=700px height=700px>
+                                        <source type=image/webp data-srcset=assets/img/webp/slider-3.webp>
+                                        <source type=image/jpeg data-srcset=assets/img/slider-3.jpg><img class="lazy lazyload" data-src=assets/img/slider-3.jpg alt="">
+                                    </picture>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-a__slide swiper-slide">
+                            <div class=infoblock-b>
+                                <div class="infoblock-b__img img">
+                                    <picture class=img__i width=700px height=700px>
+                                        <source type=image/webp data-srcset=assets/img/webp/slider-3.webp>
+                                        <source type=image/jpeg data-srcset=assets/img/slider-3.jpg><img class="lazy lazyload" data-src=assets/img/slider-3.jpg alt="">
+                                    </picture>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-a__slide swiper-slide">
+                            <div class=infoblock-b>
+                                <div class="infoblock-b__img img">
+                                    <picture class=img__i width=700px height=700px>
+                                        <source type=image/webp data-srcset=assets/img/webp/slider-3.webp>
+                                        <source type=image/jpeg data-srcset=assets/img/slider-3.jpg><img class="lazy lazyload" data-src=assets/img/slider-3.jpg alt="">
+                                    </picture>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-a__slide swiper-slide">
+                            <div class=infoblock-b>
+                                <div class="infoblock-b__img img">
+                                    <picture class=img__i width=700px height=700px>
+                                        <source type=image/webp data-srcset=assets/img/webp/slider-3.webp>
+                                        <source type=image/jpeg data-srcset=assets/img/slider-3.jpg><img class="lazy lazyload" data-src=assets/img/slider-3.jpg alt="">
+                                    </picture>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-dots slider-a__dots slider-dots--blue slider-a__dots--only-phone"></div>
+                </div>
+                <div class="s-system__content container--left">
+                    <div class="infoblock-a s-system__infoblock-a infoblock-system-functions">
+                        <div class=infoblock-a__aside>
+                            <h3 class=infoblock-a__title>Функции системы</h3>
+                        </div>
+                        <div class=infoblock-a__content>
+                            <h6>САУ ДГУ обеспечивает отключаемые и неотключаемые защиты и блокировки ДГ и оборудования, поставляемого комплектно с ним, а также аварийную сигнализацию при всех видах управления.</h6>
+                            <h6>Для условий, требующих сейсмостойкости оборудования, предусмотрена комплектация виброзащитными платформами, разработанными ООО «Вест-Инжиниринг».</h6><br>
+                            <div class=accordeon-ul showamount=1>
+                                <ul class=accordeon-ul__content>
+                                    <li>Автоматическое поддержание ДГУ в готовности к пуску, включая поддержание температуры охлаждающей жидкости и масла дизеля, давления и пускового воздуха;</li>
+                                    <li>Информационное сопровождение работы ДГУ, в т.ч. автоматическая архивация аварийно-предупредительной сигнализации, срабатывающих защит и блокировок, действий обслуживающего персонала.;</li>
+                                    <li>Формирование исполнительной, аварийно-предупредительной сигнализации, регистрация и передача параметров в систему АСУТП.</li>
+                                    <li>Автоматическое пополнение расходных емкостей топлива, масла и охлаждающей жидкости;</li>
+                                    <li>Автоматическое включение резерва – АВР;</li>
+                                    <li>Автоматизированный экстренный останов (по каналу защиты);</li>
+                                    <li>Управление регулятором частоты вращения дизеля и блоком регулирования возбуждения генератора;</li>
+                                    <li>В части шкафов фазы и нейтрали предназначена для подключения выводов генератора к системе электроснабжения АС, а также обеспечения необходимых измерений электрических параметров генератора с целью защиты и управления ДГ.;</li>
+                                </ul><button class="btn-arrow accordeon-ul__button"><span class=btn__text></span><svg class=i-arrow-bottom-a>
+                                        <use xlink:href=#i-arrow-bottom-a></use>
+                                    </svg></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-implementation-objects slider-a swiper-container js-slider-a">
+                    <div class=slider-a__header>
+                        <h3 class="tag slider-a__title">Объекты внедрения</h3>
+                        <div class="slider-nav slider-a__nav">
+                            <div class=slider-nav__left><svg class=i-arrow-left-b>
+                                    <use xlink:href=#i-arrow-left-b></use>
+                                </svg></div>
+                            <div class=slider-nav__right><svg class=i-arrow-right-b>
+                                    <use xlink:href=#i-arrow-right-b></use>
+                                </svg></div>
+                        </div>
+                    </div>
+                    <div class="slider-a__inner swiper-wrapper">
+                        <div class="slider-a__slide swiper-slide"><a class=infoblock-b href=javascript:void(0)>
+                                <div class="infoblock-b__img img">
+                                    <div class=infoblock-b__overlay>
+                                        <div class="btn-icon-b btn-icon-b--border infoblock-b__overlay-button"><span class=btn-icon-b__text>подробнее</span><span class=btn-icon-b__circle><svg class=i-plus-a>
+                                                    <use xlink:href=#i-plus-a></use>
+                                                </svg></span></div>
+                                    </div>
+                                    <picture class=img__i width=700px height=700px>
+                                        <source type=image/webp data-srcset=assets/img/webp/slider-4.webp>
+                                        <source type=image/jpeg data-srcset=assets/img/slider-4.jpg><img class="lazy lazyload" data-src=assets/img/slider-4.jpg alt="">
+                                    </picture>
+                                </div>
+                                <div class=infoblock-b__content>
+                                    <div class=infoblock-b__title>Ленинградская АЭС</div>
+                                    <div class=infoblock-b__text>1, 2, 3, 4 энергоблок – 2007-2010 гг;</div>
+                                </div>
+                            </a></div>
+                        <div class="slider-a__slide swiper-slide"><a class=infoblock-b href=javascript:void(0)>
+                                <div class="infoblock-b__img img">
+                                    <div class=infoblock-b__overlay>
+                                        <div class="btn-icon-b btn-icon-b--border infoblock-b__overlay-button"><span class=btn-icon-b__text>подробнее</span><span class=btn-icon-b__circle><svg class=i-plus-a>
+                                                    <use xlink:href=#i-plus-a></use>
+                                                </svg></span></div>
+                                    </div>
+                                    <picture class=img__i width=700px height=700px>
+                                        <source type=image/webp data-srcset=assets/img/webp/slider-5.webp>
+                                        <source type=image/jpeg data-srcset=assets/img/slider-5.jpg><img class="lazy lazyload" data-src=assets/img/slider-5.jpg alt="">
+                                    </picture>
+                                </div>
+                                <div class=infoblock-b__content>
+                                    <div class=infoblock-b__title>Калининская АЭС</div>
+                                    <div class=infoblock-b__text>4 энергоблок – 2009 г;</div>
+                                </div>
+                            </a></div>
+                        <div class="slider-a__slide swiper-slide"><a class=infoblock-b href=javascript:void(0)>
+                                <div class="infoblock-b__img img">
+                                    <div class=infoblock-b__overlay>
+                                        <div class="btn-icon-b btn-icon-b--border infoblock-b__overlay-button"><span class=btn-icon-b__text>подробнее</span><span class=btn-icon-b__circle><svg class=i-plus-a>
+                                                    <use xlink:href=#i-plus-a></use>
+                                                </svg></span></div>
+                                    </div>
+                                    <picture class=img__i width=700px height=700px>
+                                        <source type=image/webp data-srcset=assets/img/webp/slider-6.webp>
+                                        <source type=image/jpeg data-srcset=assets/img/slider-6.jpg><img class="lazy lazyload" data-src=assets/img/slider-6.jpg alt="">
+                                    </picture>
+                                </div>
+                                <div class=infoblock-b__content>
+                                    <div class=infoblock-b__title>Белоярская АЭС</div>
+                                    <div class=infoblock-b__text>2012 г;</div>
+                                </div>
+                            </a></div>
+                        <div class="slider-a__slide swiper-slide"><a class=infoblock-b href=javascript:void(0)>
+                                <div class="infoblock-b__img img">
+                                    <div class=infoblock-b__overlay>
+                                        <div class="btn-icon-b btn-icon-b--border infoblock-b__overlay-button"><span class=btn-icon-b__text>подробнее</span><span class=btn-icon-b__circle><svg class=i-plus-a>
+                                                    <use xlink:href=#i-plus-a></use>
+                                                </svg></span></div>
+                                    </div>
+                                    <picture class=img__i width=700px height=700px>
+                                        <source type=image/webp data-srcset=assets/img/webp/slider-6.webp>
+                                        <source type=image/jpeg data-srcset=assets/img/slider-6.jpg><img class="lazy lazyload" data-src=assets/img/slider-6.jpg alt="">
+                                    </picture>
+                                </div>
+                                <div class=infoblock-b__content>
+                                    <div class=infoblock-b__title>Белоярская АЭС</div>
+                                    <div class=infoblock-b__text>2012 г;</div>
+                                </div>
+                            </a></div>
+                        <div class="slider-a__slide swiper-slide"><a class=infoblock-b href=javascript:void(0)>
+                                <div class="infoblock-b__img img">
+                                    <div class=infoblock-b__overlay>
+                                        <div class="btn-icon-b btn-icon-b--border infoblock-b__overlay-button"><span class=btn-icon-b__text>подробнее</span><span class=btn-icon-b__circle><svg class=i-plus-a>
+                                                    <use xlink:href=#i-plus-a></use>
+                                                </svg></span></div>
+                                    </div>
+                                    <picture class=img__i width=700px height=700px>
+                                        <source type=image/webp data-srcset=assets/img/webp/slider-6.webp>
+                                        <source type=image/jpeg data-srcset=assets/img/slider-6.jpg><img class="lazy lazyload" data-src=assets/img/slider-6.jpg alt="">
+                                    </picture>
+                                </div>
+                                <div class=infoblock-b__content>
+                                    <div class=infoblock-b__title>Белоярская АЭС</div>
+                                    <div class=infoblock-b__text>2012 г;</div>
+                                </div>
+                            </a></div>
+                        <div class="slider-a__slide swiper-slide"><a class=infoblock-b href=javascript:void(0)>
+                                <div class="infoblock-b__img img">
+                                    <div class=infoblock-b__overlay>
+                                        <div class="btn-icon-b btn-icon-b--border infoblock-b__overlay-button"><span class=btn-icon-b__text>подробнее</span><span class=btn-icon-b__circle><svg class=i-plus-a>
+                                                    <use xlink:href=#i-plus-a></use>
+                                                </svg></span></div>
+                                    </div>
+                                    <picture class=img__i width=700px height=700px>
+                                        <source type=image/webp data-srcset=assets/img/webp/slider-6.webp>
+                                        <source type=image/jpeg data-srcset=assets/img/slider-6.jpg><img class="lazy lazyload" data-src=assets/img/slider-6.jpg alt="">
+                                    </picture>
+                                </div>
+                                <div class=infoblock-b__content>
+                                    <div class=infoblock-b__title>Белоярская АЭС</div>
+                                    <div class=infoblock-b__text>2012 г;</div>
+                                </div>
+                            </a></div>
+                    </div>
+                    <div class="slider-dots slider-a__dots slider-dots--blue slider-a__dots--only-phone"></div>
+                </div>
+                <div class=container--left>
+                    <h3 class="s-system__title s-system__title-other-solution">Другие РЕШЕНИЯ</h3>
+                </div>
+                <div class="slider-a swiper-container js-slider-a">
+                    <div class=slider-a__header>
+                        <h5 class="tag slider-a__title">Оборудование</h5><a class="btn-icon-b btn-icon-b--border slider-a__link" href=javascript:void(0)><span class=btn-icon-b__text>все оборудование</span><span class=btn-icon-b__circle><svg class=i-arrow-right-b>
+                                    <use xlink:href=#i-arrow-right-b></use>
+                                </svg></span></a>
+                    </div>
+                    <div class="slider-a__inner swiper-wrapper">
+                        <div class="slider-a__slide swiper-slide"><a class=infoblock-b href=javascript:void(0)>
+                                <div class="infoblock-b__img img">
+                                    <div class=infoblock-b__overlay>
+                                        <div class="btn-icon-b btn-icon-b--border infoblock-b__overlay-button"><span class=btn-icon-b__text>подробнее</span><span class=btn-icon-b__circle><svg class=i-plus-a>
+                                                    <use xlink:href=#i-plus-a></use>
+                                                </svg></span></div>
+                                    </div>
+                                    <picture class=img__i width=700px height=700px>
+                                        <source type=image/webp data-srcset=assets/img/webp/slider-7.webp>
+                                        <source type=image/jpeg data-srcset=assets/img/slider-7.jpg><img class="lazy lazyload" data-src=assets/img/slider-7.jpg alt="">
+                                    </picture>
+                                </div>
+                                <div class=infoblock-b__content>
+                                    <div class=infoblock-b__title>Аппаратура программно-технических средств АПТС «Онега»</div>
+                                </div>
+                            </a></div>
+                        <div class="slider-a__slide swiper-slide"><a class=infoblock-b href=javascript:void(0)>
+                                <div class="infoblock-b__img img">
+                                    <div class=infoblock-b__overlay>
+                                        <div class="btn-icon-b btn-icon-b--border infoblock-b__overlay-button"><span class=btn-icon-b__text>подробнее</span><span class=btn-icon-b__circle><svg class=i-plus-a>
+                                                    <use xlink:href=#i-plus-a></use>
+                                                </svg></span></div>
+                                    </div>
+                                    <picture class=img__i width=700px height=700px>
+                                        <source type=image/webp data-srcset=assets/img/webp/slider-8.webp>
+                                        <source type=image/jpeg data-srcset=assets/img/slider-8.jpg><img class="lazy lazyload" data-src=assets/img/slider-8.jpg alt="">
+                                    </picture>
+                                </div>
+                                <div class=infoblock-b__content>
+                                    <div class=infoblock-b__title>Распределительное токовое задвижное оборудование НКУ РТЗО </div>
+                                </div>
+                            </a></div>
+                        <div class="slider-a__slide swiper-slide"><a class=infoblock-b href=javascript:void(0)>
+                                <div class="infoblock-b__img img">
+                                    <div class=infoblock-b__overlay>
+                                        <div class="btn-icon-b btn-icon-b--border infoblock-b__overlay-button"><span class=btn-icon-b__text>подробнее</span><span class=btn-icon-b__circle><svg class=i-plus-a>
+                                                    <use xlink:href=#i-plus-a></use>
+                                                </svg></span></div>
+                                    </div>
+                                    <picture class=img__i width=700px height=700px>
+                                        <source type=image/webp data-srcset=assets/img/webp/slider-9.webp>
+                                        <source type=image/jpeg data-srcset=assets/img/slider-9.jpg><img class="lazy lazyload" data-src=assets/img/slider-9.jpg alt="">
+                                    </picture>
+                                </div>
+                                <div class=infoblock-b__content>
+                                    <div class=infoblock-b__title>Мозаичные диспетчерские щиты</div>
+                                </div>
+                            </a></div>
+                        <div class="slider-a__slide swiper-slide"><a class=infoblock-b href=javascript:void(0)>
+                                <div class="infoblock-b__img img">
+                                    <div class=infoblock-b__overlay>
+                                        <div class="btn-icon-b btn-icon-b--border infoblock-b__overlay-button"><span class=btn-icon-b__text>подробнее</span><span class=btn-icon-b__circle><svg class=i-plus-a>
+                                                    <use xlink:href=#i-plus-a></use>
+                                                </svg></span></div>
+                                    </div>
+                                    <picture class=img__i width=700px height=700px>
+                                        <source type=image/webp data-srcset=assets/img/webp/slider-9.webp>
+                                        <source type=image/jpeg data-srcset=assets/img/slider-9.jpg><img class="lazy lazyload" data-src=assets/img/slider-9.jpg alt="">
+                                    </picture>
+                                </div>
+                                <div class=infoblock-b__content>
+                                    <div class=infoblock-b__title>Мозаичные диспетчерские щиты</div>
+                                </div>
+                            </a></div>
+                        <div class="slider-a__slide swiper-slide"><a class=infoblock-b href=javascript:void(0)>
+                                <div class="infoblock-b__img img">
+                                    <div class=infoblock-b__overlay>
+                                        <div class="btn-icon-b btn-icon-b--border infoblock-b__overlay-button"><span class=btn-icon-b__text>подробнее</span><span class=btn-icon-b__circle><svg class=i-plus-a>
+                                                    <use xlink:href=#i-plus-a></use>
+                                                </svg></span></div>
+                                    </div>
+                                    <picture class=img__i width=700px height=700px>
+                                        <source type=image/webp data-srcset=assets/img/webp/slider-9.webp>
+                                        <source type=image/jpeg data-srcset=assets/img/slider-9.jpg><img class="lazy lazyload" data-src=assets/img/slider-9.jpg alt="">
+                                    </picture>
+                                </div>
+                                <div class=infoblock-b__content>
+                                    <div class=infoblock-b__title>Мозаичные диспетчерские щиты</div>
+                                </div>
+                            </a></div>
+                        <div class="slider-a__slide swiper-slide"><a class=infoblock-b href=javascript:void(0)>
+                                <div class="infoblock-b__img img">
+                                    <div class=infoblock-b__overlay>
+                                        <div class="btn-icon-b btn-icon-b--border infoblock-b__overlay-button"><span class=btn-icon-b__text>подробнее</span><span class=btn-icon-b__circle><svg class=i-plus-a>
+                                                    <use xlink:href=#i-plus-a></use>
+                                                </svg></span></div>
+                                    </div>
+                                    <picture class=img__i width=700px height=700px>
+                                        <source type=image/webp data-srcset=assets/img/webp/slider-9.webp>
+                                        <source type=image/jpeg data-srcset=assets/img/slider-9.jpg><img class="lazy lazyload" data-src=assets/img/slider-9.jpg alt="">
+                                    </picture>
+                                </div>
+                                <div class=infoblock-b__content>
+                                    <div class=infoblock-b__title>Мозаичные диспетчерские щиты</div>
+                                </div>
+                            </a></div>
+                    </div>
+                    <div class="slider-dots slider-a__dots slider-dots--blue slider-a__dots--only-phone"></div>
+                </div>
+                <div class="slider-a swiper-container js-slider-a">
+                    <div class=slider-a__header>
+                        <h5 class="tag slider-a__title">Системы</h5><a class="btn-icon-b btn-icon-b--border slider-a__link" href=javascript:void(0)><span class=btn-icon-b__text>все системы</span><span class=btn-icon-b__circle><svg class=i-arrow-right-b>
+                                    <use xlink:href=#i-arrow-right-b></use>
+                                </svg></span></a>
+                    </div>
+                    <div class="slider-a__inner swiper-wrapper">
+                        <div class="slider-a__slide swiper-slide"><a class=infoblock-b href=javascript:void(0)>
+                                <div class="infoblock-b__img img">
+                                    <div class=infoblock-b__overlay>
+                                        <div class="btn-icon-b btn-icon-b--border infoblock-b__overlay-button"><span class=btn-icon-b__text>подробнее</span><span class=btn-icon-b__circle><svg class=i-plus-a>
+                                                    <use xlink:href=#i-plus-a></use>
+                                                </svg></span></div>
+                                    </div>
+                                    <picture class=img__i width=700px height=700px>
+                                        <source type=image/webp data-srcset=assets/img/webp/slider-7.webp>
+                                        <source type=image/jpeg data-srcset=assets/img/slider-7.jpg><img class="lazy lazyload" data-src=assets/img/slider-7.jpg alt="">
+                                    </picture>
+                                </div>
+                                <div class=infoblock-b__content>
+                                    <div class=infoblock-b__title>Система автоматизированного управления дизель-генераторной установкой САУ ДГУ</div>
+                                </div>
+                            </a></div>
+                        <div class="slider-a__slide swiper-slide"><a class=infoblock-b href=javascript:void(0)>
+                                <div class="infoblock-b__img img">
+                                    <div class=infoblock-b__overlay>
+                                        <div class="btn-icon-b btn-icon-b--border infoblock-b__overlay-button"><span class=btn-icon-b__text>подробнее</span><span class=btn-icon-b__circle><svg class=i-plus-a>
+                                                    <use xlink:href=#i-plus-a></use>
+                                                </svg></span></div>
+                                    </div>
+                                    <picture class=img__i width=700px height=700px>
+                                        <source type=image/webp data-srcset=assets/img/webp/slider-8.webp>
+                                        <source type=image/jpeg data-srcset=assets/img/slider-8.jpg><img class="lazy lazyload" data-src=assets/img/slider-8.jpg alt="">
+                                    </picture>
+                                </div>
+                                <div class=infoblock-b__content>
+                                    <div class=infoblock-b__title>Система контроля и управления противопожарной защитой СКУ ПЗ</div>
+                                </div>
+                            </a></div>
+                        <div class="slider-a__slide swiper-slide"><a class=infoblock-b href=javascript:void(0)>
+                                <div class="infoblock-b__img img">
+                                    <div class=infoblock-b__overlay>
+                                        <div class="btn-icon-b btn-icon-b--border infoblock-b__overlay-button"><span class=btn-icon-b__text>подробнее</span><span class=btn-icon-b__circle><svg class=i-plus-a>
+                                                    <use xlink:href=#i-plus-a></use>
+                                                </svg></span></div>
+                                    </div>
+                                    <picture class=img__i width=700px height=700px>
+                                        <source type=image/webp data-srcset=assets/img/webp/slider-9.webp>
+                                        <source type=image/jpeg data-srcset=assets/img/slider-9.jpg><img class="lazy lazyload" data-src=assets/img/slider-9.jpg alt="">
+                                    </picture>
+                                </div>
+                                <div class=infoblock-b__content>
+                                    <div class=infoblock-b__title>Система контроля и управления электротехническим оборудованием СКУ ЭЧ</div>
+                                </div>
+                            </a></div>
+                        <div class="slider-a__slide swiper-slide"><a class=infoblock-b href=javascript:void(0)>
+                                <div class="infoblock-b__img img">
+                                    <div class=infoblock-b__overlay>
+                                        <div class="btn-icon-b btn-icon-b--border infoblock-b__overlay-button"><span class=btn-icon-b__text>подробнее</span><span class=btn-icon-b__circle><svg class=i-plus-a>
+                                                    <use xlink:href=#i-plus-a></use>
+                                                </svg></span></div>
+                                    </div>
+                                    <picture class=img__i width=700px height=700px>
+                                        <source type=image/webp data-srcset=assets/img/webp/slider-9.webp>
+                                        <source type=image/jpeg data-srcset=assets/img/slider-9.jpg><img class="lazy lazyload" data-src=assets/img/slider-9.jpg alt="">
+                                    </picture>
+                                </div>
+                                <div class=infoblock-b__content>
+                                    <div class=infoblock-b__title>Мозаичные диспетчерские щиты</div>
+                                </div>
+                            </a></div>
+                        <div class="slider-a__slide swiper-slide"><a class=infoblock-b href=javascript:void(0)>
+                                <div class="infoblock-b__img img">
+                                    <div class=infoblock-b__overlay>
+                                        <div class="btn-icon-b btn-icon-b--border infoblock-b__overlay-button"><span class=btn-icon-b__text>подробнее</span><span class=btn-icon-b__circle><svg class=i-plus-a>
+                                                    <use xlink:href=#i-plus-a></use>
+                                                </svg></span></div>
+                                    </div>
+                                    <picture class=img__i width=700px height=700px>
+                                        <source type=image/webp data-srcset=assets/img/webp/slider-9.webp>
+                                        <source type=image/jpeg data-srcset=assets/img/slider-9.jpg><img class="lazy lazyload" data-src=assets/img/slider-9.jpg alt="">
+                                    </picture>
+                                </div>
+                                <div class=infoblock-b__content>
+                                    <div class=infoblock-b__title>Мозаичные диспетчерские щиты</div>
+                                </div>
+                            </a></div>
+                        <div class="slider-a__slide swiper-slide"><a class=infoblock-b href=javascript:void(0)>
+                                <div class="infoblock-b__img img">
+                                    <div class=infoblock-b__overlay>
+                                        <div class="btn-icon-b btn-icon-b--border infoblock-b__overlay-button"><span class=btn-icon-b__text>подробнее</span><span class=btn-icon-b__circle><svg class=i-plus-a>
+                                                    <use xlink:href=#i-plus-a></use>
+                                                </svg></span></div>
+                                    </div>
+                                    <picture class=img__i width=700px height=700px>
+                                        <source type=image/webp data-srcset=assets/img/webp/slider-9.webp>
+                                        <source type=image/jpeg data-srcset=assets/img/slider-9.jpg><img class="lazy lazyload" data-src=assets/img/slider-9.jpg alt="">
+                                    </picture>
+                                </div>
+                                <div class=infoblock-b__content>
+                                    <div class=infoblock-b__title>Мозаичные диспетчерские щиты</div>
+                                </div>
+                            </a></div>
+                    </div>
+                    <div class="slider-dots slider-a__dots slider-dots--blue slider-a__dots--only-phone"></div>
+                </div>
+            </section>
+            <section class="s-consult-form container--left">
+                <div class=s-consult-form__aside>
+                    <h3 class=s-consult-form__title>Узнать подробности</h3>
+                    <div class=s-consult-form__subtitle>Проконсультируем и подготовим коммерческое предложение</div>
+                </div>
+                <form class="form s-consult-form__form check-inputs-container" action=#><input type=hidden value="Главный стилист бренда"><input class=is-required type=text placeholder=Имя><input class=is-required type=email value="" placeholder=Email><input class="is-required tel-mask-on" type=text placeholder="+7 (_ _ _) _ _ _ - _ _ - _ _"><input class=is-required placeholder=Комментарий>
+                    <div class=form__footer><button class="btn-icon btn-icon--border form__button check-inputs-btn"><span class=btn-icon__circle><svg class=i-arrow-right-a>
+                                    <use xlink:href=#i-arrow-right-a></use>
+                                </svg></span><span class=btn-icon__text>Отправить сообщение</span></button>
+                        <p class=personal-agreement><input type=checkbox><span>Нажав на кнопку, вы соглашаетесь на обработку<a href=javascript:void(0)> персональных данных</a></span></p>
+                    </div>
+                </form>
+            </section>
+        </main>
+        <footer class=footer>
+            <div class="footer__top container--full"><a class=footer__logo href=index.html><img src=assets/img/svg/logo.svg></a>
+                <div class=footer__menu>
+                    <ul class="footer__menu-list footer__menu-list--socials">
+                        <li><a href=#>Facebook</a></li>
+                        <li><a href=#>Instagram</a></li>
+                        <li><a href=#>Telegram</a></li>
+                    </ul>
+                    <ul class=footer__menu-list>
+                        <li><a href=#>О компании</a></li>
+                        <li><a href=#>Продукция</a></li>
+                        <li><a href=#>Услуги</a></li>
+                    </ul>
+                    <ul class=footer__menu-list>
+                        <li><a href=#>Проекты</a></li>
+                        <li><a href=#>Новости</a></li>
+                    </ul>
+                    <ul class=footer__menu-list>
+                        <li>Контакты</li>
+                        <li><a class=color-gray href=tel:88123267877>+7 (812) 326 78 77</a></li>
+                        <li class=color-gray><a class=color-gray href=mailto:info@west-e.ru>info@west-e.ru</a></li>
+                    </ul>
+                    <ul class=footer__menu-list>
+                        <li>Адрес</li>
+                        <li class=color-gray>197341,<br>г. Санкт-Петербург,<br>Коломяжский пр., 27</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom container--full">
+                <p class=footer__copyright><span class=footer__copyright-top>2021 © ООО «Вест-Инжиниринг» Все права защищены.</span></p><span class=footer__production>Создание сайта<a class=footer__production-link href=https://its.agency/ target=_blank rel=nofollow> its.agency</a></span>
+            </div>
+        </footer>
+        <script type="text/javascript" src="/js/runtime.js"></script>
+        <script type="text/javascript" src="/js/vendors.js"></script>
+        <script type="text/javascript" src="/js/common.js"></script>
+        <script type="text/javascript" src="/js/system.js"></script>
+    </body>
+
+</html>
