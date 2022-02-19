@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="ru">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>ПринтПроф</title>
+    <meta name="description" content="template">
+    <meta name="keywords" content="template">
+    <meta name="robots" content="index, follow">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ffae4d7f-4819-420f-8a64-77a8cf78e2ba&amp;lang=ru_RU"></script>
+    <link href="/assets/css/main.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="scroll-page" data-scroll-container="">
+      <section class="modal modal--search modal--fullscreen" data-modal="search" data-file-src="./search-modal.html"><button class="modal__overlay" type="button" data-modal-close="search"></button>
+        <div class="modal__container">
+          <div class="modal__content"></div>
+        </div>
+      </section>
+      <section class="modal modal--message modal--center" data-modal="message"><button class="modal__overlay" type="button" data-modal-close="message"></button>
+        <div class="modal__container">
+          <div class="modal__content"><button class="modal-message__close-button" data-modal-close="message"><svg class="i-cross">
+                <use xlink:href="#i-cross"></use>
+              </svg></button>
+            <div class="modal-message__icon"><svg class="i-checked">
+                <use xlink:href="#i-checked"></use>
+              </svg></div>
+            <p class="modal-message__title">Спасибо, ваша заявка принята!</p>
+            <p class="modal-message__text">Наш специалист свяжется с вами в ближайшее время.</p>
+          </div>
+        </div>
+      </section>
+      <section class="modal modal--form modal--center" data-modal="form" data-file-src="./form-modal.html"><button class="modal__overlay" type="button" data-modal-close="form"></button>
+        <div class="modal__container">
+          <div class="modal__content"></div>
+        </div>
+      </section>
+      <header class="header js-toggle">
+        <div class="container header__inner">
+          <div class="header__mobile-container"><a class="logo" href="/"><img src="assets/img/svg/logo.svg" width="360px" height="52px"></a><a class="header__btn-search-mobile" href="#" data-modal-open="search">
+              <div class="header__btn-search-ico"><svg class="i-search">
+                  <use xlink:href="#i-search"></use>
+                </svg></div>
+              <div class="header__btn-search-cross"></div>
+            </a><button class="header__btn-burger js-toggle__btn"><span></span><span></span><span></span></button></div>
+          <div class="header__top"><a class="logo" href="/"><img src="assets/img/svg/logo.svg" width="360px" height="52px"></a>
+            <div class="header__contacts-wrapper"><button class="btn-icon btn-icon--stroke"><svg class="i-phone">
+                  <use xlink:href="#i-phone"></use>
+                </svg></button>
+              <div class="header__contacts">
+                <div class="header__contact"><span>Санкт-Петербург</span><a href="tel:+8126775573">(812) 677-55-73</a></div>
+                <div class="header__contact"><span>Москва</span><a href="tel:+8126775573">(812) 677-55-73</a></div>
+                <div class="header__contact"><span>Екатеринбург</span><a href="tel:+8126775573">(812) 677-55-73</a></div>
+                <div class="header__contact"><span>Калининград</span><a href="tel:+8126775573">(812) 677-55-73</a></div>
+              </div>
+            </div>
+            <div class="header__socials"><a class="social header__social" href=""><svg class="i-headhunter">
+                  <use xlink:href="#i-headhunter"></use>
+                </svg></a><a class="social header__social" href=""><svg class="i-instagram">
+                  <use xlink:href="#i-instagram"></use>
+                </svg></a><a class="social header__social" href=""><svg class="i-telegram">
+                  <use xlink:href="#i-telegram"></use>
+                </svg></a><a class="social header__social" href=""><svg class="i-youtube">
+                  <use xlink:href="#i-youtube"></use>
+                </svg></a><a href="javascript:void(0)"><button class="btn btn--small header__btn-lang-mobile"><span>ENG</span></button></a></div>
+            <div class="header__buttons-wrapper"><a class="btn-icon btn-icon--fill header__btn-search js-toggle__btn" href="#" data-modal-open="search"><svg class="i-search">
+                  <use xlink:href="#i-search"></use>
+                </svg></a><button class="btn btn--small header__btn-desktop"><span>Вход для клиентов</span><svg class="i-user">
+                  <use xlink:href="#i-user"></use>
+                </svg></button><a href="javascript:void(0)"><button class="btn btn--small header__btn-lang-desktop"><span>ENG</span></button></a></div>
+          </div>
+          <div class="header__bottom">
+            <ul class="nav">
+              <li class="nav__item"><a class="nav__link link--underline" href="products.html"><svg class="i-squares">
+                    <use xlink:href="#i-squares"></use>
+                  </svg><span>Продукция</span></a></li>
+              <li class="nav__item"><a class="nav__link link--underline" href="industry-solutions.html"><span>Отраслевые решения</span></a></li>
+              <li class="nav__item"><a class="nav__link link--underline" href="services.html"><span>Услуги</span></a></li>
+              <li class="nav__item"><a class="nav__link link--underline" href="production.html"><span>Производство</span></a></li>
+              <li class="nav__item"><a class="nav__link link--underline" href="documents.html"><span>Компания</span></a></li>
+              <li class="nav__item"><a class="nav__link link--underline" href="blog.html"><span>Блог</span></a></li>
+              <li class="nav__item"><a class="nav__link link--underline" href="products.html"><span>Контакты</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <section class="modal modal--cookie modal--popup" data-modal="cookie"><button class="modal__overlay" type="button" data-modal-close="cookie"></button>
+        <div class="modal__container">
+          <div class="modal__content">
+            <p class="t-h4 modal-cookie__title">Файлы cookie</p>
+            <p class="modal-cookie__text">Этот сайт использует файлы cookie для хранения данных. Продолжая использовать сайт, вы даете свое согласие на работу с этими файлами.</p><button class="btn btn--blue" data-modal-close="cookie"><span>Хорошо</span></button>
+          </div>
+        </div>
+      </section>
+      <main class="main--margin0" data-scroll-section="">
+        <script>
+          document.body.classList.add("main-page")
+        </script>
+        <section class="s-contact">
+          <div class="container">
+            <ul class="crumbs crumbs--default">
+              <li><a class="crumbs__link" href="/main.html">Главная</a></li>
+            </ul>
+            <div class="section-title">
+              <p class="section-title__text t-h1">Контактная информация</p>
+            </div>
+          </div>
+          <div class="contact-city nav s-contact__city">
+            <div class="contact-city__phones">
+              <p class="contact-city__city">Санкт-Петербург</p><a class="contact-city__phone" href="javascript:void(0)">8 (812) 677-55-73</a><a class="contact-city__phone" href="tel:88126772294">8 (812) 677-22-94<span>Факс</span></a><a class="contact-city__email" href="mailto:info@pkprintprof.ru">info@pkprintprof.ru</a>
+            </div>
+            <div class="contact-city__locations">
+              <div class="contact-city__location">
+                <div class="contact-city__location-icon"><svg class="i-location2">
+                    <use xlink:href="#i-location2"></use>
+                  </svg></div>
+                <div class="contact-city__location-content">
+                  <p class="contact-city__location-title" data-coords="59.932179,30.343117">Головной офис</p>
+                  <p class="contact-city__location-text">197022, Санкт-Петербург,</p>
+                  <p class="contact-city__location-text">пр. Чкаловский, д. 50, лит. А, оф. 420</p>
+                  <p class="contact-city__location-text">Часы работы: с 09.00 до 18.00</p>
+                </div>
+              </div>
+              <div class="contact-city__location">
+                <div class="contact-city__location-icon"><svg class="i-location2">
+                    <use xlink:href="#i-location2"></use>
+                  </svg></div>
+                <div class="contact-city__location-content">
+                  <p class="contact-city__location-title" data-coords="59.922179,30.345117">Головной офис</p>
+                  <p class="contact-city__location-text">197022, Санкт-Петербург,</p>
+                  <p class="contact-city__location-text">пр. Чкаловский, д. 50, лит. А, оф. 420</p>
+                  <p class="contact-city__location-text">Часы работы: с 09.00 до 18.00</p>
+                </div>
+              </div>
+            </div>
+            <div class="contact-city__map-container">
+              <div class="contact-city__info"><button class="contact-city__show-map-button is-active" data-tab-link="contact-city__map1" data-tab="1">Карта</button><button class="contact-city__show-map-button" data-tab-link="contact-city__map1" data-tab="2">Схема проезда к складу</button></div>
+              <div class="contact-city__img-wrapper">
+                <div class="contact-city__map open" data-tab-content="contact-city__map1" data-tab="1">
+                  <div class="contact-city__map-item contact-city__map-item" data-coords="[[&quot;59.922179&quot;,&quot;30.345117&quot;],[&quot;59.932179&quot;,&quot;30.343117&quot;]]" id="contact-city__map1"></div>
+                </div>
+                <div class="contact-city__scheme" data-tab-content="contact-city__map1" data-tab="2">
+                  <picture>
+                    <source type="image/webp" data-srcset="assets/img/webp/map.webp">
+                    <source type="image/jpeg" data-srcset="assets/img/undefined"><img class="lazy lazyload" data-src="assets/img/undefined" alt="" width="300px" height="300px">
+                  </picture>
+                  <p>1. Со стороны шоссе Революции по Рябовскому шоссе до г. Всеволожск, на перекрёстке с Колтушским шоссе направо, через ж/ж переезд до 1-го светофора (микрорайон Южный)</p>
+                  <p>2. Со ст. м. "Ладожская" по пр. Косыгина в сторону КАД, прямо по главной дороге; после п. Колтуши на светофоре налево, прямо по главной дороге до АЗС NESTE (см. схему) и на светофоре направо.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-city nav s-contact__city">
+            <div class="contact-city__phones">
+              <p class="contact-city__city">Москва</p><a class="contact-city__phone" href="javascript:void(0)">8 (812) 677-55-73</a><a class="contact-city__phone" href="tel:88126772294">8 (812) 677-22-94<span>Факс</span></a><a class="contact-city__email" href="mailto:info@pkprintprof.ru">info@pkprintprof.ru</a>
+            </div>
+            <div class="contact-city__locations">
+              <div class="contact-city__location">
+                <div class="contact-city__location-icon"><svg class="i-location2">
+                    <use xlink:href="#i-location2"></use>
+                  </svg></div>
+                <div class="contact-city__location-content">
+                  <p class="contact-city__location-title" data-coords="59.932179,30.343117">Головной офис</p>
+                  <p class="contact-city__location-text">197022, Санкт-Петербург,</p>
+                  <p class="contact-city__location-text">пр. Чкаловский, д. 50, лит. А, оф. 420</p>
+                  <p class="contact-city__location-text">Часы работы: с 09.00 до 18.00</p>
+                </div>
+              </div>
+              <div class="contact-city__location">
+                <div class="contact-city__location-icon"><svg class="i-location2">
+                    <use xlink:href="#i-location2"></use>
+                  </svg></div>
+                <div class="contact-city__location-content">
+                  <p class="contact-city__location-title" data-coords="59.922179,30.345117">Головной офис</p>
+                  <p class="contact-city__location-text">197022, Санкт-Петербург,</p>
+                  <p class="contact-city__location-text">пр. Чкаловский, д. 50, лит. А, оф. 420</p>
+                  <p class="contact-city__location-text">Часы работы: с 09.00 до 18.00</p>
+                </div>
+              </div>
+            </div>
+            <div class="contact-city__map-container">
+              <div class="contact-city__info"><button class="contact-city__show-map-button is-active" data-tab-link="contact-city__map2" data-tab="1">Карта</button><button class="contact-city__show-map-button" data-tab-link="contact-city__map2" data-tab="2">Схема проезда к складу</button></div>
+              <div class="contact-city__img-wrapper">
+                <div class="contact-city__map open" data-tab-content="contact-city__map2" data-tab="1">
+                  <div class="contact-city__map-item contact-city__map-item" data-coords="[[&quot;59.922179&quot;,&quot;30.345117&quot;],[&quot;59.932179&quot;,&quot;30.343117&quot;]]" id="contact-city__map2"></div>
+                </div>
+                <div class="contact-city__scheme" data-tab-content="contact-city__map2" data-tab="2">
+                  <picture>
+                    <source type="image/webp" data-srcset="assets/img/webp/map.webp">
+                    <source type="image/jpeg" data-srcset="assets/img/undefined"><img class="lazy lazyload" data-src="assets/img/undefined" alt="" width="300px" height="300px">
+                  </picture>
+                  <p>1. Со стороны шоссе Революции по Рябовскому шоссе до г. Всеволожск, на перекрёстке с Колтушским шоссе направо, через ж/ж переезд до 1-го светофора (микрорайон Южный)</p>
+                  <p>2. Со ст. м. "Ладожская" по пр. Косыгина в сторону КАД, прямо по главной дороге; после п. Колтуши на светофоре налево, прямо по главной дороге до АЗС NESTE (см. схему) и на светофоре направо.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-city nav s-contact__city">
+            <div class="contact-city__phones">
+              <p class="contact-city__city">Екатеринбург</p><a class="contact-city__phone" href="javascript:void(0)">8 (812) 677-55-73</a><a class="contact-city__phone" href="tel:88126772294">8 (812) 677-22-94<span>Факс</span></a><a class="contact-city__email" href="mailto:info@pkprintprof.ru">info@pkprintprof.ru</a>
+            </div>
+            <div class="contact-city__locations">
+              <div class="contact-city__location">
+                <div class="contact-city__location-icon"><svg class="i-location2">
+                    <use xlink:href="#i-location2"></use>
+                  </svg></div>
+                <div class="contact-city__location-content">
+                  <p class="contact-city__location-title" data-coords="59.932179,30.343117">Головной офис</p>
+                  <p class="contact-city__location-text">197022, Санкт-Петербург,</p>
+                  <p class="contact-city__location-text">пр. Чкаловский, д. 50, лит. А, оф. 420</p>
+                  <p class="contact-city__location-text">Часы работы: с 09.00 до 18.00</p>
+                </div>
+              </div>
+              <div class="contact-city__location">
+                <div class="contact-city__location-icon"><svg class="i-location2">
+                    <use xlink:href="#i-location2"></use>
+                  </svg></div>
+                <div class="contact-city__location-content">
+                  <p class="contact-city__location-title" data-coords="59.922179,30.345117">Головной офис</p>
+                  <p class="contact-city__location-text">197022, Санкт-Петербург,</p>
+                  <p class="contact-city__location-text">пр. Чкаловский, д. 50, лит. А, оф. 420</p>
+                  <p class="contact-city__location-text">Часы работы: с 09.00 до 18.00</p>
+                </div>
+              </div>
+            </div>
+            <div class="contact-city__map-container">
+              <div class="contact-city__info"><button class="contact-city__show-map-button is-active" data-tab-link="contact-city__map3" data-tab="1">Карта</button><button class="contact-city__show-map-button" data-tab-link="contact-city__map3" data-tab="2">Схема проезда к складу</button></div>
+              <div class="contact-city__img-wrapper">
+                <div class="contact-city__map open" data-tab-content="contact-city__map3" data-tab="1">
+                  <div class="contact-city__map-item contact-city__map-item" data-coords="[[&quot;59.922179&quot;,&quot;30.345117&quot;],[&quot;59.932179&quot;,&quot;30.343117&quot;]]" id="contact-city__map3"></div>
+                </div>
+                <div class="contact-city__scheme" data-tab-content="contact-city__map3" data-tab="2">
+                  <picture>
+                    <source type="image/webp" data-srcset="assets/img/webp/map.webp">
+                    <source type="image/jpeg" data-srcset="assets/img/undefined"><img class="lazy lazyload" data-src="assets/img/undefined" alt="" width="300px" height="300px">
+                  </picture>
+                  <p>1. Со стороны шоссе Революции по Рябовскому шоссе до г. Всеволожск, на перекрёстке с Колтушским шоссе направо, через ж/ж переезд до 1-го светофора (микрорайон Южный)</p>
+                  <p>2. Со ст. м. "Ладожская" по пр. Косыгина в сторону КАД, прямо по главной дороге; после п. Колтуши на светофоре налево, прямо по главной дороге до АЗС NESTE (см. схему) и на светофоре направо.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-city nav s-contact__city">
+            <div class="contact-city__phones">
+              <p class="contact-city__city">Калининград</p><a class="contact-city__phone" href="javascript:void(0)">8 (812) 677-55-73</a><a class="contact-city__phone" href="tel:88126772294">8 (812) 677-22-94<span>Факс</span></a><a class="contact-city__email" href="mailto:info@pkprintprof.ru">info@pkprintprof.ru</a>
+            </div>
+            <div class="contact-city__locations">
+              <div class="contact-city__location">
+                <div class="contact-city__location-icon"><svg class="i-location2">
+                    <use xlink:href="#i-location2"></use>
+                  </svg></div>
+                <div class="contact-city__location-content">
+                  <p class="contact-city__location-title" data-coords="59.932179,30.343117">Головной офис</p>
+                  <p class="contact-city__location-text">197022, Санкт-Петербург,</p>
+                  <p class="contact-city__location-text">пр. Чкаловский, д. 50, лит. А, оф. 420</p>
+                  <p class="contact-city__location-text">Часы работы: с 09.00 до 18.00</p>
+                </div>
+              </div>
+              <div class="contact-city__location">
+                <div class="contact-city__location-icon"><svg class="i-location2">
+                    <use xlink:href="#i-location2"></use>
+                  </svg></div>
+                <div class="contact-city__location-content">
+                  <p class="contact-city__location-title" data-coords="59.922179,30.345117">Головной офис</p>
+                  <p class="contact-city__location-text">197022, Санкт-Петербург,</p>
+                  <p class="contact-city__location-text">пр. Чкаловский, д. 50, лит. А, оф. 420</p>
+                  <p class="contact-city__location-text">Часы работы: с 09.00 до 18.00</p>
+                </div>
+              </div>
+            </div>
+            <div class="contact-city__map-container">
+              <div class="contact-city__info"><button class="contact-city__show-map-button is-active" data-tab-link="contact-city__map4" data-tab="1">Карта</button><button class="contact-city__show-map-button" data-tab-link="contact-city__map4" data-tab="2">Схема проезда к складу</button></div>
+              <div class="contact-city__img-wrapper">
+                <div class="contact-city__map open" data-tab-content="contact-city__map4" data-tab="1">
+                  <div class="contact-city__map-item contact-city__map-item" data-coords="[[&quot;59.922179&quot;,&quot;30.345117&quot;],[&quot;59.932179&quot;,&quot;30.343117&quot;]]" id="contact-city__map4"></div>
+                </div>
+                <div class="contact-city__scheme" data-tab-content="contact-city__map4" data-tab="2">
+                  <picture>
+                    <source type="image/webp" data-srcset="assets/img/webp/map.webp">
+                    <source type="image/jpeg" data-srcset="assets/img/undefined"><img class="lazy lazyload" data-src="assets/img/undefined" alt="" width="300px" height="300px">
+                  </picture>
+                  <p>1. Со стороны шоссе Революции по Рябовскому шоссе до г. Всеволожск, на перекрёстке с Колтушским шоссе направо, через ж/ж переезд до 1-го светофора (микрорайон Южный)</p>
+                  <p>2. Со ст. м. "Ладожская" по пр. Косыгина в сторону КАД, прямо по главной дороге; после п. Колтуши на светофоре налево, прямо по главной дороге до АЗС NESTE (см. схему) и на светофоре направо.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <footer class="footer footer--contact">
+          <div class="footer__top container">
+            <h2 class="t-h1">Обратная связь</h2>
+            <div class="footer__top-inner">
+              <form class="footer__form" action="" method="POST"><input name="name" placeholder="Ваше имя"><input name="company" placeholder="Компания"><input name="tel" placeholder="Телефон или e-mail"><input name="message" placeholder="Сообщение">
+                <div class="footer__form-row"><span class="footer__form-text">Нажав на кнопку, вы соглашаетесь<br>на обработку<a href="#">персональных данных</a></span><button class="btn btn--red btn--stroke"><span>Отправить сообщение</span></button></div>
+              </form>
+            </div>
+          </div>
+          <div class="footer__bottom container">
+            <div class="footer__copyright"><span>2021 © ООО «ПК ПринтПроф» Все права защищены.</span><a href="javascript:void(0)">Политика конфиденциальности</a></div><span>Создание сайта<a href="https://its.agency" target="_blank">its.agency</a></span>
+          </div>
+        </footer>
+      </main>
+    </div>
+    <script src="/assets/js/vendors.js"></script>
+    <script src="/assets/js/main.js"></script>
+  </body>
+
+</html>

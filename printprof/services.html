@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ru">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>ПринтПроф</title>
+    <meta name="description" content="template">
+    <meta name="keywords" content="template">
+    <meta name="robots" content="index, follow">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ffae4d7f-4819-420f-8a64-77a8cf78e2ba&amp;lang=ru_RU"></script>
+    <link href="/assets/css/main.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="scroll-page" data-scroll-container="">
+      <section class="modal modal--search modal--fullscreen" data-modal="search" data-file-src="./search-modal.html"><button class="modal__overlay" type="button" data-modal-close="search"></button>
+        <div class="modal__container">
+          <div class="modal__content"></div>
+        </div>
+      </section>
+      <section class="modal modal--message modal--center" data-modal="message"><button class="modal__overlay" type="button" data-modal-close="message"></button>
+        <div class="modal__container">
+          <div class="modal__content"><button class="modal-message__close-button" data-modal-close="message"><svg class="i-cross">
+                <use xlink:href="#i-cross"></use>
+              </svg></button>
+            <div class="modal-message__icon"><svg class="i-checked">
+                <use xlink:href="#i-checked"></use>
+              </svg></div>
+            <p class="modal-message__title">Спасибо, ваша заявка принята!</p>
+            <p class="modal-message__text">Наш специалист свяжется с вами в ближайшее время.</p>
+          </div>
+        </div>
+      </section>
+      <section class="modal modal--form modal--center" data-modal="form" data-file-src="./form-modal.html"><button class="modal__overlay" type="button" data-modal-close="form"></button>
+        <div class="modal__container">
+          <div class="modal__content"></div>
+        </div>
+      </section>
+      <header class="header js-toggle">
+        <div class="container header__inner">
+          <div class="header__mobile-container"><a class="logo" href="/"><img src="assets/img/svg/logo.svg" width="360px" height="52px"></a><a class="header__btn-search-mobile" href="#" data-modal-open="search">
+              <div class="header__btn-search-ico"><svg class="i-search">
+                  <use xlink:href="#i-search"></use>
+                </svg></div>
+              <div class="header__btn-search-cross"></div>
+            </a><button class="header__btn-burger js-toggle__btn"><span></span><span></span><span></span></button></div>
+          <div class="header__top"><a class="logo" href="/"><img src="assets/img/svg/logo.svg" width="360px" height="52px"></a>
+            <div class="header__contacts-wrapper"><button class="btn-icon btn-icon--stroke"><svg class="i-phone">
+                  <use xlink:href="#i-phone"></use>
+                </svg></button>
+              <div class="header__contacts">
+                <div class="header__contact"><span>Санкт-Петербург</span><a href="tel:+8126775573">(812) 677-55-73</a></div>
+                <div class="header__contact"><span>Москва</span><a href="tel:+8126775573">(812) 677-55-73</a></div>
+                <div class="header__contact"><span>Екатеринбург</span><a href="tel:+8126775573">(812) 677-55-73</a></div>
+                <div class="header__contact"><span>Калининград</span><a href="tel:+8126775573">(812) 677-55-73</a></div>
+              </div>
+            </div>
+            <div class="header__socials"><a class="social header__social" href=""><svg class="i-headhunter">
+                  <use xlink:href="#i-headhunter"></use>
+                </svg></a><a class="social header__social" href=""><svg class="i-instagram">
+                  <use xlink:href="#i-instagram"></use>
+                </svg></a><a class="social header__social" href=""><svg class="i-telegram">
+                  <use xlink:href="#i-telegram"></use>
+                </svg></a><a class="social header__social" href=""><svg class="i-youtube">
+                  <use xlink:href="#i-youtube"></use>
+                </svg></a><a href="javascript:void(0)"><button class="btn btn--small header__btn-lang-mobile"><span>ENG</span></button></a></div>
+            <div class="header__buttons-wrapper"><a class="btn-icon btn-icon--fill header__btn-search js-toggle__btn" href="#" data-modal-open="search"><svg class="i-search">
+                  <use xlink:href="#i-search"></use>
+                </svg></a><button class="btn btn--small header__btn-desktop"><span>Вход для клиентов</span><svg class="i-user">
+                  <use xlink:href="#i-user"></use>
+                </svg></button><a href="javascript:void(0)"><button class="btn btn--small header__btn-lang-desktop"><span>ENG</span></button></a></div>
+          </div>
+          <div class="header__bottom">
+            <ul class="nav">
+              <li class="nav__item"><a class="nav__link link--underline" href="products.html"><svg class="i-squares">
+                    <use xlink:href="#i-squares"></use>
+                  </svg><span>Продукция</span></a></li>
+              <li class="nav__item"><a class="nav__link link--underline is-active" href="industry-solutions.html"><span>Отраслевые решения</span></a></li>
+              <li class="nav__item"><a class="nav__link link--underline" href="services.html"><span>Услуги</span></a></li>
+              <li class="nav__item"><a class="nav__link link--underline" href="production.html"><span>Производство</span></a></li>
+              <li class="nav__item"><a class="nav__link link--underline" href="documents.html"><span>Компания</span></a></li>
+              <li class="nav__item"><a class="nav__link link--underline" href="blog.html"><span>Блог</span></a></li>
+              <li class="nav__item"><a class="nav__link link--underline" href="products.html"><span>Контакты</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <section class="modal modal--cookie modal--popup" data-modal="cookie"><button class="modal__overlay" type="button" data-modal-close="cookie"></button>
+        <div class="modal__container">
+          <div class="modal__content">
+            <p class="t-h4 modal-cookie__title">Файлы cookie</p>
+            <p class="modal-cookie__text">Этот сайт использует файлы cookie для хранения данных. Продолжая использовать сайт, вы даете свое согласие на работу с этими файлами.</p><button class="btn btn--blue" data-modal-close="cookie"><span>Хорошо</span></button>
+          </div>
+        </div>
+      </section>
+      <main data-scroll-section="">
+        <script>
+          document.body.classList.add("main-page")
+        </script>
+        <section class="s-services">
+          <div class="container">
+            <ul class="crumbs crumbs--default">
+              <li><a class="crumbs__link" href="/main.html">Главная</a></li>
+            </ul>
+            <div class="s-services__title">
+              <div class="section-title">
+                <p class="section-title__text t-h1">Услуги</p>
+              </div>
+            </div>
+            <div class="services-list"><a class="service" href="/service.html"><span class="service__title">Консультирование</span>
+                <div class="service__content">
+                  <div class="service__content-left"><span class="service__text">Мы обладаем собственным производством и можем предложить этикеточную или упаковочную продукцию без посреднических наценок</span>
+                    <div class="service__button"><svg class="i-arrow-link">
+                        <use xlink:href="#i-arrow-link"></use>
+                      </svg></div>
+                  </div>
+                  <div class="service__content-right">
+                    <div class="icon-bg"><svg class="i-conversation">
+                        <use xlink:href="#i-conversation"></use>
+                      </svg></div>
+                  </div>
+                </div>
+              </a><a class="service" href="/service.html"><span class="service__title">Дизайн</span>
+                <div class="service__content">
+                  <div class="service__content-left"><span class="service__text">Типография имеет возможность оперативно изготавливать тиражи этикеточной или упаковочной продукции точно в срок</span>
+                    <div class="service__button"><svg class="i-arrow-link">
+                        <use xlink:href="#i-arrow-link"></use>
+                      </svg></div>
+                  </div>
+                  <div class="service__content-right">
+                    <div class="icon-bg"><svg class="i-graphic-design">
+                        <use xlink:href="#i-graphic-design"></use>
+                      </svg></div>
+                  </div>
+                </div>
+              </a><a class="service" href="/service.html"><span class="service__title">Подбор материалов</span>
+                <div class="service__content">
+                  <div class="service__content-left"><span class="service__text">Собственная техническая база позволяет нам в прогнозируемо короткие сроки производить как этикеточную, так и упаковочную продукцию</span>
+                    <div class="service__button"><svg class="i-arrow-link">
+                        <use xlink:href="#i-arrow-link"></use>
+                      </svg></div>
+                  </div>
+                  <div class="service__content-right">
+                    <div class="icon-bg"><svg class="i-union">
+                        <use xlink:href="#i-union"></use>
+                      </svg></div>
+                  </div>
+                </div>
+              </a><a class="service" href="/service.html"><span class="service__title">Печать и брендирование</span>
+                <div class="service__content">
+                  <div class="service__content-left"><span class="service__text">Принимаем заказы на печать самоклеющихся этикеток различнойсложности и тиража. Работаем с качественными нетоксичными материалами</span>
+                    <div class="service__button"><svg class="i-arrow-link">
+                        <use xlink:href="#i-arrow-link"></use>
+                      </svg></div>
+                  </div>
+                  <div class="service__content-right">
+                    <div class="icon-bg"><svg class="i-cmyk">
+                        <use xlink:href="#i-cmyk"></use>
+                      </svg></div>
+                  </div>
+                </div>
+              </a><a class="service" href="/service.html"><span class="service__title">Доставка</span>
+                <div class="service__content">
+                  <div class="service__content-left"><span class="service__text">Бесплатная доставка «до дверей» заказчика действует на крупные заказы, но даже при небольших тиражах ее стоимость будет минимальной.</span>
+                    <div class="service__button"><svg class="i-arrow-link">
+                        <use xlink:href="#i-arrow-link"></use>
+                      </svg></div>
+                  </div>
+                  <div class="service__content-right">
+                    <div class="icon-bg"><svg class="i-package">
+                        <use xlink:href="#i-package"></use>
+                      </svg></div>
+                  </div>
+                </div>
+              </a><a class="service" href="/service.html"><span class="service__title">Поставка расходников</span>
+                <div class="service__content">
+                  <div class="service__content-left"><span class="service__text">Для успешной реализации задач любой сложности мы предоставляющую возможность распечатать этикетки на самых разнообразных материалах</span>
+                    <div class="service__button"><svg class="i-arrow-link">
+                        <use xlink:href="#i-arrow-link"></use>
+                      </svg></div>
+                  </div>
+                  <div class="service__content-right">
+                    <div class="icon-bg"><svg class="i-offset">
+                        <use xlink:href="#i-offset"></use>
+                      </svg></div>
+                  </div>
+                </div>
+              </a></div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer" data-scroll-section="">
+        <div class="footer__top container">
+          <div class="footer__top-inner">
+            <h2 class="t-h1">Контакты</h2><svg class="footer__logo" xmlns="http://www.w3.org/2000/svg" width="466" height="72" viewbox="0 0 466 72" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M22.4738 18.3181H8.51639C8.04326 18.3181 7.80669 18.7863 7.80669 19.2545V58.3488C7.80669 58.5829 7.80669 58.817 8.04325 59.0511C8.27982 59.2852 8.51639 59.2852 8.51639 59.2852H40.2163C40.4529 59.2852 40.4529 58.5829 40.926 57.6465L41.6357 56.476L61.0341 22.5319C61.2707 22.2978 61.2707 21.3614 61.2707 20.1909C61.2707 19.4886 61.0341 18.7863 60.561 18.084L53.9371 7.78374C53.9371 7.78374 53.464 7.54964 53.2274 7.54964C52.7543 7.54964 52.5178 7.78374 52.2812 7.78374L27.6783 32.8322C27.4417 33.0663 27.4417 33.5345 27.4417 34.0027C27.4417 34.4708 27.6783 35.1731 27.9148 35.4072L39.0335 45.4734C43.7648 49.6872 40.926 56.2419 30.7536 56.7101C34.0656 53.4327 34.7753 51.7941 32.4096 49.6872L22.9469 41.0256C21.0544 39.3869 20.1081 36.5777 19.8716 34.0027C19.8716 31.4276 20.5813 28.8525 22.4738 26.9797L47.0767 2.3995C47.3133 2.1654 47.7864 1.69721 48.023 1.46311C49.679 0.292623 51.8081 -0.175573 53.7006 0.0585243C55.8297 0.0585243 57.9588 0.994914 59.3782 2.3995C59.6147 2.6336 59.8513 3.10179 60.0879 3.33589L66.9483 13.6362C68.3677 15.509 68.8408 17.6158 68.8408 19.7227C69.0774 22.766 67.8946 25.5751 67.4214 26.5115L48.023 60.4557L47.5499 61.3921C45.8939 64.4353 44.4745 67.0104 40.2163 67.0104H8.51639C6.15072 67.0104 4.02163 66.074 2.60223 64.4353C0.946262 62.7966 0 60.6898 0 58.3488V19.2545C0 14.5726 3.78506 10.5929 8.51639 10.5929H30.2805L22.4738 18.3181Z" fill="#FF6269"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M458.597 38.2377C459.441 40.3356 459.863 42.853 459.863 45.7901H459.441V46.2097C459.441 49.1467 459.019 51.2446 458.175 52.9229C457.331 54.6012 456.066 55.4404 453.956 55.4404H452.69L451.846 55.0208V35.7202L452.69 35.3006H453.956C456.066 35.3006 457.753 36.1398 458.597 38.2377ZM439.188 53.3425C438.345 51.6642 437.923 49.5663 437.923 46.6292H438.345C438.345 43.6922 438.766 41.1747 439.61 39.0768C440.454 36.9789 441.72 36.1398 443.83 36.1398H444.673H445.517V55.4404L444.673 55.86H443.408C441.298 55.86 440.032 55.0208 439.188 53.3425ZM434.125 34.4615C432.437 37.3985 431.594 41.1747 431.594 45.7901H431.172C431.172 49.9859 432.016 53.7621 433.703 56.2795C435.391 58.797 437.923 60.0557 441.298 60.0557H443.408C443.83 60.0557 444.673 60.0557 445.095 59.6362V71.8039L451.424 70.5452V59.6362C451.599 59.6362 451.774 59.7082 451.979 59.7925C452.268 59.9118 452.618 60.0557 453.112 60.0557H455.222C458.175 60.0557 461.129 58.797 462.817 56.2795C464.504 53.3425 465.348 49.9859 465.348 45.7901V45.3705C465.348 40.7551 464.504 36.9789 462.817 34.0419C461.129 31.1048 458.597 29.8461 455.222 29.8461C454.8 29.8461 454.483 29.951 454.167 30.0559C453.851 30.1608 453.534 30.2657 453.112 30.2657C452.901 30.4755 452.585 30.5804 452.268 30.6853C451.952 30.7902 451.635 30.8951 451.424 31.1048V18.0979L445.095 19.3566V31.1048C444.884 31.1048 444.568 30.9999 444.252 30.895C443.935 30.7901 443.619 30.6853 443.408 30.6853C442.986 30.2657 442.564 30.2657 441.72 30.2657C438.345 30.2657 435.813 31.5244 434.125 34.4615ZM124.804 60.8194H116.035V27.7478H101.837V60.8194H93.0684V20.5399H124.804V60.8194ZM143.681 44.7076H139.56V60.8194H130.905V20.5399H139.56V36.2277H142.445L151.1 20.5399H161.816L150.276 38.7717L162.64 60.8194H151.924L143.681 44.7076ZM200.194 60.8194H209.027V20.5399H178.512V60.8194H186.944V27.7478H200.194V60.8194ZM233.029 45.6584C233.029 43.1684 232.603 41.0934 231.751 39.8484C230.898 38.1884 230.046 37.7734 228.341 37.7734C227.915 37.7734 227.488 37.8771 227.062 37.9809C226.636 38.0846 226.21 38.1884 225.783 38.1884C224.931 38.6034 224.505 39.0184 224.078 39.8484V51.8834C224.179 51.9812 224.279 52.1021 224.385 52.2298L224.385 52.2299L224.386 52.2301L224.386 52.2303C224.73 52.644 225.132 53.1284 225.783 53.1284C226.636 53.5434 227.488 53.5434 228.341 53.5434C230.046 53.5434 230.898 52.7134 231.751 51.4684C232.603 50.2234 232.603 48.1484 232.603 46.0734V45.6584H233.029ZM241.98 46.0734C241.98 50.6384 241.128 53.9584 238.997 56.8634C237.292 59.3534 234.308 60.5984 230.898 60.5984C229.619 60.5984 228.341 60.1834 227.062 59.7684C225.783 59.3534 224.931 58.5234 224.078 57.2784V70.1435L215.127 71.8035V30.7183H223.652L224.078 34.0384C224.931 32.7934 225.783 31.9634 227.062 31.1334C228.341 30.7184 229.619 30.3033 230.898 30.3033C234.308 30.3033 237.292 31.5483 238.997 34.4534C241.128 37.3584 241.98 41.0934 241.98 45.2434V46.0734ZM271.276 30.3033H262.452L254.888 47.065H254.468V30.3033H245.643V60.8181H254.468L262.031 44.0565H262.452V60.8181H271.276V30.3033ZM301.79 60.8181H293.386V49.6437H286.182V60.8181H277.378V30.3033H286.182V42.3374H293.386V30.3033H301.79V60.8181ZM323.494 37.6097H331.046L332.305 30.3033H305.452V37.6097H314.263V60.8181H323.494V37.6097ZM366.483 60.8194H359.702V26.0518H342.749V60.8194H335.968V20.5399H366.483V60.8194ZM390.355 38.1103C391.596 40.1648 392.01 42.6301 392.01 45.5064V45.9173C392.01 48.7935 391.596 50.848 390.355 52.4915C389.113 54.1351 387.458 54.9569 385.39 54.9569C384.148 54.9569 382.907 54.546 382.08 54.1351C381.866 53.9228 381.652 53.7379 381.445 53.5592C380.852 53.0462 380.318 52.584 380.011 51.6698V38.5212C380.425 37.2885 381.252 36.4667 382.08 36.0558C382.907 35.645 384.148 35.2341 385.39 35.2341C387.872 35.2341 389.113 36.0558 390.355 38.1103ZM395.32 56.6005C397.389 53.7242 398.216 50.4371 398.216 46.3282V45.5064C398.216 40.9866 397.389 37.2885 395.32 34.4123C393.665 31.536 390.769 30.3033 387.458 30.3033C385.803 30.3033 384.148 30.7142 382.907 31.536C381.666 32.3578 380.424 33.5905 379.597 34.8232L378.769 31.1251H373.804V71.8035L380.011 70.5708V57.0114C381.252 58.244 382.08 59.0658 383.321 59.4767C384.562 59.8876 385.803 60.2985 387.458 60.2985C390.769 60.2985 393.251 59.0658 395.32 56.6005ZM408.081 45.7698C408.081 48.6958 408.494 50.7859 409.734 52.8759C410.975 54.548 412.628 55.384 414.696 55.384C416.763 55.384 418.416 54.548 419.657 52.8759C420.897 51.2039 421.31 48.6958 421.31 45.7698V45.3517C421.31 42.4257 420.897 40.3356 419.657 38.6636C418.416 36.9915 416.763 35.7375 414.696 35.7375C412.628 35.7375 410.975 36.5735 409.734 38.6636C408.494 40.3356 408.081 42.8437 408.081 45.3517V45.7698ZM401.879 45.3517C401.879 41.1716 403.12 37.4095 405.187 34.4835C407.667 31.5574 410.561 30.3033 414.696 30.3033C418.83 30.3033 421.724 31.5574 424.204 34.4835C426.685 37.4095 427.512 40.7536 427.512 45.3517V45.7698C427.512 49.9499 426.272 53.712 424.204 56.638C422.137 59.5641 418.83 60.8181 414.696 60.8181C410.561 60.8181 407.667 59.5641 405.187 56.638C403.12 53.712 401.879 50.3679 401.879 45.7698V45.3517Z" fill="#33468A"></path>
+            </svg>
+          </div>
+          <div class="footer__top-inner">
+            <div class="footer__tab-block">
+              <div class="footer__tab-links"><button class="footer__tab-link is-active" data-tab-link="city" data-tab="1">Санкт-Петербург</button><button class="footer__tab-link" data-tab-link="city" data-tab="2">Москва</button><button class="footer__tab-link" data-tab-link="city" data-tab="3">Екатеринбург</button><button class="footer__tab-link" data-tab-link="city" data-tab="4">Калининград</button></div>
+              <div class="footer__tab-contents">
+                <div class="footer__tab-content open" data-tab-content="city" data-tab="1"><a class="footer__tab-content-tel" href="tel:+88126775573">8 (812) 677-55-73</a><a class="footer__tab-content-mail" href="mailto:info@pkprintprof.ru">info@pkprintprof.ru</a>
+                  <div class="footer__tab-content-text"><span>197022, Санкт-Петербург,<br>пр. Чкаловский, д.50, лит.А, оф.420</span><span>Часы работы: с 09.00 до 18.00</span></div>
+                  <div class="footer__socials"><a class="social footer__social" href=""><svg class="i-instagram">
+                        <use xlink:href="#i-instagram"></use>
+                      </svg></a><a class="social footer__social" href=""><svg class="i-telegram">
+                        <use xlink:href="#i-telegram"></use>
+                      </svg></a><a class="social footer__social" href=""><svg class="i-youtube">
+                        <use xlink:href="#i-youtube"></use>
+                      </svg></a></div>
+                </div>
+                <div class="footer__tab-content" data-tab-content="city" data-tab="2"><a class="footer__tab-content-tel" href="tel:+88126775573">8 (812) 677-55-74</a><a class="footer__tab-content-mail" href="mailto:info@pkprintprof.ru">info@pkprintprof.ru</a>
+                  <div class="footer__tab-content-text"><span>197022, Санкт-Петербург,<br>пр. Чкаловский, д.50, лит.А, оф.420</span><span>Часы работы: с 09.00 до 18.00</span></div>
+                  <div class="footer__socials"><a class="social footer__social" href=""><svg class="i-instagram">
+                        <use xlink:href="#i-instagram"></use>
+                      </svg></a><a class="social footer__social" href=""><svg class="i-telegram">
+                        <use xlink:href="#i-telegram"></use>
+                      </svg></a><a class="social footer__social" href=""><svg class="i-youtube">
+                        <use xlink:href="#i-youtube"></use>
+                      </svg></a></div>
+                </div>
+                <div class="footer__tab-content" data-tab-content="city" data-tab="3"><a class="footer__tab-content-tel" href="tel:+88126775573">8 (812) 677-55-75</a><a class="footer__tab-content-mail" href="mailto:info@pkprintprof.ru">info@pkprintprof.ru</a>
+                  <div class="footer__tab-content-text"><span>197022, Санкт-Петербург,<br>пр. Чкаловский, д.50, лит.А, оф.420</span><span>Часы работы: с 09.00 до 18.00</span></div>
+                  <div class="footer__socials"><a class="social footer__social" href=""><svg class="i-instagram">
+                        <use xlink:href="#i-instagram"></use>
+                      </svg></a><a class="social footer__social" href=""><svg class="i-telegram">
+                        <use xlink:href="#i-telegram"></use>
+                      </svg></a><a class="social footer__social" href=""><svg class="i-youtube">
+                        <use xlink:href="#i-youtube"></use>
+                      </svg></a></div>
+                </div>
+                <div class="footer__tab-content" data-tab-content="city" data-tab="4"><a class="footer__tab-content-tel" href="tel:+88126775573">8 (812) 677-55-76</a><a class="footer__tab-content-mail" href="mailto:info@pkprintprof.ru">info@pkprintprof.ru</a>
+                  <div class="footer__tab-content-text"><span>197022, Санкт-Петербург,<br>пр. Чкаловский, д.50, лит.А, оф.420</span><span>Часы работы: с 09.00 до 18.00</span></div>
+                  <div class="footer__socials"><a class="social footer__social" href=""><svg class="i-instagram">
+                        <use xlink:href="#i-instagram"></use>
+                      </svg></a><a class="social footer__social" href=""><svg class="i-telegram">
+                        <use xlink:href="#i-telegram"></use>
+                      </svg></a><a class="social footer__social" href=""><svg class="i-youtube">
+                        <use xlink:href="#i-youtube"></use>
+                      </svg></a></div>
+                </div>
+              </div>
+            </div>
+            <form class="footer__form" action="" method="POST"><input name="name" placeholder="Ваше имя"><input name="company" placeholder="Компания"><input name="tel" placeholder="Телефон или e-mail"><input name="message" placeholder="Сообщение">
+              <div class="footer__form-row"><span class="footer__form-text">Нажав на кнопку, вы соглашаетесь<br>на обработку&nbsp;<a href="#">персональных данных</a></span><button class="btn btn--red btn--stroke"><span>Отправить сообщение</span></button></div>
+            </form>
+          </div>
+        </div>
+        <div class="footer__bottom container">
+          <div class="footer__copyright"><span>2021 © ООО «ПК ПринтПроф» Все права защищены.</span><a href="javascript:void(0)">Политика конфиденциальности</a></div><span>Создание сайта&nbsp;<a href="https://its.agency" target="_blank">— its.agency</a></span>
+        </div>
+      </footer>
+    </div>
+    <script src="/assets/js/vendors.js"></script>
+    <script src="/assets/js/main.js"></script>
+  </body>
+
+</html>
