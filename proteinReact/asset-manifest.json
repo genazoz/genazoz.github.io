@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/react-protein/static/css/main.c90a7398.css",
+    "main.js": "/react-protein/static/js/main.eab94c49.js",
+    "static/media/fa-light-300.svg": "/react-protein/static/media/fa-light-300.3f4e749ed60bf505ac85.svg",
+    "static/media/fa-regular-400.svg": "/react-protein/static/media/fa-regular-400.3b67150e3dfa82edca77.svg",
+    "static/media/fa-solid-900.svg": "/react-protein/static/media/fa-solid-900.5aab07fd55d2891b4c97.svg",
+    "static/media/fa-brands-400.svg": "/react-protein/static/media/fa-brands-400.ae1ddd148121fade5a0d.svg",
+    "static/media/fa-light-300.eot": "/react-protein/static/media/fa-light-300.85719d9f9968077312dd.eot",
+    "static/media/fa-light-300.ttf": "/react-protein/static/media/fa-light-300.e4e189103bc7da2cfb49.ttf",
+    "static/media/fa-regular-400.eot": "/react-protein/static/media/fa-regular-400.0ff2d8f58da6eada41a3.eot",
+    "static/media/fa-regular-400.ttf": "/react-protein/static/media/fa-regular-400.c03c56dcbc7a76153c78.ttf",
+    "static/media/fa-solid-900.eot": "/react-protein/static/media/fa-solid-900.3130262819498e9d9ab3.eot",
+    "static/media/fa-solid-900.ttf": "/react-protein/static/media/fa-solid-900.d546d748f7c0e96132d4.ttf",
+    "static/media/fa-light-300.woff": "/react-protein/static/media/fa-light-300.d099d6dcc4043daad76c.woff",
+    "static/media/fa-regular-400.woff": "/react-protein/static/media/fa-regular-400.2a039b96b6caa4234bab.woff",
+    "static/media/fa-light-300.woff2": "/react-protein/static/media/fa-light-300.e543e52ca4a2988afb57.woff2",
+    "static/media/fa-solid-900.woff": "/react-protein/static/media/fa-solid-900.21d0d53e91255a3a80f1.woff",
+    "static/media/fa-regular-400.woff2": "/react-protein/static/media/fa-regular-400.cf463d02d68f3039b8bb.woff2",
+    "static/media/DINProCondensedMedium.ttf": "/react-protein/static/media/DINProCondensedMedium.93f3483d3c8a4757bff3.ttf",
+    "static/media/fa-brands-400.eot": "/react-protein/static/media/fa-brands-400.2746faee8523f28a5057.eot",
+    "static/media/fa-brands-400.ttf": "/react-protein/static/media/fa-brands-400.2008e6316b604f95d937.ttf",
+    "static/media/fa-solid-900.woff2": "/react-protein/static/media/fa-solid-900.04bd3960fa75e2c5c484.woff2",
+    "static/media/BebasNeueBold.otf": "/react-protein/static/media/BebasNeueBold.a20da9a8676904a41a73.otf",
+    "static/media/fa-brands-400.woff": "/react-protein/static/media/fa-brands-400.68b178e195e6c6034111.woff",
+    "static/media/fa-brands-400.woff2": "/react-protein/static/media/fa-brands-400.4ff6a8930456607a9aa8.woff2",
+    "index.html": "/react-protein/index.html",
+    "main.c90a7398.css.map": "/react-protein/static/css/main.c90a7398.css.map",
+    "main.eab94c49.js.map": "/react-protein/static/js/main.eab94c49.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c90a7398.css",
+    "static/js/main.eab94c49.js"
+  ]
+}
